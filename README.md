@@ -21,5 +21,8 @@ Single static page (`index.html`) — no build step:
 - Images: `assets/img/` (stock photo sources listed in `docs/image-sources.md`)
 - Hindi text: the `I18N.hi` dictionary in `index.html`
 
+## Live site
+https://smileandglow.co.in (GitHub Pages, custom domain via `CNAME`)
+
 ## Deploy
 Any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages). For GitHub Pages: Settings → Pages → Deploy from branch `main`, folder `/ (root)`, then add your custom domain.

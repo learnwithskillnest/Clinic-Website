@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smileandglow.co.in/sitemap.xml
