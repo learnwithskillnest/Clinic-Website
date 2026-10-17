@@ -8,7 +8,8 @@ Website for **Smile & Glow** (Dr. Pallavi — BDS, MDS (Maxillofacial Medicine &
 
 ## What's in the site
 Single static page (`index.html`) — no build step:
-- Dental, skin & hair, and laser treatment sections with photos
+- Hero photo slideshow, dental and skin & hair treatment cards with photos, swipeable laser treatments carousel
+- "Inside Smile & Glow" photo gallery carousel (real clinic photos)
 - About Dr. Pallavi, "Inside our clinic", visit steps, FAQs
 - Both branches with timings, maps and directions
 - Booking form that opens WhatsApp with the patient's details (nothing stored)

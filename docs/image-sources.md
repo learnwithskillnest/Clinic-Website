@@ -20,3 +20,7 @@ Clinic's own photos (Google Business listing / Instagram @smileandglowclinic):
 - About inset: clinic entrance at night (Aashiyana Google listing)
 - Inside our clinic: frame from Instagram reel
 - Logo: supplied by user
+
+Gallery (clinic's own photos from the Aashiyana Google Business listing):
+- gallery-sign.webp, gallery-building.webp, gallery-night.webp, gallery-entrance.webp
+- gallery-treatment-room.webp (Instagram reel frame), gallery-hair-prp.webp (Google listing)
