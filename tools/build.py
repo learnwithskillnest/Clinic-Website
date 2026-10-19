@@ -18,6 +18,9 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup, NavigableString, Comment, Doctype
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from treatments import build_treatments, TREATMENTS, REG_NO  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://smileandglow.co.in"
 PHONE = "+91-72754-33783"
@@ -96,6 +99,7 @@ def json_ld(lang, page_url, faqs):
               "name": "PG Diploma in Nutrition"}],
          "knowsAbout": ["Dentistry", "Oral medicine", "Dental radiology", "Cosmetology", "Skin care",
                         "Laser treatments", "Nutrition"],
+         "identifier": {"@type": "PropertyValue", "propertyID": "Dental registration number", "value": REG_NO},
          "worksFor": [{"@id": f"{SITE}/#it-chauraha"}, {"@id": f"{SITE}/#aashiyana"}],
          "sameAs": [INSTAGRAM]},
         clinic("it-chauraha", "Smile & Glow – I.T Chauraha",
@@ -108,7 +112,8 @@ def json_ld(lang, page_url, faqs):
          "inLanguage": ["en", "hi"], "publisher": {"@id": f"{SITE}/#org"}},
         {"@type": ["WebPage", "MedicalWebPage"], "@id": f"{page_url}#webpage", "url": page_url,
          "inLanguage": lang, "isPartOf": {"@id": f"{SITE}/#website"}, "about": {"@id": f"{SITE}/#org"},
-         "reviewedBy": {"@id": f"{SITE}/#dr-pallavi"}, "lastReviewed": "2026-10-19"},
+         "dateModified": "2026-10-19",
+         "hasPart": [{"@type": "WebPage", "url": f"{SITE}/{t['slug']}/", "name": f"{t['name']} in Lucknow"} for t in TREATMENTS]},
         {"@type": "FAQPage", "@id": f"{page_url}#faq", "inLanguage": lang,
          "mainEntity": [{"@type": "Question", "name": q,
                          "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]},
@@ -193,7 +198,22 @@ def main():
     out.parent.mkdir(exist_ok=True)
     out.write_text(str(soup), encoding="utf-8")
 
-    print(f"Built {out.relative_to(ROOT)} and refreshed JSON-LD in index.html")
+    # 3) Treatment pages + shared stylesheet
+    slugs = build_treatments(ROOT, src)
+
+    # 4) Sitemap
+    alt = ('    <xhtml:link rel="alternate" hreflang="en" href="{s}/"/>\n'
+           '    <xhtml:link rel="alternate" hreflang="hi" href="{s}/hi/"/>\n'
+           '    <xhtml:link rel="alternate" hreflang="x-default" href="{s}/"/>\n').format(s=SITE)
+    urls = [f"  <url>\n    <loc>{SITE}/</loc>\n    <lastmod>2026-10-19</lastmod>\n{alt}  </url>",
+            f"  <url>\n    <loc>{SITE}/hi/</loc>\n    <lastmod>2026-10-19</lastmod>\n{alt}  </url>"]
+    urls += [f"  <url>\n    <loc>{SITE}/{slug}/</loc>\n    <lastmod>2026-10-19</lastmod>\n  </url>" for slug in slugs]
+    (ROOT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8")
+
+    print(f"Built {out.relative_to(ROOT)}, {len(slugs)} treatment pages, sitemap.xml; refreshed JSON-LD in index.html")
     if missing:
         print(f"\n{len(missing)} visible text(s) without a Hindi translation (add them to i18n/hi.json):")
         for m in sorted(missing):

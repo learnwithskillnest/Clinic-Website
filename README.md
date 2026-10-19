@@ -18,12 +18,13 @@ Single static page (`index.html`) — no build step:
 
 ## Editing
 - **English page:** edit `index.html`.
+- **Treatment pages** (`/root-canal-treatment-lucknow/` etc.): edit the content and prices in `tools/treatments.py`, then run the build below. Their styles come from `assets/site.css`, which is generated from the homepage's `<style>` block.
 - **Hindi page:** don't edit `hi/index.html` by hand. Add or change translations in `i18n/hi.json`, then run:
   ```
   pip install beautifulsoup4   # once
   python3 tools/build.py
   ```
-  This rebuilds `hi/index.html`, refreshes the structured data (JSON-LD) in both pages from the visible FAQ and clinic details, and lists any text that still needs a Hindi translation.
+  This rebuilds `hi/index.html`, the six treatment pages, `assets/site.css` and `sitemap.xml`, refreshes the structured data (JSON-LD) in both pages from the visible FAQ and clinic details, and lists any text that still needs a Hindi translation.
 - Clinic WhatsApp number: `CLINIC_WHATSAPP` near the bottom of `index.html`
 - Images: `assets/img/` (stock photo sources listed in `docs/image-sources.md`)
 
