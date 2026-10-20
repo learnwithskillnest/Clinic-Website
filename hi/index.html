@@ -13,10 +13,10 @@
 <meta content="Dr. Pallavi, Smile &amp; Glow" name="author"/>
 <meta content="IN-UP" name="geo.region"/>
 <meta content="Lucknow" name="geo.placename"/>
-<link as="image" fetchpriority="high" href="/assets/img/hero-laser-machine.webp" rel="preload"/>
-<link href="/assets/img/logo.png" rel="icon" type="image/png"/>
-<link href="/assets/img/logo.png" rel="apple-touch-icon"/>
-<meta content="#d4126b" name="theme-color"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/assets/img/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#1b5c8c" name="theme-color"/>
 <meta content="website" property="og:type"/>
 <meta content="Smile &amp; Glow" property="og:site_name"/>
 <meta content="लखनऊ में डेंटल और स्किन क्लिनिक | स्माइल एंड ग्लो – डॉ. पल्लवी" property="og:title"/>
@@ -26,362 +26,281 @@
 <meta content="hi_IN" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="डॉ. पल्लवी द्वारा स्माइल एंड ग्लो, आई.टी. चौराहा और आशियाना, लखनऊ में दांत, त्वचा, बाल और लेज़र उपचार। Google पर 4.9★ रेटिंग। बुकिंग: +91 72754 33783" name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Mukta:wght@400;500;600;700&amp;family=Tiro+Devanagari+Hindi&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Mukta:wght@400;500;600;700&amp;family=Tiro+Devanagari+Hindi&amp;display=swap" rel="stylesheet"/></noscript>
+<!-- FONTS --><link as="font" crossorigin="" href="/assets/fonts/mukta-latin-400.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="" href="/assets/fonts/playfair-latin-600.woff2" rel="preload" type="font/woff2"/><!-- /FONTS -->
 <style>
+  /* ---------- Fonts (self-hosted, only the weights used) ---------- */
+  @font-face{font-family:"Mukta";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/mukta-latin-400.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Mukta";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/mukta-latin-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Mukta";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/mukta-latin-700.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Mukta";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/mukta-devanagari-400.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF}
+  @font-face{font-family:"Mukta";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/mukta-devanagari-600.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF}
+  @font-face{font-family:"Mukta";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/mukta-devanagari-700.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF}
+  @font-face{font-family:"Playfair Display";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/playfair-latin-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+  /* ---------- Tokens ---------- */
   :root{
-    --bg:#f7f9fd;
-    --bg-2:#eef3fb;
+    --bg:#f8f9fb;
+    --bg-2:#eef2f7;
     --surface:#ffffff;
-    --ink:#22302b;
-    --muted:#5f6b65;
-    --green:#1b5c8c;       /* logo tooth blue */
-    --green-2:#2373ad;
-    --green-soft:#e3eef8;
-    --gold:#9b3d93;        /* logo leaf purple */
-    --gold-soft:#f3e5f3;
-    --rose:#d4126b;        /* logo magenta */
-    --rose-soft:#fbe1ec;
-    --saffron:#e58a2a;
-    --line:#dfe6f1;
-    --radius:22px;
-    --shadow:0 14px 34px rgba(60,45,20,.10);
+    --ink:#1d2733;
+    --muted:#525d6b;
+    --brand:#1b5c8c;        /* logo tooth blue */
+    --brand-ink:#ffffff;
+    --brand-soft:#e3eef8;
+    --accent:#c2125f;       /* logo magenta, deepened for 5:1+ contrast */
+    --accent-ink:#ffffff;
+    --accent-text:#b0105a;  /* magenta for links/labels on light backgrounds */
+    --band:#1b5c8c;
+    --band-ink:#ffffff;
+    --band-muted:#d6e6f3;
+    --radius:16px;
+    --t-xs:.875rem;   /* 14px */
+    --t-s:1rem;       /* 16px */
+    --t-m:1.0625rem;  /* 17px body */
+    --t-l:1.25rem;    /* 20px */
+    --t-xl:1.75rem;   /* 28px */
+    --t-2xl:clamp(1.875rem,1.2rem + 2vw,2.5rem);
+    --t-3xl:clamp(2rem,1.1rem + 3vw,3.5rem);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#12161d; --bg-2:#171c25; --surface:#1c222c; --ink:#f1ece2; --muted:#b0b6ae;
-      --green:#7fb8e6; --green-2:#a3cdf0; --green-soft:#1c2a38; --gold:#d38fd0; --gold-soft:#2f2234;
-      --rose:#ec7a9c; --rose-soft:#3a2229; --saffron:#f2a556; --line:#2d3533; --shadow:0 14px 34px rgba(0,0,0,.4);
+      --bg:#10141a; --bg-2:#161c24; --surface:#1b222c; --ink:#eef1f4; --muted:#aab4c0;
+      --brand:#8cc4ee; --brand-ink:#0b1a26; --brand-soft:#1c2a38;
+      --accent:#f08cab; --accent-ink:#2a0b18; --accent-text:#f5a3bd;
+      --band:#16324a; --band-ink:#eef1f4; --band-muted:#b9cfe0;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#12161d; --bg-2:#171c25; --surface:#1c222c; --ink:#f1ece2; --muted:#b0b6ae;
-    --green:#7fb8e6; --green-2:#a3cdf0; --green-soft:#1c2a38; --gold:#d38fd0; --gold-soft:#2f2234;
-    --rose:#ec7a9c; --rose-soft:#3a2229; --saffron:#f2a556; --line:#2d3533; --shadow:0 14px 34px rgba(0,0,0,.4);
+    --bg:#10141a; --bg-2:#161c24; --surface:#1b222c; --ink:#eef1f4; --muted:#aab4c0;
+    --brand:#8cc4ee; --brand-ink:#0b1a26; --brand-soft:#1c2a38;
+    --accent:#f08cab; --accent-ink:#2a0b18; --accent-text:#f5a3bd;
+    --band:#16324a; --band-ink:#eef1f4; --band-muted:#b9cfe0;
   }
+
+  /* ---------- Base ---------- */
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:"Mukta",system-ui,sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden}
-  h1,h2,h3{font-family:"Playfair Display","Tiro Devanagari Hindi",Georgia,serif;line-height:1.15;font-weight:600;color:var(--green)}
-  .hi{font-family:"Tiro Devanagari Hindi",serif}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{background:var(--bg);color:var(--ink);font-family:"Mukta",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:var(--t-m);line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:"Playfair Display","Mukta",Georgia,serif;line-height:1.2;font-weight:600;color:var(--brand)}
+  :lang(hi) h1,:lang(hi) h2,:lang(hi) h3,:lang(hi) h4{font-family:"Mukta",system-ui,sans-serif;font-weight:700}
+  p{max-width:68ch}
   a{color:inherit}
-  .wrap{max-width:1160px;margin:0 auto;padding:0 16px}
-  .fill{background:#fff3c4;color:#6b4e00;border-radius:6px;padding:0 5px;font-weight:600}
+  img{max-width:100%;height:auto}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  .muted{color:var(--muted)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
 
-  /* ---------- Logo ---------- */
-  .logo{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1}
-  .logo svg{width:34px;height:22px;margin-bottom:2px}
-  .logo .word{font-family:"Playfair Display",serif;font-weight:600;font-size:1.3rem;color:var(--green);letter-spacing:.01em}
-  .logo .sub{font-size:.6rem;letter-spacing:.42em;color:var(--green);font-weight:600;margin-top:3px;display:flex;align-items:center;gap:6px}
-  .logo .sub::before,.logo .sub::after{content:"";width:14px;height:1px;background:var(--gold)}
+  /* ---------- Buttons & links ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:600;font-size:var(--t-s);padding:12px 24px;border-radius:999px;border:0;cursor:pointer;font-family:inherit;transition:filter .15s}
+  .btn:hover{filter:brightness(1.08)}
+  .btn.rose{background:var(--accent);color:var(--accent-ink)}
+  .btn.ghost{background:transparent;color:var(--brand);box-shadow:inset 0 0 0 2px currentColor}
+  .btn.ghost:hover{background:var(--brand-soft);filter:none}
+  .link{color:var(--accent-text);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .link:hover{text-decoration-thickness:2px}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 
-  .brand-img{display:inline-block;line-height:0}
-  .brand-img{display:inline-flex !important;align-items:center;gap:12px;text-decoration:none;line-height:1.1 !important}
-  .brand-img img{height:70px;width:auto;display:block}
-  .brand-txt b{display:block;font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--rose)}
-  .brand-txt small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:600;margin-top:4px}
-  @media (max-width:400px){.brand-txt small{display:none}}
-  footer .brand-img img{height:90px}
-  :root[data-theme="dark"] .brand-img, .dark-logo{}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brand-img img{background:#fff;border-radius:14px;padding:4px}}
-  :root[data-theme="dark"] .brand-img img{background:#fff;border-radius:14px;padding:4px}
-
-  /* ---------- Nav ---------- */
-  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:88px}
-  .links{display:flex;gap:22px;align-items:center}
-  .links a{white-space:nowrap}
-  @media (max-width:1240px) and (min-width:861px){.brand-txt small{display:none}.links{gap:18px}.links a{font-size:.95rem}}
-  .links a{text-decoration:none;font-weight:500;color:var(--muted)}
-  .links a:hover{color:var(--rose)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .15s,background .15s}
-  .btn:hover{background:var(--green-2);transform:translateY(-1px)}
-  .btn.rose{background:var(--rose)}
-  .btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
-  .btn.ghost:hover{background:var(--green-soft)}
-  .links .btn{color:#fff}
-  .menu-btn{display:none;background:none;border:none;color:var(--ink);cursor:pointer}
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--bg-2)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+  .brand-img{display:inline-flex;align-items:center;gap:12px;text-decoration:none;line-height:1.15}
+  .brand-img img{width:58px;height:56px;display:block}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brand-img img{background:#fff;border-radius:12px;padding:3px}}
+  :root[data-theme="dark"] .brand-img img{background:#fff;border-radius:12px;padding:3px}
+  .brand-txt b{display:block;font-family:"Playfair Display","Mukta",serif;font-weight:600;font-size:var(--t-l);color:var(--accent-text)}
+  .brand-txt small{display:block;font-size:var(--t-xs);color:var(--muted);margin-top:2px}
+  .links{display:flex;gap:4px;align-items:center}
+  .links a{text-decoration:none;font-weight:500;color:var(--muted);padding:10px 10px;border-radius:8px;white-space:nowrap}
+  .links a:hover{color:var(--accent-text)}
+  .links .btn{color:var(--accent-ink);margin-left:8px;padding:10px 20px}
+  .menu-btn{display:none;background:none;border:0;color:var(--ink);cursor:pointer;width:48px;height:48px;place-items:center}
+  @media (max-width:1080px) and (min-width:861px){.brand-txt small{display:none}.links a{padding:10px 7px}}
   @media (max-width:860px){
-    .links{display:none;position:absolute;top:88px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px 16px;border-bottom:1px solid var(--line);gap:16px}
+    .links{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:12px 20px 20px;border-bottom:1px solid var(--bg-2);gap:2px}
     .links.open{display:flex}
-    .menu-btn{display:block}
-  }
-
-  /* ---------- Decorative ---------- */
-  .petal{position:absolute;pointer-events:none;opacity:.9}
-  .divider{display:flex;justify-content:center;align-items:center;gap:12px;margin:0 auto 14px;color:var(--gold)}
-  .divider::before,.divider::after{content:"";width:48px;height:1px;background:currentColor;opacity:.7}
-
-  /* ---------- Hero ---------- */
-  .hero{position:relative;padding:64px 0 90px;overflow:hidden;background:
-      radial-gradient(600px 380px at 92% 8%, var(--rose-soft), transparent 70%),
-      radial-gradient(520px 360px at 0% 100%, var(--green-soft), transparent 70%),
-      radial-gradient(400px 300px at 55% 0%, var(--gold-soft), transparent 70%);}
-  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
-  .tag{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);color:var(--rose);font-weight:600;font-size:.85rem;padding:6px 14px;border-radius:999px;margin-bottom:22px;box-shadow:var(--shadow)}
-  .hero h1{font-size:clamp(2.4rem,5.4vw,4rem);margin-bottom:10px}
-  .hero h1 .kicker{display:block;font-family:"Mukta",system-ui,sans-serif;font-size:clamp(1rem,1.7vw,1.25rem);font-weight:700;letter-spacing:.02em;line-height:1.3;color:var(--rose);margin-bottom:14px}
-  .hero h1 em{color:var(--rose);font-style:italic}
-  .hero h1 .g{color:var(--gold);font-style:italic}
-  .hero .hindi{font-size:1.35rem;color:var(--gold);margin-bottom:18px}
-  .hero p.lead{font-size:1.12rem;color:var(--muted);max-width:530px;margin-bottom:30px}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
-  .stats{display:flex;gap:34px;margin-top:40px;flex-wrap:wrap}
-  .stats strong{display:block;font-family:"Playfair Display",serif;font-size:1.7rem;color:var(--green)}
-  .stats span{font-size:.9rem;color:var(--muted)}
-
-  .frame{position:relative;max-width:420px;width:100%;justify-self:center}
-  .arch{aspect-ratio:4/5;border-radius:220px 220px 28px 28px;background:linear-gradient(170deg,var(--gold-soft),var(--rose-soft) 60%,var(--green-soft));border:6px solid var(--surface);box-shadow:var(--shadow);display:grid;place-items:center;position:relative;overflow:hidden}
-  .arch img{width:100%;height:100%;object-fit:cover}
-  .arch .ph{text-align:center;color:var(--green);padding:24px}
-  .arch .ph svg{width:120px;height:80px;margin-bottom:10px}
-  .arch .ph small{display:block;color:var(--muted);font-size:.85rem;margin-top:6px}
-  .chip{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:12px 16px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem}
-  .chip i{font-style:normal;width:34px;height:34px;border-radius:50%;display:grid;place-items:center}
-  .ch1{top:12%;left:-8%}
-  .ch2{top:44%;right:-8%}
-  .ch3{bottom:-4%;left:8%}
-  @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr}
-    .frame{max-width:330px}
-    .ch1{left:-2%}.ch2{right:-2%}
+    .links .btn{margin:10px 0 0}
+    .menu-btn{display:grid}
   }
 
   /* ---------- Sections ---------- */
-  section{padding:88px 0;position:relative}
-  .head{text-align:center;max-width:660px;margin:0 auto 46px}
-  .head h2{font-size:clamp(2rem,3.8vw,2.7rem);margin-bottom:12px}
-  .head p{color:var(--muted)}
+  section{padding:80px 0;position:relative}
+  .sec-head{max-width:720px;margin:0 0 40px}
+  .sec-head h2{font-size:var(--t-2xl);margin-bottom:10px}
+  .sec-head p{color:var(--muted)}
+  .alt{background:var(--bg-2)}
 
-  .tabs{display:flex;justify-content:center;gap:8px;margin-bottom:36px;flex-wrap:wrap}
-  .tab{background:var(--surface);border:1.5px solid var(--line);padding:10px 22px;border-radius:999px;font-weight:600;cursor:pointer;color:var(--muted);font-family:inherit;font-size:1rem}
-  .tab.active{background:var(--green);border-color:var(--green);color:#fff}
-  .tab[data-tab="skin"].active{background:var(--rose);border-color:var(--rose)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-  .svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
-  .svc::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:var(--green-soft);opacity:.6}
-  .svc.skin::after{background:var(--rose-soft)}
-  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .svc .ico{position:relative;z-index:1;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;background:var(--green-soft);color:var(--green)}
-  .svc.skin .ico{background:var(--rose-soft);color:var(--rose)}
-  .svc h3{font-size:1.28rem;margin-bottom:6px}
-  .svc p{color:var(--muted);font-size:.98rem}
-  .panel[hidden]{display:none}
-  .svc{padding:0 0 26px}
-  .svc>h3,.svc>p{padding:0 26px}
-  .svc::after{display:none}
-  .svc-pic{position:relative;aspect-ratio:16/10;overflow:hidden;line-height:0;background:var(--bg-2)}
-  .svc-pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .svc:hover .svc-pic img{transform:scale(1.05)}
-  .svc .ico{margin:-27px 0 12px 22px;border:4px solid var(--surface);box-sizing:content-box;width:46px;height:46px;position:relative;z-index:2}
-  .real{position:absolute;right:10px;top:10px;line-height:1;background:var(--rose);color:#fff;font-weight:600;font-size:.75rem;padding:5px 10px;border-radius:999px}
+  /* ---------- Hero ---------- */
+  .hero{padding:56px 0 72px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .hero h1{font-size:var(--t-3xl);line-height:1.12;max-width:15ch;margin-bottom:18px}
+  .hero .lead{font-size:var(--t-l);color:var(--muted);max-width:36ch;margin-bottom:28px}
+  .facts-row{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:36px;color:var(--muted);font-size:var(--t-s)}
+  .facts-row b{display:block;font-family:"Playfair Display","Mukta",serif;font-size:var(--t-xl);color:var(--brand);line-height:1.1}
+  .hero-pic{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-height:620px;background:var(--bg-2)}
+  .hero-pic img{width:100%;height:100%;object-fit:cover;display:block}
+  @media (max-width:900px){
+    .hero{padding:28px 0 48px}
+    .hero-grid{grid-template-columns:1fr;gap:24px}
+    .hero h1{max-width:none}
+    .hero .lead{font-size:var(--t-m);margin-bottom:20px}
+    .hero-pic{aspect-ratio:16/10;max-height:280px;border-radius:18px}
+    .hero-pic img{object-position:50% 35%}
+    .facts-row{margin-top:20px;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 24px}
+  }
 
+  /* ---------- Treatments (list layout) ---------- */
+  .tx-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .tx-col > img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius);display:block;margin-bottom:22px;background:var(--bg-2)}
+  .tx-col > h3{font-size:var(--t-xl);margin-bottom:8px}
+  .tx-list{list-style:none}
+  .tx-list li{padding:16px 0}
+  .tx-list li + li{border-top:1px solid var(--bg-2)}
+  .tx-list h4{font-size:var(--t-l);margin-bottom:4px;color:var(--ink)}
+  .tx-list p{color:var(--muted)}
+  .tx-meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px;font-size:var(--t-s)}
+  .tx-meta .price{font-weight:600;color:var(--ink)}
+  .svc-more{color:var(--accent-text);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  @media (max-width:900px){.tx-cols{grid-template-columns:1fr;gap:40px}}
 
-
-  /* ---------- Laser ---------- */
-  .laser{background:linear-gradient(180deg,var(--bg),var(--bg-2))}
-
-  .lz{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-  .lz:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .lz-pic{position:relative;aspect-ratio:16/10;line-height:0}
-  .lz-pic svg{width:100%;height:100%;display:block}
-  .lz-no{position:absolute;left:14px;top:12px;line-height:1;font-family:"Playfair Display",serif;font-weight:700;font-size:1.05rem;color:#fff;background:var(--rose);padding:6px 10px;border-radius:999px}
-  .lz-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
-  .lz-body h3{font-size:1.28rem;margin-bottom:6px}
-  .lz-body p{color:var(--muted);font-size:.97rem;flex:1}
-  .lz-link{margin-top:14px;font-weight:600;color:var(--rose);text-decoration:none}
-  .lz-link:hover{text-decoration:underline}
-  .svc-more{display:inline-block;margin:12px 26px 0;font-weight:600;color:var(--rose);text-decoration:none}
-  .svc-more:hover{text-decoration:underline}
-  .lz-more{margin:8px 0 0}
-  .foot-links{margin-top:18px;font-size:.92rem;color:var(--muted);line-height:2}
-  .foot-links a{color:var(--muted)}
-  .foot-links a:hover{color:var(--rose)}
-  .lz-note{text-align:center;color:var(--muted);font-size:.92rem;margin-top:26px}
-
-
-  /* ---------- Carousels ---------- */
-  .hero-car{display:block}
-  .hero-car .hs{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s ease;}
-  .hero-car .hs.is-active{opacity:1}
-  .hero-car .hs img{width:100%;height:100%;object-fit:cover}
-  .hero-car figcaption{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);white-space:nowrap;background:rgba(255,255,255,.92);color:#1b5c8c;font-weight:600;font-size:.88rem;padding:6px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-  .hdots{position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;gap:8px;z-index:2}
-  .hdots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(0,0,0,.15);cursor:pointer;transition:width .3s}
-  .hdots button[aria-selected="true"]{width:26px;border-radius:999px;background:var(--rose)}
-  .car{position:relative}
-  .car-track{display:grid;grid-auto-flow:column;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:6px 2px 10px;outline:none}
-  .car-track::-webkit-scrollbar{display:none}
-  .car-track>*{scroll-snap-align:start}
-  .lz-grid{grid-auto-columns:calc((100% - 44px)/3)}
-  .g-track{grid-auto-columns:calc((100% - 44px)/3)}
-  .car-btn{position:absolute;top:42%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--green);font-size:1.8rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;padding-bottom:4px;transition:opacity .2s,transform .2s}
-  .car-btn:hover{transform:translateY(-50%) scale(1.06);color:var(--rose)}
-  .car-btn.prev{left:-20px}.car-btn.next{right:-20px}
-  .car-btn[disabled]{opacity:0;pointer-events:none}
-  .car-dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
-  .car-dots span{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .3s}
-  .car-dots span.on{width:22px;border-radius:999px;background:var(--rose)}
-  .g-slide{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2);box-shadow:var(--shadow)}
-  .g-slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-  .g-slide:hover img{transform:scale(1.04)}
-  .g-slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 18px 14px;color:#fff;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.65))}
-  @media (max-width:960px){.lz-grid,.g-track{grid-auto-columns:calc((100% - 22px)/2)}.car-btn.prev{left:-6px}.car-btn.next{right:-6px}}
-  @media (max-width:600px){.lz-grid,.g-track{grid-auto-columns:86%}.car-btn{width:40px;height:40px;font-size:1.5rem}}
-  @media (prefers-reduced-motion: reduce){.hero-car .hs{transition:none}.car-track{scroll-behavior:auto}}
+  /* ---------- Laser band ---------- */
+  .band{background:var(--band);color:var(--band-ink)}
+  .band h2,.band h3,.band h4{color:var(--band-ink)}
+  .band .sec-head p,.band p{color:var(--band-muted)}
+  .lz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 40px;list-style:none}
+  .lz h3{font-size:var(--t-l);margin-bottom:6px}
+  .lz-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:var(--t-s)}
+  .band a.lz-link,.band a.svc-more{color:var(--band-ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .lz-note{margin-top:40px;font-size:var(--t-s)}
+  @media (max-width:900px){.lz-grid{grid-template-columns:1fr 1fr;gap:28px}}
+  @media (max-width:560px){.lz-grid{grid-template-columns:1fr}}
 
   /* ---------- About ---------- */
-  .about{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
-  .portrait{aspect-ratio:4/5;border-radius:28px;background:linear-gradient(160deg,var(--green-soft),var(--gold-soft));display:grid;place-items:center;position:relative;overflow:hidden;border:6px solid var(--surface);box-shadow:var(--shadow)}
-  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-  .portrait-wrap{position:relative;max-width:420px;width:100%;justify-self:center}
-  .pcap{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.92);color:#1b5c8c;font-weight:600;font-size:.85rem;padding:5px 12px;border-radius:999px}
-  .inset{position:absolute;right:-22px;bottom:-26px;width:42%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:6px solid var(--surface);box-shadow:var(--shadow)}
-  .inset img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-  @media (max-width:900px){.portrait-wrap{max-width:340px;margin:0 auto}.inset{right:-6px}}
-  .portrait .initial{font-family:"Playfair Display",serif;font-size:7rem;color:var(--green);opacity:.85}
-  .portrait small{position:absolute;bottom:14px;left:14px;right:14px;text-align:center;color:var(--muted);font-size:.82rem}
-  .about h2{font-size:clamp(2rem,3.6vw,2.6rem);margin-bottom:6px}
-  .qual{color:var(--green)!important;font-weight:600;margin:4px 0 0!important;font-size:1rem}
-  .creds{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
-  .creds span{background:var(--surface);border:1px solid var(--line);color:var(--green);font-weight:600;font-size:.88rem;padding:5px 12px;border-radius:999px}
-  .creds span.r{color:var(--rose)}
-  .about p{color:var(--muted);margin-bottom:16px}
-  .ticks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .portrait{margin:0}
+  .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;display:block;background:var(--bg-2)}
+  .portrait figcaption{font-size:var(--t-xs);color:var(--muted);margin-top:10px}
+  .about h2{font-size:var(--t-2xl);margin-bottom:8px}
+  .qual{color:var(--brand);font-weight:600;margin:0 0 4px}
+  .reg{color:var(--muted);font-size:var(--t-s);margin-bottom:18px}
+  .about p.body{color:var(--muted);margin-bottom:14px}
+  .ticks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:20px}
   .ticks li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
-  .ticks li::before{content:"✿";color:var(--rose);font-size:1.1rem;line-height:1.4}
-  @media (max-width:900px){.about-grid{grid-template-columns:1fr}.portrait{width:100%}.ticks{grid-template-columns:1fr}}
+  .ticks svg{flex-shrink:0;margin-top:4px;color:var(--accent-text)}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:28px}.portrait{max-width:420px}.ticks{grid-template-columns:1fr}}
 
-  /* ---------- Content series (from Instagram highlights) ---------- */
-  .series{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .s-card{border-radius:var(--radius);padding:26px 22px;color:#fff;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:var(--shadow)}
-  .s-card h3{color:#fff;font-size:1.35rem;margin:10px 0 6px}
-  .s-card p{opacity:.92;font-size:.96rem}
-  .s-card .em{font-size:1.8rem}
-  .s1{background:linear-gradient(150deg,#d4126b,#e85a97)}
-  .s2{background:linear-gradient(150deg,#1b5c8c,#3a86bf)}
-  .s3{background:linear-gradient(150deg,#d9822b,#efb04f)}
-  .s4{background:linear-gradient(150deg,#8a2f86,#b65bb0)}
+  /* ---------- Instagram series ---------- */
+  .series{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;list-style:none;margin-bottom:32px}
+  .series h3{font-size:var(--t-l);margin-bottom:6px}
+  .series p{color:var(--muted);font-size:var(--t-s)}
   @media (max-width:900px){.series{grid-template-columns:1fr 1fr}}
-  @media (max-width:520px){.series{grid-template-columns:1fr}}
+  @media (max-width:520px){.series{grid-template-columns:1fr;gap:20px}}
 
+  /* ---------- Gallery ---------- */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .g-item{margin:0}
+  .g-item img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);display:block;background:var(--bg-2)}
+  .g-item figcaption{font-size:var(--t-s);color:var(--muted);margin-top:8px}
+  @media (max-width:900px){.gallery-grid{grid-template-columns:1fr 1fr;gap:16px}}
+  @media (max-width:520px){.g-item figcaption{font-size:var(--t-xs)}}
 
-  .inside{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:22px;margin-bottom:34px;box-shadow:var(--shadow)}
-  .inside-pic{border-radius:20px;overflow:hidden;aspect-ratio:4/4.2;line-height:0}
-  .inside-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-  .inside-txt h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:10px}
-  .inside-txt p{color:var(--muted);margin-bottom:14px}
-  @media (max-width:800px){.inside{grid-template-columns:1fr;gap:20px}.inside-pic{aspect-ratio:4/3.4}}
-
-  /* ---------- Journey ---------- */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
-  .step{padding:28px 22px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);text-align:center}
-  .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:46px;height:46px;margin:0 auto 14px;border-radius:50%;background:var(--gold-soft);color:var(--gold);font-family:"Playfair Display",serif;font-weight:700;font-size:1.3rem;border:1.5px solid var(--gold)}
-  .step h3{font-size:1.2rem;margin-bottom:6px}
-  .step p{color:var(--muted);font-size:.96rem}
-  @media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
-  @media (max-width:520px){.steps{grid-template-columns:1fr}}
-
-  /* ---------- Instagram band ---------- */
-  .insta{position:relative;overflow:hidden;background:linear-gradient(120deg,#1b5c8c,#8a2f86 60%,#d4126b);color:#fff;border-radius:30px;padding:50px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  .insta h2{color:#fff;font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:6px}
-  .insta p{opacity:.88}
-  .insta .count{font-family:"Playfair Display",serif;font-size:2.4rem;color:#fff}
-  .insta .btn{background:#fff;color:var(--green)}
-  .insta .lotus-bg{position:absolute;right:-30px;bottom:-40px;width:220px;opacity:.12}
-  @media (max-width:520px){.insta{padding:34px 22px}}
+  /* ---------- Visit ---------- */
+  .visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .visit-pic img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 30%;border-radius:var(--radius);display:block}
+  .visit h2{font-size:var(--t-2xl);margin-bottom:10px}
+  .visit .body{color:var(--muted);margin-bottom:20px}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:18px;margin:26px 0}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:4px 14px}
+  .steps li::before{content:counter(s);grid-row:span 2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand);font-weight:700}
+  .steps h4{font-size:var(--t-l);color:var(--ink);line-height:1.3}
+  .steps p{color:var(--muted)}
+  @media (max-width:900px){.visit{grid-template-columns:1fr;gap:28px}}
 
   /* ---------- FAQ ---------- */
-  .faq{max-width:800px;margin:0 auto}
-  details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:12px}
-  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--ink)}
+  .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:start}
+  .faq-side h2{font-size:var(--t-2xl);margin-bottom:10px}
+  .faq-side p{color:var(--muted);margin-bottom:18px}
+  .faq{max-width:none}
+  details{border-radius:12px;padding:0 4px}
+  details + details{border-top:1px solid var(--bg-2)}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);padding:16px 0;min-height:48px}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";color:var(--rose);font-size:1.4rem;line-height:1}
-  details[open] summary::after{content:"–"}
-  details p{color:var(--muted);margin-top:10px}
+  summary::after{content:"+";color:var(--accent-text);font-size:1.5rem;line-height:1;font-weight:400}
+  details[open] summary::after{content:"\2212"}
+  details p{color:var(--muted);padding:0 0 18px}
+  @media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:16px}}
 
   /* ---------- Contact ---------- */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-  .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px}
-  .box h3{font-size:1.5rem;margin-bottom:18px}
-  .info{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
-  .info .ico{width:44px;height:44px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:grid;place-items:center;flex-shrink:0}
-  .info b{display:block}
-  .info span{color:var(--muted);font-size:.98rem}
-  form{display:grid;gap:14px}
-  label{font-size:.9rem;font-weight:600;color:var(--muted)}
-  input,select,textarea{width:100%;margin-top:6px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font-family:inherit;font-size:1rem}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--rose)}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .note{font-size:.85rem;color:var(--muted)}
-  @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
-  @media (max-width:480px){.row2{grid-template-columns:1fr}.box{padding:24px 18px}}
-
-
-
-  .branches{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:28px}
-  .branch{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+  .branches{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:40px}
+  .branch{background:var(--surface);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
   .branch-map iframe{display:block;width:100%;height:220px;border:0;background:var(--bg-2)}
-  .branch-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:14px;flex:1}
-  .branch-tag{align-self:flex-start;background:var(--rose-soft);color:var(--rose);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
-  .branch h3{font-size:1.6rem;margin:-4px 0 2px}
+  .branch-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .branch h3{font-size:var(--t-xl)}
   .row-i{display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
-  .row-i i{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:grid;place-items:center;font-style:normal}
+  .row-i svg{flex-shrink:0;margin-top:3px;color:var(--brand)}
   .row-i a{color:var(--ink);font-weight:600;text-decoration:none}
   .hours{display:grid;gap:4px;width:100%}
-  .hours div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:4px}
-  .hours div:last-child{border-bottom:0}
+  .hours div{display:flex;justify-content:space-between;gap:12px}
   .hours b{color:var(--ink);font-weight:600;text-align:right}
-  .grate{color:var(--muted);text-decoration:none;font-size:.95rem}
-  .grate .stars{color:#f5a623;letter-spacing:1px}
+  .grate{color:var(--muted);font-size:var(--t-s)}
   .grate b{color:var(--ink)}
   .branch-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
-  .branch-actions .btn{padding:10px 18px;font-size:.95rem}
-  .booking{max-width:760px;margin:0 auto}
+  .booking{max-width:760px;background:var(--surface);border-radius:var(--radius);padding:32px}
+  .booking h3{font-size:var(--t-xl);margin-bottom:18px}
+  form{display:grid;gap:14px}
+  form .btn{justify-self:start}
+  label{font-size:var(--t-s);font-weight:600;color:var(--ink)}
+  input,select,textarea{width:100%;margin-top:6px;padding:12px 14px;min-height:48px;border-radius:10px;border:1.5px solid #c9d2de;background:var(--bg);color:var(--ink);font-family:inherit;font-size:var(--t-s)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) input,:root:not([data-theme="light"]) select,:root:not([data-theme="light"]) textarea{border-color:#3a4552}}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .note{font-size:var(--t-xs);color:var(--muted)}
   @media (max-width:900px){.branches{grid-template-columns:1fr}}
+  @media (max-width:480px){.row2{grid-template-columns:1fr}.booking{padding:24px 18px}}
 
-  footer{border-top:1px solid var(--line);padding:36px 0 96px;color:var(--muted);font-size:.95rem;background:var(--bg-2)}
+  /* ---------- Footer ---------- */
+  footer{padding:40px 0 48px;color:var(--muted);font-size:var(--t-s);background:var(--bg-2)}
   .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-
+  .foot .brand-img img{width:58px;height:56px}
+  .foot-links{margin-top:20px;line-height:2.2}
+  .foot-links a{color:var(--muted);padding:6px 2px}
+  .foot-links a:hover{color:var(--accent-text)}
+  .disclaimer{font-size:var(--t-xs);margin:16px 0 0}
+  .foot-bottom{margin-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
   .lang{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .lang svg{color:var(--muted)}
-  .lang a{background:var(--surface);border:1.5px solid var(--line);color:var(--muted);padding:6px 14px;border-radius:999px;font-size:.92rem;font-weight:600;text-decoration:none}
-  .lang a[aria-current="page"]{background:var(--green);border-color:var(--green);color:#fff}
-  .disclaimer{font-size:.85rem;color:var(--muted);margin:18px 0 0;max-width:820px}
-  .foot-bottom{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  .lang a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--surface)}
+  .lang a[lang="hi"]{font-family:system-ui,"Noto Sans Devanagari",sans-serif}
+  :lang(hi) .lang a[lang="hi"]{font-family:inherit}
+  .lang a[aria-current="page"]{background:var(--brand);color:var(--brand-ink)}
 
-  .wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:30;text-decoration:none}
+  /* ---------- Floating contact ---------- */
+  .wa{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#167a40;color:#fff;display:grid;place-items:center;z-index:30;text-decoration:none}
+  .mbar{display:none}
+  @media (max-width:700px){
+    .wa{display:none}
+    .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--bg-2)}
+    .mbar a{min-height:48px;font-size:var(--t-s)}
+    .mbar .wa-btn{background:#167a40;color:#fff}
+    body{padding-bottom:76px}
+  }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smileandglow.co.in/#org","name":"Smile & Glow","alternateName":["Smile and Glow Clinic","Dr. Pallavi's Clinic"],"url":"https://smileandglow.co.in/","logo":"https://smileandglow.co.in/assets/img/logo.png","telephone":"+91-72754-33783","sameAs":["https://www.instagram.com/smileandglowclinic/"],"founder":{"@id":"https://smileandglow.co.in/#dr-pallavi"},"subOrganization":[{"@id":"https://smileandglow.co.in/#it-chauraha"},{"@id":"https://smileandglow.co.in/#aashiyana"}]},{"@type":"Person","@id":"https://smileandglow.co.in/#dr-pallavi","name":"Dr. Pallavi","honorificPrefix":"Dr.","jobTitle":"Dental Surgeon and Aesthetic Physician","image":"https://smileandglow.co.in/assets/img/clinic-treatment-room.webp","hasCredential":[{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"BDS"},{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"MDS (Maxillofacial Medicine & Radiology)"},{"@type":"EducationalOccupationalCredential","credentialCategory":"certificate","name":"FMC (Fellow in Cosmetology)"},{"@type":"EducationalOccupationalCredential","credentialCategory":"certificate","name":"PG Diploma in Nutrition"}],"knowsAbout":["Dentistry","Oral medicine","Dental radiology","Cosmetology","Skin care","Laser treatments","Nutrition"],"identifier":{"@type":"PropertyValue","propertyID":"Dental registration number","value":"15199/11/02/2016"},"worksFor":[{"@id":"https://smileandglow.co.in/#it-chauraha"},{"@id":"https://smileandglow.co.in/#aashiyana"}],"sameAs":["https://www.instagram.com/smileandglowclinic/"]},{"@type":["Dentist","MedicalClinic"],"@id":"https://smileandglow.co.in/#it-chauraha","name":"Smile & Glow – I.T Chauraha","alternateName":["Smile and Glow Clinic","Dr. Pallavi's Clinic"],"url":"https://smileandglow.co.in/","image":"https://smileandglow.co.in/assets/img/gallery-sign.webp","logo":"https://smileandglow.co.in/assets/img/logo.png","telephone":"+91-72754-33783","address":{"@type":"PostalAddress","streetAddress":"Gate No. 4, 1/2 Shivsthali, Faizabad Rd, opp. IT Girls College, New Hyderabad, Hasanganj","addressLocality":"Lucknow","addressRegion":"Uttar Pradesh","postalCode":"226007","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":26.8710086,"longitude":80.9419724},"hasMap":"https://maps.google.com/?cid=17579297340809890606","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"11:00","closes":"15:00"}],"isAcceptingNewPatients":true,"medicalSpecialty":"Dentistry","availableService":[{"@type":"MedicalProcedure","name":"Root canal treatment"},{"@type":"MedicalProcedure","name":"Dental implants"},{"@type":"MedicalProcedure","name":"Smile makeover"},{"@type":"MedicalProcedure","name":"Teeth whitening"},{"@type":"MedicalProcedure","name":"Oral medicine and radiology"},{"@type":"MedicalProcedure","name":"Kids and family dentistry"},{"@type":"MedicalProcedure","name":"Chemical peels"},{"@type":"MedicalProcedure","name":"Acne and scar treatment"},{"@type":"MedicalProcedure","name":"Anti-ageing treatment"},{"@type":"MedicalProcedure","name":"Face PRP"},{"@type":"MedicalProcedure","name":"Hair PRP"},{"@type":"MedicalProcedure","name":"Skincare consultation"},{"@type":"MedicalProcedure","name":"Laser hair reduction"},{"@type":"MedicalProcedure","name":"Laser toning"},{"@type":"MedicalProcedure","name":"Carbon laser peel"},{"@type":"MedicalProcedure","name":"Fractional laser resurfacing"},{"@type":"MedicalProcedure","name":"IPL photofacial"},{"@type":"MedicalProcedure","name":"Laser tattoo removal"}],"parentOrganization":{"@id":"https://smileandglow.co.in/#org"},"employee":{"@id":"https://smileandglow.co.in/#dr-pallavi"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"13","bestRating":"5"},"sameAs":["https://maps.google.com/?cid=17579297340809890606","https://www.instagram.com/smileandglowclinic/","https://www.justdial.com/Lucknow/Smile-Glow-It-Girls-College-Gate-No-4-Babuganj/0522PX522-X522-230105184820-S3Q7_BZDET"]},{"@type":["Dentist","MedicalClinic"],"@id":"https://smileandglow.co.in/#aashiyana","name":"Smile & Glow – Aashiyana","alternateName":["Smile and Glow Clinic","Dr. Pallavi's Clinic"],"url":"https://smileandglow.co.in/","image":"https://smileandglow.co.in/assets/img/gallery-sign.webp","logo":"https://smileandglow.co.in/assets/img/logo.png","telephone":"+91-72754-33783","address":{"@type":"PostalAddress","streetAddress":"SS-771, behind Aastha Hospital, Sector H, LDA Colony, Aashiyana","addressLocality":"Lucknow","addressRegion":"Uttar Pradesh","postalCode":"226012","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":26.797045,"longitude":80.912754},"hasMap":"https://maps.google.com/?cid=7330207607150827761","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"16:00","closes":"21:00"}],"isAcceptingNewPatients":true,"medicalSpecialty":"Dentistry","availableService":[{"@type":"MedicalProcedure","name":"Root canal treatment"},{"@type":"MedicalProcedure","name":"Dental implants"},{"@type":"MedicalProcedure","name":"Smile makeover"},{"@type":"MedicalProcedure","name":"Teeth whitening"},{"@type":"MedicalProcedure","name":"Oral medicine and radiology"},{"@type":"MedicalProcedure","name":"Kids and family dentistry"},{"@type":"MedicalProcedure","name":"Chemical peels"},{"@type":"MedicalProcedure","name":"Acne and scar treatment"},{"@type":"MedicalProcedure","name":"Anti-ageing treatment"},{"@type":"MedicalProcedure","name":"Face PRP"},{"@type":"MedicalProcedure","name":"Hair PRP"},{"@type":"MedicalProcedure","name":"Skincare consultation"},{"@type":"MedicalProcedure","name":"Laser hair reduction"},{"@type":"MedicalProcedure","name":"Laser toning"},{"@type":"MedicalProcedure","name":"Carbon laser peel"},{"@type":"MedicalProcedure","name":"Fractional laser resurfacing"},{"@type":"MedicalProcedure","name":"IPL photofacial"},{"@type":"MedicalProcedure","name":"Laser tattoo removal"}],"parentOrganization":{"@id":"https://smileandglow.co.in/#org"},"employee":{"@id":"https://smileandglow.co.in/#dr-pallavi"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"8","bestRating":"5"},"sameAs":["https://maps.google.com/?cid=7330207607150827761","https://www.instagram.com/smileandglowclinic/"]},{"@type":"WebSite","@id":"https://smileandglow.co.in/#website","url":"https://smileandglow.co.in/","name":"Smile & Glow","inLanguage":["en","hi"],"publisher":{"@id":"https://smileandglow.co.in/#org"}},{"@type":["WebPage","MedicalWebPage"],"@id":"https://smileandglow.co.in/hi/#webpage","url":"https://smileandglow.co.in/hi/","inLanguage":"hi","isPartOf":{"@id":"https://smileandglow.co.in/#website"},"about":{"@id":"https://smileandglow.co.in/#org"},"dateModified":"2026-10-19","hasPart":[{"@type":"WebPage","url":"https://smileandglow.co.in/root-canal-treatment-lucknow/","name":"Root Canal Treatment in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/dental-implants-lucknow/","name":"Dental Implants in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/teeth-whitening-lucknow/","name":"Teeth Whitening in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/laser-hair-removal-lucknow/","name":"Laser Hair Reduction in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/hair-prp-treatment-lucknow/","name":"Hair PRP Treatment in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/chemical-peel-lucknow/","name":"Chemical Peel in Lucknow"}]},{"@type":"FAQPage","@id":"https://smileandglow.co.in/hi/#faq","inLanguage":"hi","mainEntity":[{"@type":"Question","name":"लखनऊ में स्माइल एंड ग्लो क्लिनिक कहाँ हैं?","acceptedAnswer":{"@type":"Answer","text":"हमारी दो शाखाएँ हैं: आई.टी. चौराहा — गेट नं. 4, 1/2 शिवस्थली, फ़ैज़ाबाद रोड, आई.टी. गर्ल्स कॉलेज के सामने, हसनगंज, लखनऊ 226007; और आशियाना — SS-771, आस्था हॉस्पिटल के पीछे, सेक्टर H, LDA कॉलोनी, लखनऊ 226012।"}},{"@type":"Question","name":"क्लिनिक का समय क्या है?","acceptedAnswer":{"@type":"Answer","text":"आई.टी. चौराहा सोमवार से शनिवार, सुबह 11:00 से दोपहर 3:00 बजे तक खुला रहता है। आशियाना सोमवार से शनिवार, शाम 4:00 से रात 9:00 बजे तक खुला रहता है। रविवार को दोनों शाखाओं में केवल अपॉइंटमेंट से मरीज़ देखे जाते हैं।"}},{"@type":"Question","name":"स्माइल एंड ग्लो में डॉक्टर कौन हैं?","acceptedAnswer":{"@type":"Answer","text":"डॉ. पल्लवी — BDS, MDS (मैक्सिलोफ़ेशियल मेडिसिन और रेडियोलॉजी), FMC (फ़ेलो इन कॉस्मेटोलॉजी) और न्यूट्रिशन में PG डिप्लोमा। वे दांतों के साथ-साथ त्वचा और बालों की समस्याओं का भी इलाज करती हैं।"}},{"@type":"Question","name":"अपॉइंटमेंट कैसे बुक करें?","acceptedAnswer":{"@type":"Answer","text":"+91 72754 33783 पर कॉल या WhatsApp करें, या इस पेज पर दिया बुकिंग फ़ॉर्म भरें — आपकी जानकारी के साथ WhatsApp अपने-आप खुल जाएगा।"}},{"@type":"Question","name":"कौन-कौन से उपचार उपलब्ध हैं?","acceptedAnswer":{"@type":"Answer","text":"दांतों की देखभाल (रूट कैनाल, इम्प्लांट, स्माइल मेकओवर, दांतों की सफ़ेदी, ओरल मेडिसिन और एक्स-रे, बच्चों की दंत चिकित्सा), त्वचा और बालों की देखभाल (केमिकल पील, मुहांसे और दाग, एंटी-एजिंग, फ़ेस PRP, हेयर PRP) और लेज़र उपचार (लेज़र हेयर रिडक्शन, लेज़र टोनिंग, कार्बन लेज़र पील, फ्रैक्शनल लेज़र, IPL फ़ोटोफ़ेशियल, टैटू रिमूवल)।"}},{"@type":"Question","name":"क्या लेज़र उपचार भारतीय त्वचा के लिए सही है?","acceptedAnswer":{"@type":"Answer","text":"हर लेज़र प्लान त्वचा की जाँच और पैच टेस्ट से शुरू होता है, और सेटिंग्स आपकी त्वचा के प्रकार के अनुसार चुनी जाती हैं। अगर लेज़र आपके लिए सही विकल्प नहीं है, तो डॉ. पल्लवी आपको बता देंगी।"}},{"@type":"Question","name":"क्या रूट कैनाल में दर्द होता है?","acceptedAnswer":{"@type":"Answer","text":"आधुनिक RCT लोकल एनेस्थीसिया में होता है, इसलिए ज़्यादातर मरीज़ों को सामान्य फ़िलिंग जितना ही महसूस होता है। दर्द असल में इंफ़ेक्शन से होता है — इलाज से राहत मिलती है।"}},{"@type":"Question","name":"क्या एक ही विज़िट में दांत और त्वचा दोनों का इलाज हो सकता है?","acceptedAnswer":{"@type":"Answer","text":"हाँ — स्माइल एंड ग्लो इसी सोच पर बना है। बुकिंग के समय दोनों समस्याएँ बताएँ, हम उसी हिसाब से विज़िट प्लान करेंगे।"}},{"@type":"Question","name":"क्या सच में महँगे स्किनकेयर की ज़रूरत है?","acceptedAnswer":{"@type":"Answer","text":"ज़रूरी नहीं। सही स्किन टाइप के लिए चुने गए कई सस्ते प्रोडक्ट भी अच्छा काम करते हैं। डॉ. पल्लवी आपकी त्वचा और बजट के हिसाब से रूटीन बताएँगी।"}},{"@type":"Question","name":"क्या केमिकल पील के बाद आराम करना पड़ता है?","acceptedAnswer":{"@type":"Answer","text":"हल्के पील में आमतौर पर बहुत कम या कोई डाउनटाइम नहीं होता — कुछ दिन हल्की लाली या पपड़ी हो सकती है। आपको धूप से बचाव समेत पूरी आफ़्टरकेयर जानकारी दी जाएगी।"}},{"@type":"Question","name":"क्या मैं हिंदी में परामर्श ले सकता/सकती हूँ?","acceptedAnswer":{"@type":"Answer","text":"बिल्कुल — परामर्श हिंदी और अंग्रेज़ी दोनों में उपलब्ध है।"}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smileandglow.co.in/#org","name":"Smile & Glow","description":"Dental, skin, hair and laser clinics in Lucknow, run by Dr. Pallavi.","areaServed":{"@type":"City","name":"Lucknow"},"alternateName":["Smile and Glow Clinic","Dr. Pallavi's Clinic"],"url":"https://smileandglow.co.in/","logo":"https://smileandglow.co.in/assets/img/logo.png","telephone":"+91-72754-33783","sameAs":["https://www.instagram.com/smileandglowclinic/"],"founder":{"@id":"https://smileandglow.co.in/#dr-pallavi"},"subOrganization":[{"@id":"https://smileandglow.co.in/#it-chauraha"},{"@id":"https://smileandglow.co.in/#aashiyana"}]},{"@type":"Person","@id":"https://smileandglow.co.in/#dr-pallavi","name":"Dr. Pallavi","honorificPrefix":"Dr.","jobTitle":"Dental Surgeon and Aesthetic Physician","image":"https://smileandglow.co.in/assets/img/clinic-treatment-room.webp","hasCredential":[{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"BDS"},{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"MDS (Maxillofacial Medicine & Radiology)"},{"@type":"EducationalOccupationalCredential","credentialCategory":"certificate","name":"FMC (Fellow in Cosmetology)"},{"@type":"EducationalOccupationalCredential","credentialCategory":"certificate","name":"PG Diploma in Nutrition"}],"knowsAbout":["Dentistry","Oral medicine","Dental radiology","Cosmetology","Skin care","Laser treatments","Nutrition"],"identifier":{"@type":"PropertyValue","propertyID":"Dental registration number","value":"15199/11/02/2016"},"worksFor":[{"@id":"https://smileandglow.co.in/#it-chauraha"},{"@id":"https://smileandglow.co.in/#aashiyana"}],"sameAs":["https://www.instagram.com/smileandglowclinic/"]},{"@type":["Dentist","MedicalClinic"],"@id":"https://smileandglow.co.in/#it-chauraha","name":"Smile & Glow – I.T Chauraha","alternateName":["Smile and Glow Clinic","Dr. Pallavi's Clinic"],"description":"Dental, skin, hair and laser clinic run by Dr. Pallavi (BDS, MDS, FMC). Root canal, implants, teeth whitening, chemical peels, hair PRP and laser hair reduction.","url":"https://smileandglow.co.in/","priceRange":"₹₹","currenciesAccepted":"INR","areaServed":{"@type":"City","name":"Lucknow"},"image":"https://smileandglow.co.in/assets/img/gallery-sign.webp","logo":"https://smileandglow.co.in/assets/img/logo.png","telephone":"+91-72754-33783","address":{"@type":"PostalAddress","streetAddress":"Gate No. 4, 1/2 Shivsthali, Faizabad Rd, opp. IT Girls College, New Hyderabad, Hasanganj","addressLocality":"Lucknow","addressRegion":"Uttar Pradesh","postalCode":"226007","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":26.8710086,"longitude":80.9419724},"hasMap":"https://maps.google.com/?cid=17579297340809890606","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"11:00","closes":"15:00"}],"isAcceptingNewPatients":true,"medicalSpecialty":"Dentistry","availableService":[{"@type":"MedicalProcedure","name":"Root canal treatment"},{"@type":"MedicalProcedure","name":"Dental implants"},{"@type":"MedicalProcedure","name":"Smile makeover"},{"@type":"MedicalProcedure","name":"Teeth whitening"},{"@type":"MedicalProcedure","name":"Oral medicine and radiology"},{"@type":"MedicalProcedure","name":"Kids and family dentistry"},{"@type":"MedicalProcedure","name":"Chemical peels"},{"@type":"MedicalProcedure","name":"Acne and scar treatment"},{"@type":"MedicalProcedure","name":"Anti-ageing treatment"},{"@type":"MedicalProcedure","name":"Face PRP"},{"@type":"MedicalProcedure","name":"Hair PRP"},{"@type":"MedicalProcedure","name":"Skincare consultation"},{"@type":"MedicalProcedure","name":"Laser hair reduction"},{"@type":"MedicalProcedure","name":"Laser toning"},{"@type":"MedicalProcedure","name":"Carbon laser peel"},{"@type":"MedicalProcedure","name":"Fractional laser resurfacing"},{"@type":"MedicalProcedure","name":"IPL photofacial"},{"@type":"MedicalProcedure","name":"Laser tattoo removal"}],"parentOrganization":{"@id":"https://smileandglow.co.in/#org"},"employee":{"@id":"https://smileandglow.co.in/#dr-pallavi"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"13","bestRating":"5"},"sameAs":["https://maps.google.com/?cid=17579297340809890606","https://www.instagram.com/smileandglowclinic/","https://www.justdial.com/Lucknow/Smile-Glow-It-Girls-College-Gate-No-4-Babuganj/0522PX522-X522-230105184820-S3Q7_BZDET"]},{"@type":["Dentist","MedicalClinic"],"@id":"https://smileandglow.co.in/#aashiyana","name":"Smile & Glow – Aashiyana","alternateName":["Smile and Glow Clinic","Dr. Pallavi's Clinic"],"description":"Dental, skin, hair and laser clinic run by Dr. Pallavi (BDS, MDS, FMC). Root canal, implants, teeth whitening, chemical peels, hair PRP and laser hair reduction.","url":"https://smileandglow.co.in/","priceRange":"₹₹","currenciesAccepted":"INR","areaServed":{"@type":"City","name":"Lucknow"},"image":"https://smileandglow.co.in/assets/img/gallery-sign.webp","logo":"https://smileandglow.co.in/assets/img/logo.png","telephone":"+91-72754-33783","address":{"@type":"PostalAddress","streetAddress":"SS-771, behind Aastha Hospital, Sector H, LDA Colony, Aashiyana","addressLocality":"Lucknow","addressRegion":"Uttar Pradesh","postalCode":"226012","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":26.797045,"longitude":80.912754},"hasMap":"https://maps.google.com/?cid=7330207607150827761","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"16:00","closes":"21:00"}],"isAcceptingNewPatients":true,"medicalSpecialty":"Dentistry","availableService":[{"@type":"MedicalProcedure","name":"Root canal treatment"},{"@type":"MedicalProcedure","name":"Dental implants"},{"@type":"MedicalProcedure","name":"Smile makeover"},{"@type":"MedicalProcedure","name":"Teeth whitening"},{"@type":"MedicalProcedure","name":"Oral medicine and radiology"},{"@type":"MedicalProcedure","name":"Kids and family dentistry"},{"@type":"MedicalProcedure","name":"Chemical peels"},{"@type":"MedicalProcedure","name":"Acne and scar treatment"},{"@type":"MedicalProcedure","name":"Anti-ageing treatment"},{"@type":"MedicalProcedure","name":"Face PRP"},{"@type":"MedicalProcedure","name":"Hair PRP"},{"@type":"MedicalProcedure","name":"Skincare consultation"},{"@type":"MedicalProcedure","name":"Laser hair reduction"},{"@type":"MedicalProcedure","name":"Laser toning"},{"@type":"MedicalProcedure","name":"Carbon laser peel"},{"@type":"MedicalProcedure","name":"Fractional laser resurfacing"},{"@type":"MedicalProcedure","name":"IPL photofacial"},{"@type":"MedicalProcedure","name":"Laser tattoo removal"}],"parentOrganization":{"@id":"https://smileandglow.co.in/#org"},"employee":{"@id":"https://smileandglow.co.in/#dr-pallavi"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"8","bestRating":"5"},"sameAs":["https://maps.google.com/?cid=7330207607150827761","https://www.instagram.com/smileandglowclinic/"]},{"@type":"WebSite","@id":"https://smileandglow.co.in/#website","url":"https://smileandglow.co.in/","name":"Smile & Glow","inLanguage":["en","hi"],"publisher":{"@id":"https://smileandglow.co.in/#org"}},{"@type":["WebPage","MedicalWebPage"],"@id":"https://smileandglow.co.in/hi/#webpage","url":"https://smileandglow.co.in/hi/","inLanguage":"hi","isPartOf":{"@id":"https://smileandglow.co.in/#website"},"about":{"@id":"https://smileandglow.co.in/#org"},"dateModified":"2026-10-19","hasPart":[{"@type":"WebPage","url":"https://smileandglow.co.in/root-canal-treatment-lucknow/","name":"Root Canal Treatment in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/dental-implants-lucknow/","name":"Dental Implants in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/teeth-whitening-lucknow/","name":"Teeth Whitening in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/laser-hair-removal-lucknow/","name":"Laser Hair Reduction in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/hair-prp-treatment-lucknow/","name":"Hair PRP Treatment in Lucknow"},{"@type":"WebPage","url":"https://smileandglow.co.in/chemical-peel-lucknow/","name":"Chemical Peel in Lucknow"}]},{"@type":"FAQPage","@id":"https://smileandglow.co.in/hi/#faq","inLanguage":"hi","mainEntity":[{"@type":"Question","name":"लखनऊ में स्माइल एंड ग्लो क्लिनिक कहाँ हैं?","acceptedAnswer":{"@type":"Answer","text":"हमारी दो शाखाएँ हैं: आई.टी. चौराहा — गेट नं. 4, 1/2 शिवस्थली, फ़ैज़ाबाद रोड, आई.टी. गर्ल्स कॉलेज के सामने, हसनगंज, लखनऊ 226007; और आशियाना — SS-771, आस्था हॉस्पिटल के पीछे, सेक्टर H, LDA कॉलोनी, लखनऊ 226012।"}},{"@type":"Question","name":"क्लिनिक का समय क्या है?","acceptedAnswer":{"@type":"Answer","text":"आई.टी. चौराहा सोमवार से शनिवार, सुबह 11:00 से दोपहर 3:00 बजे तक खुला रहता है। आशियाना सोमवार से शनिवार, शाम 4:00 से रात 9:00 बजे तक खुला रहता है। रविवार को दोनों शाखाओं में केवल अपॉइंटमेंट से मरीज़ देखे जाते हैं।"}},{"@type":"Question","name":"स्माइल एंड ग्लो में डॉक्टर कौन हैं?","acceptedAnswer":{"@type":"Answer","text":"डॉ. पल्लवी — BDS, MDS (मैक्सिलोफ़ेशियल मेडिसिन और रेडियोलॉजी), FMC (फ़ेलो इन कॉस्मेटोलॉजी) और न्यूट्रिशन में PG डिप्लोमा। वे दांतों के साथ-साथ त्वचा और बालों की समस्याओं का भी इलाज करती हैं।"}},{"@type":"Question","name":"अपॉइंटमेंट कैसे बुक करें?","acceptedAnswer":{"@type":"Answer","text":"+91 72754 33783 पर कॉल या WhatsApp करें, या इस पेज पर दिया बुकिंग फ़ॉर्म भरें — आपकी जानकारी के साथ WhatsApp अपने-आप खुल जाएगा।"}},{"@type":"Question","name":"कौन-कौन से उपचार उपलब्ध हैं?","acceptedAnswer":{"@type":"Answer","text":"दांतों की देखभाल (रूट कैनाल, इम्प्लांट, स्माइल मेकओवर, दांतों की सफ़ेदी, ओरल मेडिसिन और एक्स-रे, बच्चों की दंत चिकित्सा), त्वचा और बालों की देखभाल (केमिकल पील, मुहांसे और दाग, एंटी-एजिंग, फ़ेस PRP, हेयर PRP) और लेज़र उपचार (लेज़र हेयर रिडक्शन, लेज़र टोनिंग, कार्बन लेज़र पील, फ्रैक्शनल लेज़र, IPL फ़ोटोफ़ेशियल, टैटू रिमूवल)।"}},{"@type":"Question","name":"क्या लेज़र उपचार भारतीय त्वचा के लिए सही है?","acceptedAnswer":{"@type":"Answer","text":"हर लेज़र प्लान त्वचा की जाँच और पैच टेस्ट से शुरू होता है, और सेटिंग्स आपकी त्वचा के प्रकार के अनुसार चुनी जाती हैं। अगर लेज़र आपके लिए सही विकल्प नहीं है, तो डॉ. पल्लवी आपको बता देंगी।"}},{"@type":"Question","name":"क्या रूट कैनाल में दर्द होता है?","acceptedAnswer":{"@type":"Answer","text":"आधुनिक RCT लोकल एनेस्थीसिया में होता है, इसलिए ज़्यादातर मरीज़ों को सामान्य फ़िलिंग जितना ही महसूस होता है। दर्द असल में इंफ़ेक्शन से होता है — इलाज से राहत मिलती है।"}},{"@type":"Question","name":"क्या एक ही विज़िट में दांत और त्वचा दोनों का इलाज हो सकता है?","acceptedAnswer":{"@type":"Answer","text":"हाँ — स्माइल एंड ग्लो इसी सोच पर बना है। बुकिंग के समय दोनों समस्याएँ बताएँ, हम उसी हिसाब से विज़िट प्लान करेंगे।"}},{"@type":"Question","name":"क्या सच में महँगे स्किनकेयर की ज़रूरत है?","acceptedAnswer":{"@type":"Answer","text":"ज़रूरी नहीं। सही स्किन टाइप के लिए चुने गए कई सस्ते प्रोडक्ट भी अच्छा काम करते हैं। डॉ. पल्लवी आपकी त्वचा और बजट के हिसाब से रूटीन बताएँगी।"}},{"@type":"Question","name":"क्या केमिकल पील के बाद आराम करना पड़ता है?","acceptedAnswer":{"@type":"Answer","text":"हल्के पील में आमतौर पर बहुत कम या कोई डाउनटाइम नहीं होता — कुछ दिन हल्की लाली या पपड़ी हो सकती है। आपको धूप से बचाव समेत पूरी आफ़्टरकेयर जानकारी दी जाएगी।"}},{"@type":"Question","name":"क्या मैं हिंदी में परामर्श ले सकता/सकती हूँ?","acceptedAnswer":{"@type":"Answer","text":"बिल्कुल — परामर्श हिंदी और अंग्रेज़ी दोनों में उपलब्ध है।"}}]}]}</script>
 </head>
 <body>
-<!-- Reusable lotus symbol -->
-<svg aria-hidden="true" height="0" style="position:absolute" width="0">
-<symbol id="lotus" viewbox="0 0 64 40">
-<path d="M32 4c5 6 7 13 7 19s-3 11-7 13c-4-2-7-7-7-13s2-13 7-19z" fill="currentColor"></path>
-<path d="M18 12c6 2 11 7 13 13 1 4 1 8 0 11-5-1-10-5-12-10-2-5-2-10-1-14z" fill="currentColor" opacity=".85"></path>
-<path d="M46 12c-6 2-11 7-13 13-1 4-1 8 0 11 5-1 10-5 12-10 2-5 2-10 1-14z" fill="currentColor" opacity=".85"></path>
-<path d="M6 22c7-1 15 2 21 9 1 1 2 3 3 5-8 1-16-1-21-6-2-2-3-5-3-8z" fill="currentColor" opacity=".7"></path>
-<path d="M58 22c-7-1-15 2-21 9-1 1-2 3-3 5 8 1 16-1 21-6 2-2 3-5 3-8z" fill="currentColor" opacity=".7"></path>
-</symbol>
-</svg>
 <header>
 <div class="wrap nav">
-<a aria-label="Dr. Pallavi's Clinic home" class="brand-img" href="#top"><img alt="Dr. Pallavi's Clinic — Dental and Aesthetic Expert" src="/assets/img/logo.png"/><span class="brand-txt"><b>स्माइल एंड ग्लो</b><small>डेंटल और एस्थेटिक क्लिनिक · लखनऊ</small></span></a>
-<nav class="links" id="links">
+<a aria-label="Smile &amp; Glow home" class="brand-img" href="#top"><img alt="Smile &amp; Glow logo" height="56" src="/assets/img/logo-sm.webp" width="58"/><span class="brand-txt"><b>स्माइल एंड ग्लो</b><small>डेंटल और एस्थेटिक क्लिनिक · लखनऊ</small></span></a>
+<nav aria-label="Main" class="links" id="links">
 <a href="#services">उपचार</a>
 <a href="#laser">लेज़र</a>
 <a href="#about">डॉ. पल्लवी</a>
 <a href="#gallery">गैलरी</a>
-<a href="#series">स्किन टॉक्स</a>
 <a href="#faq">सवाल-जवाब</a>
-<a class="btn rose" href="#contact">अपॉइंटमेंट बुक करें</a>
+<a href="#contact">समय</a>
+<a class="btn rose" href="#book-form">अपॉइंटमेंट बुक करें</a>
 </nav>
-<button aria-label="Open menu" class="menu-btn" onclick="document.getElementById('links').classList.toggle('open')">
-<svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="26"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+<button aria-controls="links" aria-expanded="false" aria-label="Open menu" class="menu-btn" type="button">
+<svg aria-hidden="true" fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="26"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
 </button>
 </div>
 </header>
@@ -390,218 +309,136 @@
 <section class="hero">
 <div class="wrap hero-grid">
 <div>
-<span class="tag">✿ डॉ. पल्लवी द्वारा एस्थेटिक और डेंटल केयर</span>
-<h1><span class="kicker">लखनऊ में डेंटल, स्किन और लेज़र क्लिनिक</span>आपकी <em>मुस्कान</em>,<br/>आपका <span class="g">निखार</span> — एक ही क्लिनिक में।</h1>
-<p class="lead">एक एस्थेटिक फिज़िशियन और डेंटल सर्जन से ईमानदार, विज्ञान-आधारित दांत और त्वचा की देखभाल — वही सीधी सलाह जिसे Instagram पर 20 हज़ार लोग फ़ॉलो करते हैं, अब लखनऊ के हमारे दो क्लिनिकों में आमने-सामने: आई.टी. चौराहा और आशियाना।</p>
+<h1>लखनऊ में डेंटल, स्किन और लेज़र क्लिनिक</h1>
+<p class="lead">डॉ. पल्लवी दो क्लिनिकों — आई.टी. चौराहा और आशियाना — में दांत, त्वचा और बालों का इलाज करती हैं।</p>
 <div class="cta-row">
-<a class="btn rose" href="#contact">परामर्श बुक करें →</a>
-<a class="btn ghost" href="#services">उपचार देखें</a>
+<a class="btn rose" href="#book-form">परामर्श बुक करें</a>
+<a class="btn ghost" href="tel:+917275433783">कॉल करें +91 72754 33783</a>
 </div>
-<div class="stats">
-<div><strong>20K+</strong><span>Instagram समुदाय</span></div>
-<div><strong>600+</strong><span>त्वचा और दांतों के टिप्स साझा किए</span></div>
-<div><strong>4.9★</strong><span>Google रेटिंग</span></div>
+<div class="facts-row">
+<div><b>4.9★</b>Google रेटिंग</div>
+<div><b>20K+</b>Instagram समुदाय</div>
+<div><b>2</b>लखनऊ में क्लिनिक</div>
 </div>
 </div>
-<div class="frame">
-<div aria-label="Clinic highlights" aria-roledescription="carousel" class="arch hero-car">
-<figure aria-label="1 of 4" aria-roledescription="slide" class="hs is-active" role="group"><img alt="Diode laser hair reduction machine with handpiece" fetchpriority="high" src="/assets/img/hero-laser-machine.webp" style="object-position:50% 50%"/><figcaption>एडवांस्ड लेज़र मशीनें</figcaption></figure>
-<figure aria-hidden="true" aria-label="2 of 4" aria-roledescription="slide" class="hs" role="group"><img alt="Hair PRP treatment at Smile &amp; Glow" loading="lazy" src="/assets/img/about-hair-prp.webp" style="object-position:50% 30%"/><figcaption>हमारे क्लिनिक में हेयर PRP</figcaption></figure>
-<figure aria-hidden="true" aria-label="3 of 4" aria-roledescription="slide" class="hs" role="group"><img alt="Dental treatment room at Smile &amp; Glow" loading="lazy" src="/assets/img/clinic-treatment-room.webp" style="object-position:50% 30%"/><figcaption>हमारा डेंटल ट्रीटमेंट रूम</figcaption></figure>
-<figure aria-hidden="true" aria-label="4 of 4" aria-roledescription="slide" class="hs" role="group"><img alt="Smile &amp; Glow clinic entrance with lit signboard" loading="lazy" src="/assets/img/about-clinic-night.webp" style="object-position:50% 40%"/><figcaption>स्माइल एंड ग्लो, लखनऊ</figcaption></figure>
-<div aria-label="Choose slide" class="hdots" role="tablist"><button aria-label="Slide 1" aria-selected="true" role="tab" type="button"></button><button aria-label="Slide 2" role="tab" type="button"></button><button aria-label="Slide 3" role="tab" type="button"></button><button aria-label="Slide 4" role="tab" type="button"></button></div>
-</div>
-<div class="chip ch1"><i style="background:var(--green-soft)">🦷</i>डेंटल सर्जन</div>
-<div class="chip ch2"><i style="background:var(--rose-soft)">✨</i>एस्थेटिक फिज़िशियन</div>
-</div>
+<figure class="hero-pic"><img alt="Diode laser hair reduction machine with handpiece" fetchpriority="high" height="800" src="/assets/img/hero-laser-machine.webp" width="640"/></figure>
 </div>
 </section>
 <!-- SERVICES -->
-<section id="services">
+<section class="alt" id="services">
 <div class="wrap">
-<div class="head">
-<div class="divider" style="color:var(--rose)"><svg height="22" width="34"><use href="#lotus"></use></svg></div>
+<div class="sec-head">
 <h2>हमारे उपचार</h2>
 <p>रूट कैनाल से लेकर चमकती त्वचा तक — क्लिनिकल देखभाल, आसान भाषा में।</p>
 </div>
-<div class="tabs" role="tablist">
-<button class="tab active" data-tab="dental" role="tab">🦷 दांतों की देखभाल</button>
-<button class="tab" data-tab="skin" role="tab">✨ त्वचा और बाल</button>
+<div class="tx-cols">
+<div class="tx-col">
+<img alt="Dental chair in a modern clinic" height="350" loading="lazy" src="/assets/img/dental-kids-family.webp" width="560"/>
+<h3>दांतों की देखभाल</h3>
+<ul class="tx-list">
+<li><h4>रूट कैनाल ट्रीटमेंट</h4><p>आधुनिक और आरामदायक RCT से संक्रमित दांत बचाएँ — जल्दी रिकवरी के साथ।</p><div class="tx-meta"><span class="price">₹3,000 से शुरू</span><a class="svc-more" href="/root-canal-treatment-lucknow/">कीमत और जानकारी</a></div></li>
+<li><h4>डेंटल इम्प्लांट</h4><p>गायब दांतों के लिए स्थायी, प्राकृतिक दिखने वाला विकल्प, जिससे चबाना फिर आसान हो।</p><div class="tx-meta"><span class="price">₹20,000 से शुरू</span><a class="svc-more" href="/dental-implants-lucknow/">कीमत और जानकारी</a></div></li>
+<li><h4>दांतों की सफ़ेदी</h4><p>सुरक्षित, प्रोफ़ेशनल व्हाइटनिंग जो दाग हटाकर मुस्कान को चमकाए।</p><div class="tx-meta"><span class="price">₹4,000 से शुरू</span><a class="svc-more" href="/teeth-whitening-lucknow/">कीमत और जानकारी</a></div></li>
+<li><h4>स्माइल मेकओवर</h4><p>विनियर, बॉन्डिंग, क्राउन और स्माइल डिज़ाइन — मनचाही मुस्कान के लिए।</p></li>
+<li><h4>ओरल मेडिसिन और रेडियोलॉजी</h4><p>मुँह के छाले, मुँह के घाव और जबड़े की समस्याओं की जाँच, डेंटल एक्स-रे के साथ।</p></li>
+<li><h4>बच्चों और परिवार के लिए दंत चिकित्सा</h4><p>पूरे परिवार के लिए जाँच, सफ़ाई और फ़िलिंग — बच्चों से लेकर बड़ों तक।</p></li>
+</ul>
 </div>
-<div class="panel grid" id="dental">
-<div class="svc"><div class="svc-pic"><img alt="Dental tooth model showing root canal treatment" loading="lazy" src="/assets/img/dental-root-canal.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><path d="M7 4c-2 0-3.5 1.6-3.5 4 0 3 1.2 5 1.8 8.5.3 1.8.8 4.5 2 4.5 1.4 0 1.2-4 2.7-4h4c1.5 0 1.3 4 2.7 4 1.2 0 1.7-2.7 2-4.5.6-3.5 1.8-5.5 1.8-8.5 0-2.4-1.5-4-3.5-4-1.7 0-2.6 1-5 1S8.7 4 7 4z"></path><path d="M12 9v5"></path></svg></div><h3>रूट कैनाल ट्रीटमेंट</h3><p>आधुनिक और आरामदायक RCT से संक्रमित दांत बचाएँ — जल्दी रिकवरी के साथ।</p><a class="svc-more" href="/root-canal-treatment-lucknow/">ख़र्च और जानकारी →</a></div>
-<div class="svc"><div class="svc-pic"><img alt="Dental implant model" loading="lazy" src="/assets/img/dental-implants.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><path d="M8 3h8c0 3-1 5-1 7H9c0-2-1-4-1-7z"></path><path d="M10 10v3h4v-3M11 13l-1 8M13 13l1 8M9.5 16h5M9.8 18.5h4.4"></path></svg></div><h3>डेंटल इम्प्लांट</h3><p>गायब दांतों के लिए स्थायी, प्राकृतिक दिखने वाला विकल्प, जिससे चबाना फिर आसान हो।</p><a class="svc-more" href="/dental-implants-lucknow/">ख़र्च और जानकारी →</a></div>
-<div class="svc"><div class="svc-pic"><img alt="Bright, confident smile" loading="lazy" src="/assets/img/dental-smile-makeover.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><path d="M4 12c2 4 5 6 8 6s6-2 8-6"></path><path d="M8 13v2M12 14v3M16 13v2"></path><path d="M19 3l.8 2 2 .8-2 .8L19 9l-.8-2.4-2-.8 2-.8z"></path></svg></div><h3>स्माइल मेकओवर</h3><p>विनियर, बॉन्डिंग, क्राउन और स्माइल डिज़ाइन — मनचाही मुस्कान के लिए।</p></div>
-<div class="svc"><div class="svc-pic"><img alt="Teeth whitening tray" loading="lazy" src="/assets/img/dental-whitening.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"></path></svg></div><h3>दांतों की सफ़ेदी</h3><p>सुरक्षित, प्रोफ़ेशनल व्हाइटनिंग जो दाग हटाकर मुस्कान को चमकाए।</p><a class="svc-more" href="/teeth-whitening-lucknow/">ख़र्च और जानकारी →</a></div>
-<div class="svc"><div class="svc-pic"><img alt="Panoramic dental X-ray and scans" loading="lazy" src="/assets/img/dental-xray.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M7 15l3-4 3 3 2-2 3 3"></path></svg></div><h3>ओरल मेडिसिन और रेडियोलॉजी</h3><p>मुँह के छाले, मुँह के घाव और जबड़े की समस्याओं की जाँच, डेंटल एक्स-रे के साथ।</p></div>
-<div class="svc"><div class="svc-pic"><img alt="Dentist in a modern dental clinic" loading="lazy" src="/assets/img/dental-kids-family.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><circle cx="12" cy="8" r="4"></circle><path d="M5 21c0-4 3-7 7-7s7 3 7 7"></path><path d="M10 8h.01M14 8h.01"></path></svg></div><h3>बच्चों और परिवार के लिए दंत चिकित्सा</h3><p>पूरे परिवार के लिए जाँच, सफ़ाई और फ़िलिंग — बच्चों से लेकर बड़ों तक।</p></div>
+<div class="tx-col">
+<img alt="Hair PRP treatment in progress at Smile &amp; Glow" height="600" loading="lazy" src="/assets/img/gallery-hair-prp.webp" width="800"/>
+<h3>त्वचा और बाल</h3>
+<ul class="tx-list">
+<li><h4>हेयर PRP</h4><p>बाल झड़ना कम करने और घने, स्वस्थ बाल उगाने में मदद करने वाली थेरेपी।</p><div class="tx-meta"><span class="price">₹3,000 से शुरू</span><a class="svc-more" href="/hair-prp-treatment-lucknow/">कीमत और जानकारी</a></div></li>
+<li><h4>केमिकल पील</h4><p>पिगमेंटेशन, टैन, बेजान त्वचा और असमान रंगत के लिए क्लिनिकल पील।</p><div class="tx-meta"><span class="price">₹1,500 से शुरू</span><a class="svc-more" href="/chemical-peel-lucknow/">कीमत और जानकारी</a></div></li>
+<li><h4>मुहांसे और दाग की देखभाल</h4><p>मुहांसों को नियंत्रित करने और दाग-धब्बे कम करने के लिए व्यक्तिगत प्लान।</p></li>
+<li><h4>एंटी-एजिंग</h4><p>महीन रेखाओं, झुर्रियों और ढीलेपन के लिए उपचार, ताकि त्वचा कसी और मुलायम रहे।</p></li>
+<li><h4>फ़ेस PRP और ग्लो फ़ेशियल</h4><p>कोलेजन बढ़ाने वाले उपचार, जो त्वचा सुधारें और प्राकृतिक निखार लौटाएँ।</p></li>
+<li><h4>स्किनकेयर परामर्श</h4><p>आपकी त्वचा और बजट के अनुसार रूटीन — कोई फ़ालतू प्रोडक्ट नहीं।</p></li>
+</ul>
 </div>
-<div class="panel grid" hidden="" id="skin">
-<div class="svc skin"><div class="svc-pic"><img alt="Facial skin treatment in a clinic" loading="lazy" src="/assets/img/skin-chemical-peel.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"></path></svg></div><h3>केमिकल पील</h3><p>पिगमेंटेशन, टैन, बेजान त्वचा और असमान रंगत के लिए क्लिनिकल पील।</p><a class="svc-more" href="/chemical-peel-lucknow/">ख़र्च और जानकारी →</a></div>
-<div class="svc skin"><div class="svc-pic"><img alt="Close-up of skin with acne marks" loading="lazy" src="/assets/img/skin-acne.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><circle cx="12" cy="12" r="8"></circle><circle cx="9" cy="10" r="1"></circle><circle cx="14.5" cy="13.5" r="1.2"></circle><circle cx="11" cy="15" r=".7"></circle></svg></div><h3>मुहांसे और दाग की देखभाल</h3><p>मुहांसों को नियंत्रित करने और दाग-धब्बे कम करने के लिए व्यक्तिगत प्लान।</p></div>
-<div class="svc skin"><div class="svc-pic"><img alt="Anti-ageing facial treatment" loading="lazy" src="/assets/img/skin-anti-ageing.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"></path></svg></div><h3>एंटी-एजिंग</h3><p>महीन रेखाओं, झुर्रियों और ढीलेपन के लिए उपचार, ताकि त्वचा कसी और मुलायम रहे।</p></div>
-<div class="svc skin"><div class="svc-pic"><img alt="Face PRP treatment" loading="lazy" src="/assets/img/skin-face-prp.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><circle cx="12" cy="12" r="8"></circle><path d="M9 10h.01M15 10h.01M9 15c2 1.5 4 1.5 6 0"></path></svg></div><h3>फ़ेस PRP और ग्लो फ़ेशियल</h3><p>कोलेजन बढ़ाने वाले उपचार, जो त्वचा सुधारें और प्राकृतिक निखार लौटाएँ।</p></div>
-<div class="svc skin"><div class="svc-pic"><img alt="Hair PRP treatment at Smile &amp; Glow" loading="lazy" src="/assets/img/skin-hair-prp-card.webp"/><span class="real">हमारे क्लिनिक में</span></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><path d="M12 3v6M9 9h6l-1 11h-4z"></path><path d="M10 13h4"></path></svg></div><h3>हेयर PRP</h3><p>बाल झड़ना कम करने और घने, स्वस्थ बाल उगाने में मदद करने वाली थेरेपी।</p><a class="svc-more" href="/hair-prp-treatment-lucknow/">ख़र्च और जानकारी →</a></div>
-<div class="svc skin"><div class="svc-pic"><img alt="Doctor in a skincare consultation" loading="lazy" src="/assets/img/skin-consultation.webp"/></div><div class="ico"><svg fill="none" height="26" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="26"><path d="M9 3h6l-1 4h-4zM8 7h8v13a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z"></path><path d="M8 12h8"></path></svg></div><h3>स्किनकेयर परामर्श</h3><p>आपकी त्वचा और बजट के अनुसार रूटीन — कोई फ़ालतू प्रोडक्ट नहीं।</p></div>
 </div>
 </div>
 </section>
 <!-- LASER -->
-<section class="laser" id="laser">
+<section class="band" id="laser">
 <div class="wrap">
-<div class="head">
-<div class="divider" style="color:var(--rose)"><svg height="22" width="34"><use href="#lotus"></use></svg></div>
-<h2>एडवांस्ड लेज़र उपचार</h2>
+<div class="sec-head">
+<h2>लेज़र ट्रीटमेंट</h2>
 <p>बाल, पिगमेंटेशन, दाग और निखार के लिए सटीक, क्लिनिकली प्रमाणित लेज़र और लाइट थेरेपी — हर प्लान आपकी त्वचा के अनुसार।</p>
 </div>
-<div aria-label="Laser treatments" aria-roledescription="carousel" class="car">
-<button aria-label="Previous treatment" class="car-btn prev" type="button">‹</button>
-<div class="car-track lz-grid" tabindex="0">
-<article aria-roledescription="slide" class="lz" role="group">
-<div class="lz-pic"><svg aria-hidden="true" role="img" viewbox="0 0 320 200"><defs><lineargradient id="bge3eef8" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#e3eef8"></stop><stop offset="1" stop-color="#f3e5f3"></stop></lineargradient><radialgradient cx=".5" cy=".5" id="beam" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".95"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></radialgradient></defs><rect fill="url(#bge3eef8)" height="200" width="320"></rect><path d="M60 170 C 90 60, 150 40, 260 50 L 270 90 C 170 92, 120 120, 110 175 Z" fill="#f4d3c4"></path><path d="M80 150 l-4 -12" opacity="1.00" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M98 141 l-4 -12" opacity="0.88" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M116 132 l-4 -12" opacity="0.76" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M134 123 l-4 -12" opacity="0.64" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M152 114 l-4 -12" opacity="0.52" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M170 105 l-4 -12" opacity="0.40" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M188 96 l-4 -12" opacity="0.28" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M206 87 l-4 -12" opacity="0.16" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><path d="M224 78 l-4 -12" opacity="0.15" stroke="#3b2a2a" stroke-linecap="round" stroke-width="2.5"></path><circle cx="190" cy="78" fill="url(#beam)" r="40"></circle><g transform="translate(205 40) rotate(30)"><rect fill="#fff" height="56" rx="8" width="20" x="-10" y="-46"></rect><rect fill="#1b5c8c" height="10" rx="3" width="12" x="-6" y="6"></rect><circle cx="0" cy="-30" fill="#d4126b" r="3"></circle></g></svg><span class="lz-no">01</span></div>
-<div class="lz-body"><h3>लेज़र हेयर रिडक्शन</h3><p>चेहरे और शरीर के अनचाहे बालों में लंबे समय तक कमी, आराम के लिए ठंडे हैंडपीस के साथ। भारतीय त्वचा के लिए सुरक्षित।</p><a class="lz-link" data-treat="Laser hair reduction" href="#contact">यह उपचार बुक करें →</a><a class="svc-more lz-more" href="/laser-hair-removal-lucknow/">ख़र्च और जानकारी →</a></div>
-</article>
-<article aria-roledescription="slide" class="lz" role="group">
-<div class="lz-pic"><svg aria-hidden="true" role="img" viewbox="0 0 320 200"><defs><lineargradient id="bgfbe1ec" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbe1ec"></stop><stop offset="1" stop-color="#e3eef8"></stop></lineargradient><radialgradient cx=".5" cy=".5" id="beam" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".95"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></radialgradient></defs><rect fill="url(#bgfbe1ec)" height="200" width="320"></rect><path d="M150 40c-30 0-50 24-50 58 0 22 8 40 22 52l-4 30h64l-4-28c16-10 26-30 26-52 0-36-22-60-54-60z" fill="#f4d3c4"></path><path d="M104 92c-4-38 22-62 54-60 30 2 50 26 48 58-8-18-22-30-46-32-22-2-44 10-56 34z" fill="#3b2a2a"></path><circle cx="136" cy="100" fill="#3b2a2a" r="4"></circle><circle cx="170" cy="100" fill="#3b2a2a" r="4"></circle><path d="M142 128c8 6 16 6 24 0" fill="none" stroke="#c2416b" stroke-linecap="round" stroke-width="4"></path><circle cx="126" cy="116" fill="#a0634b" opacity="0.9" r="3.2"></circle><circle cx="132" cy="122" fill="#a0634b" opacity="0.8" r="3.2"></circle><circle cx="180" cy="114" fill="#a0634b" opacity="0.35" r="3.2"></circle><circle cx="186" cy="120" fill="#a0634b" opacity="0.25" r="3.2"></circle><circle cx="176" cy="124" fill="#a0634b" opacity="0.2" r="3.2"></circle><circle cx="120" cy="110" fill="#a0634b" opacity="0.85" r="3.2"></circle><rect fill="none" height="30" rx="6" stroke="#fff" stroke-dasharray="4 4" stroke-width="2" width="34" x="172" y="104"></rect><g transform="translate(238 96) rotate(40)"><rect fill="#fff" height="56" rx="8" width="20" x="-10" y="-46"></rect><rect fill="#1b5c8c" height="10" rx="3" width="12" x="-6" y="6"></rect><circle cx="0" cy="-30" fill="#d4126b" r="3"></circle></g><circle cx="220" cy="112" fill="url(#beam)" r="22"></circle></svg><span class="lz-no">02</span></div>
-<div class="lz-body"><h3>लेज़र टोनिंग</h3><p>पिगमेंटेशन, मेलास्मा, टैन और असमान रंगत के लिए। हल्के, कम-ऊर्जा वाले सेशन जो त्वचा को निखारें, लगभग बिना डाउनटाइम के।</p><a class="lz-link" data-treat="Laser toning" href="#contact">यह उपचार बुक करें →</a></div>
-</article>
-<article aria-roledescription="slide" class="lz" role="group">
-<div class="lz-pic"><svg aria-hidden="true" role="img" viewbox="0 0 320 200"><defs><lineargradient id="bgf3e5f3" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f3e5f3"></stop><stop offset="1" stop-color="#fbe1ec"></stop></lineargradient><radialgradient cx=".5" cy=".5" id="beam" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".95"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></radialgradient></defs><rect fill="url(#bgf3e5f3)" height="200" width="320"></rect><path d="M150 40c-30 0-50 24-50 58 0 22 8 40 22 52l-4 30h64l-4-28c16-10 26-30 26-52 0-36-22-60-54-60z" fill="#f4d3c4"></path><path d="M104 92c-4-38 22-62 54-60 30 2 50 26 48 58-8-18-22-30-46-32-22-2-44 10-56 34z" fill="#3b2a2a"></path><circle cx="136" cy="100" fill="#3b2a2a" r="4"></circle><circle cx="170" cy="100" fill="#3b2a2a" r="4"></circle><path d="M142 128c8 6 16 6 24 0" fill="none" stroke="#c2416b" stroke-linecap="round" stroke-width="4"></path><path d="M100 90 c10-30 40-46 54-46 v100 c-20 0-44-10-54-54z" fill="#1f1f24" opacity=".85"></path><path d="M118 120l8 4M112 104l9 2" stroke="#666" stroke-width="2"></path><circle cx="90" cy="60" fill="#555" opacity=".7" r="2"></circle><circle cx="96" cy="72" fill="#555" opacity=".7" r="2"></circle><circle cx="102" cy="84" fill="#555" opacity=".7" r="2"></circle><circle cx="108" cy="60" fill="#555" opacity=".7" r="2"></circle><circle cx="114" cy="72" fill="#555" opacity=".7" r="2"></circle><circle cx="120" cy="84" fill="#555" opacity=".7" r="2"></circle><circle cx="126" cy="60" fill="#555" opacity=".7" r="2"></circle><circle cx="132" cy="72" fill="#555" opacity=".7" r="2"></circle><g transform="translate(80 60) rotate(-40)"><rect fill="#fff" height="56" rx="8" width="20" x="-10" y="-46"></rect><rect fill="#1b5c8c" height="10" rx="3" width="12" x="-6" y="6"></rect><circle cx="0" cy="-30" fill="#d4126b" r="3"></circle></g><circle cx="100" cy="80" fill="url(#beam)" r="26"></circle></svg><span class="lz-no">03</span></div>
-<div class="lz-body"><h3>कार्बन लेज़र पील</h3><p>त्वचा पर कार्बन की पतली परत लगाकर लेज़र से हटाई जाती है — रोमछिद्रों की गहरी सफ़ाई, तेल पर नियंत्रण और तुरंत निखार। इसे "हॉलीवुड पील" भी कहते हैं।</p><a class="lz-link" data-treat="Carbon laser peel" href="#contact">यह उपचार बुक करें →</a></div>
-</article>
-<article aria-roledescription="slide" class="lz" role="group">
-<div class="lz-pic"><svg aria-hidden="true" role="img" viewbox="0 0 320 200"><defs><lineargradient id="bge3eef8" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#e3eef8"></stop><stop offset="1" stop-color="#fbe1ec"></stop></lineargradient><radialgradient cx=".5" cy=".5" id="beam" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".95"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></radialgradient></defs><rect fill="url(#bge3eef8)" height="200" width="320"></rect><rect fill="#f4d3c4" height="22" width="240" x="40" y="70"></rect><rect fill="#efbfae" height="40" width="240" x="40" y="92"></rect><rect fill="#e3a796" height="40" width="240" x="40" y="132"></rect><rect fill="#d4126b" height="60" opacity=".75" rx="2.5" width="5" x="58" y="70"></rect><circle cx="60.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="74" opacity=".75" rx="2.5" width="5" x="84" y="70"></rect><circle cx="86.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="60" opacity=".75" rx="2.5" width="5" x="110" y="70"></rect><circle cx="112.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="74" opacity=".75" rx="2.5" width="5" x="136" y="70"></rect><circle cx="138.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="60" opacity=".75" rx="2.5" width="5" x="162" y="70"></rect><circle cx="164.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="74" opacity=".75" rx="2.5" width="5" x="188" y="70"></rect><circle cx="190.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="60" opacity=".75" rx="2.5" width="5" x="214" y="70"></rect><circle cx="216.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="74" opacity=".75" rx="2.5" width="5" x="240" y="70"></rect><circle cx="242.5" cy="66" fill="url(#beam)" r="6"></circle><rect fill="#d4126b" height="60" opacity=".75" rx="2.5" width="5" x="266" y="70"></rect><circle cx="268.5" cy="66" fill="url(#beam)" r="6"></circle><path d="M40 70 q30-8 60 0 t60 0 t60 0 t60 0" fill="none" stroke="#fff" stroke-width="2"></path></svg><span class="lz-no">04</span></div>
-<div class="lz-body"><h3>फ्रैक्शनल लेज़र रिसर्फ़ेसिंग</h3><p>त्वचा में सूक्ष्म उपचार-बिंदु बनाकर नया कोलेजन बनाता है, जिससे कुछ सेशन में मुहांसों के दाग, खुले रोमछिद्र और महीन रेखाएँ कम होती हैं।</p><a class="lz-link" data-treat="Fractional laser (scars)" href="#contact">यह उपचार बुक करें →</a></div>
-</article>
-<article aria-roledescription="slide" class="lz" role="group">
-<div class="lz-pic"><svg aria-hidden="true" role="img" viewbox="0 0 320 200"><defs><lineargradient id="bgfbe1ec" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbe1ec"></stop><stop offset="1" stop-color="#f3e5f3"></stop></lineargradient><radialgradient cx=".5" cy=".5" id="beam" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".95"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></radialgradient></defs><rect fill="url(#bgfbe1ec)" height="200" width="320"></rect><path d="M150 40c-30 0-50 24-50 58 0 22 8 40 22 52l-4 30h64l-4-28c16-10 26-30 26-52 0-36-22-60-54-60z" fill="#f4d3c4"></path><path d="M104 92c-4-38 22-62 54-60 30 2 50 26 48 58-8-18-22-30-46-32-22-2-44 10-56 34z" fill="#3b2a2a"></path><circle cx="136" cy="100" fill="#3b2a2a" r="4"></circle><circle cx="170" cy="100" fill="#3b2a2a" r="4"></circle><path d="M142 128c8 6 16 6 24 0" fill="none" stroke="#c2416b" stroke-linecap="round" stroke-width="4"></path><line opacity=".7" stroke="#fff" stroke-linecap="round" stroke-width="3" x1="250" x2="164.01971597869544" y1="40" y2="66.59681859952056"></line><line opacity=".7" stroke="#fff" stroke-linecap="round" stroke-width="3" x1="250" x2="173.2727930146445" y1="40" y2="87.04185060375933"></line><line opacity=".7" stroke="#fff" stroke-linecap="round" stroke-width="3" x1="250" x2="187.2963961587551" y1="40" y2="104.56204818095705"></line><line opacity=".7" stroke="#fff" stroke-linecap="round" stroke-width="3" x1="250" x2="205.21860568974458" y1="40" y2="118.06809030346153"></line><line opacity=".7" stroke="#fff" stroke-linecap="round" stroke-width="3" x1="250" x2="225.92510542378713" y1="40" y2="126.72023668754737"></line><circle cx="250" cy="40" fill="#fff6c9" opacity=".9" r="30"></circle><circle cx="250" cy="40" fill="url(#beam)" r="55"></circle><path d="M124 112c4 2 8 2 12 0M170 112c4 2 8 2 12 0" opacity=".6" stroke="#e98a8a" stroke-width="3"></path></svg><span class="lz-no">05</span></div>
-<div class="lz-body"><h3>IPL फ़ोटोफ़ेशियल</h3><p>ब्रॉड-स्पेक्ट्रम लाइट जो लालिमा, धूप के धब्बे और बेजान त्वचा पर काम करती है, ताकि रंगत साफ़ और एक-समान हो।</p><a class="lz-link" data-treat="IPL photofacial" href="#contact">यह उपचार बुक करें →</a></div>
-</article>
-<article aria-roledescription="slide" class="lz" role="group">
-<div class="lz-pic"><svg aria-hidden="true" role="img" viewbox="0 0 320 200"><defs><lineargradient id="bge3eef8" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#e3eef8"></stop><stop offset="1" stop-color="#f3e5f3"></stop></lineargradient><radialgradient cx=".5" cy=".5" id="beam" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".95"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></radialgradient></defs><rect fill="url(#bge3eef8)" height="200" width="320"></rect><path d="M30 140 C 100 120, 200 110, 300 118 L 300 168 C 200 160, 100 168, 30 186 Z" fill="#f4d3c4"></path><path d="M90 146 q14-22 28 0 q14 22 28 0" fill="none" stroke="#1b2a5a" stroke-linecap="round" stroke-width="5"></path><rect fill="#1b2a5a" height="6" opacity="0.80" transform="rotate(0 163 135)" width="6" x="160" y="132"></rect><rect fill="#1b2a5a" height="6" opacity="0.66" transform="rotate(17 176 135)" width="6" x="173" y="137"></rect><rect fill="#1b2a5a" height="6" opacity="0.52" transform="rotate(34 189 135)" width="6" x="186" y="142"></rect><rect fill="#1b2a5a" height="6" opacity="0.38" transform="rotate(51 202 135)" width="6" x="199" y="132"></rect><rect fill="#1b2a5a" height="6" opacity="0.24" transform="rotate(68 215 135)" width="6" x="212" y="137"></rect><rect fill="#1b2a5a" height="6" opacity="0.10" transform="rotate(85 228 135)" width="6" x="225" y="142"></rect><g transform="translate(150 80) rotate(10)"><rect fill="#fff" height="56" rx="8" width="20" x="-10" y="-46"></rect><rect fill="#1b5c8c" height="10" rx="3" width="12" x="-6" y="6"></rect><circle cx="0" cy="-30" fill="#d4126b" r="3"></circle></g><circle cx="152" cy="118" fill="url(#beam)" r="26"></circle></svg><span class="lz-no">06</span></div>
-<div class="lz-body"><h3>लेज़र टैटू रिमूवल</h3><p>टैटू की स्याही को बारीक कणों में तोड़ता है, जिन्हें शरीर कुछ अंतराल वाले सेशनों में अपने-आप साफ़ कर देता है।</p><a class="lz-link" data-treat="Laser tattoo removal" href="#contact">यह उपचार बुक करें →</a></div>
-</article>
-</div>
-<button aria-label="Next treatment" class="car-btn next" type="button">›</button>
-<div aria-hidden="true" class="car-dots"></div>
-</div>
+<ul class="lz-grid">
+<li class="lz"><h3>लेज़र हेयर रिडक्शन</h3><p>चेहरे और शरीर के अनचाहे बालों में लंबे समय तक कमी, आराम के लिए ठंडे हैंडपीस के साथ। भारतीय त्वचा के लिए सुरक्षित।</p><div class="lz-links"><a class="lz-link" data-treat="Laser hair reduction" href="#book-form">यह ट्रीटमेंट बुक करें</a><a class="svc-more" href="/laser-hair-removal-lucknow/">₹1,500 प्रति सेशन से शुरू</a></div></li>
+<li class="lz"><h3>लेज़र टोनिंग</h3><p>पिगमेंटेशन, मेलास्मा, टैन और असमान रंगत के लिए। हल्के, कम-ऊर्जा वाले सेशन जो त्वचा को निखारें, लगभग बिना डाउनटाइम के।</p><div class="lz-links"><a class="lz-link" data-treat="Laser toning" href="#book-form">यह ट्रीटमेंट बुक करें</a></div></li>
+<li class="lz"><h3>कार्बन लेज़र पील</h3><p>त्वचा पर कार्बन की पतली परत लगाकर लेज़र से हटाई जाती है — रोमछिद्रों की गहरी सफ़ाई, तेल पर नियंत्रण और तुरंत निखार। इसे "हॉलीवुड पील" भी कहते हैं।</p><div class="lz-links"><a class="lz-link" data-treat="Carbon laser peel" href="#book-form">यह ट्रीटमेंट बुक करें</a></div></li>
+<li class="lz"><h3>फ्रैक्शनल लेज़र रिसर्फ़ेसिंग</h3><p>त्वचा में सूक्ष्म उपचार-बिंदु बनाकर नया कोलेजन बनाता है, जिससे कुछ सेशन में मुहांसों के दाग, खुले रोमछिद्र और महीन रेखाएँ कम होती हैं।</p><div class="lz-links"><a class="lz-link" data-treat="Fractional laser (scars)" href="#book-form">यह ट्रीटमेंट बुक करें</a></div></li>
+<li class="lz"><h3>IPL फ़ोटोफ़ेशियल</h3><p>ब्रॉड-स्पेक्ट्रम लाइट जो लालिमा, धूप के धब्बे और बेजान त्वचा पर काम करती है, ताकि रंगत साफ़ और एक-समान हो।</p><div class="lz-links"><a class="lz-link" data-treat="IPL photofacial" href="#book-form">यह ट्रीटमेंट बुक करें</a></div></li>
+<li class="lz"><h3>लेज़र टैटू रिमूवल</h3><p>टैटू की स्याही को बारीक कणों में तोड़ता है, जिन्हें शरीर कुछ अंतराल वाले सेशनों में अपने-आप साफ़ कर देता है।</p><div class="lz-links"><a class="lz-link" data-treat="Laser tattoo removal" href="#book-form">यह ट्रीटमेंट बुक करें</a></div></li>
+</ul>
 <p class="lz-note">हर लेज़र प्लान त्वचा की जाँच और पैच टेस्ट से शुरू होता है। सेशनों की संख्या आपकी त्वचा और लक्ष्य पर निर्भर करती है।</p>
 </div>
 </section>
 <!-- ABOUT -->
 <section class="about" id="about">
 <div class="wrap about-grid">
-<div class="portrait-wrap">
-<div class="portrait"><img alt="Hair PRP treatment with a microneedling pen at Smile &amp; Glow" src="/assets/img/about-hair-prp.webp"/><span class="pcap">हमारे क्लिनिक में हेयर PRP</span></div>
-<div class="inset"><img alt="Smile &amp; Glow clinic entrance with lit signboard" src="/assets/img/about-clinic-night.webp"/></div>
-</div>
+<figure class="portrait"><img alt="Hair PRP treatment with a microneedling pen at Smile &amp; Glow" height="700" loading="lazy" src="/assets/img/about-hair-prp.webp" width="560"/><figcaption>हमारे क्लिनिक में हेयर PRP</figcaption></figure>
 <div>
-<p style="color:var(--rose);font-weight:600;margin-bottom:6px">अपनी डॉक्टर से मिलें</p>
-<h2>डॉ. पल्लवी</h2>
+<h2>मिलिए डॉ. पल्लवी से</h2>
 <p class="qual">BDS, MDS (मैक्सिलोफ़ेशियल मेडिसिन और रेडियोलॉजी) · FMC (फ़ेलो इन कॉस्मेटोलॉजी) · न्यूट्रिशन में PG डिप्लोमा</p>
-<p class="qual" style="font-weight:500;opacity:.85">डेंटल रजिस्ट्रेशन नं. 15199/11/02/2016</p>
-<div class="creds">
-<span>डेंटल सर्जन</span>
-<span class="r">एस्थेटिक फिज़िशियन</span>
-<span>ओरल मेडिसिन और रेडियोलॉजी</span>
-<span class="r">कॉस्मेटोलॉजिस्ट</span>
-<span>न्यूट्रिशन</span>
-</div>
-<p>डॉ. पल्लवी स्माइल एंड ग्लो क्लिनिक की संस्थापक हैं। वे ओरल मेडिसिन और रेडियोलॉजी में विशेषज्ञता वाली डेंटल सर्जन हैं और एस्थेटिक फिज़िशियन के रूप में भी प्रैक्टिस करती हैं। इसी वजह से वे आपके दांत, त्वचा और बालों की देखभाल एक ही क्लिनिकल नज़रिए से करती हैं।</p>
-<p>ऑनलाइन वे ईमानदार प्रोडक्ट रिव्यू और हिंदी-अंग्रेज़ी में आसान स्किनकेयर वीडियो के लिए जानी जाती हैं। क्लिनिक में भी वही ईमानदारी — सिर्फ़ वही सलाह जो आपको सच में चाहिए।</p>
+<p class="reg">डेंटल रजिस्ट्रेशन नं. 15199/11/02/2016</p>
+<p class="body">डॉ. पल्लवी स्माइल एंड ग्लो क्लिनिक की संस्थापक हैं। वे ओरल मेडिसिन और रेडियोलॉजी में विशेषज्ञता वाली डेंटल सर्जन हैं और एस्थेटिक फिज़िशियन के रूप में भी प्रैक्टिस करती हैं। इसी वजह से वे आपके दांत, त्वचा और बालों की देखभाल एक ही क्लिनिकल नज़रिए से करती हैं।</p>
+<p class="body">ऑनलाइन वे ईमानदार प्रोडक्ट रिव्यू और हिंदी-अंग्रेज़ी में आसान स्किनकेयर वीडियो के लिए जानी जाती हैं। क्लिनिक में भी वही ईमानदारी — सिर्फ़ वही सलाह जो आपको सच में चाहिए।</p>
 <ul class="ticks">
-<li>सख़्त स्टेरिलाइज़ेशन और साफ़-सफ़ाई</li>
-<li>ईमानदार, प्रमाण-आधारित सलाह</li>
-<li>पारदर्शी फ़ीस</li>
-<li>हिंदी और अंग्रेज़ी में परामर्श</li>
+<li><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="16"><path d="M5 12l5 5 9-10"></path></svg>सख़्त स्टेरिलाइज़ेशन और साफ़-सफ़ाई</li>
+<li><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="16"><path d="M5 12l5 5 9-10"></path></svg>ईमानदार, प्रमाण-आधारित सलाह</li>
+<li><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="16"><path d="M5 12l5 5 9-10"></path></svg>पारदर्शी फ़ीस</li>
+<li><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="16"><path d="M5 12l5 5 9-10"></path></svg>हिंदी और अंग्रेज़ी में परामर्श</li>
 </ul>
 </div>
 </div>
 </section>
-<!-- CONTENT SERIES -->
-<section id="series">
-<div class="wrap">
-<div class="head">
-<div class="divider" style="color:var(--rose)"><svg height="22" width="34"><use href="#lotus"></use></svg></div>
-<h2>डॉ. पल्लवी के साथ स्किन टॉक्स</h2>
-<p>हमारे Instagram समुदाय की पसंदीदा सीरीज़ — क्या काम करता है और क्या नहीं, सीधी बात।</p>
-</div>
-<div class="series">
-<a class="s-card s1" href="https://www.instagram.com/smileandglowclinic/" rel="noopener" style="text-decoration:none" target="_blank"><span class="em">⭐</span><div><h3>रिव्यू वेडनेसडे</h3><p>मशहूर प्रोडक्ट्स का ईमानदार रिव्यू — पैसे वसूल या नहीं?</p></div></a>
-<a class="s-card s2" href="https://www.instagram.com/smileandglowclinic/" rel="noopener" style="text-decoration:none" target="_blank"><span class="em">🌧️</span><div><h3>मानसून सीरीज़</h3><p>फंगल इंफ़ेक्शन, रूखे बाल और मुहांसे — मौसम के अनुसार देखभाल।</p></div></a>
-<a class="s-card s3" href="https://www.instagram.com/smileandglowclinic/" rel="noopener" style="text-decoration:none" target="_blank"><span class="em hi">अ</span><div><h3>हिंदी वर्ज़न</h3><p>त्वचा और दांतों के टिप्स, आसान हिंदी में।</p></div></a>
-<a class="s-card s4" href="https://www.instagram.com/smileandglowclinic/" rel="noopener" style="text-decoration:none" target="_blank"><span class="em">💡</span><div><h3>त्वचा से जुड़े मिथक</h3><p>सस्ता बनाम महँगा स्किनकेयर, स्क्रब और घरेलू नुस्ख़े — मिथकों का सच।</p></div></a>
-</div>
-</div>
-</section>
 <!-- GALLERY -->
-<section class="gallery" id="gallery">
+<section class="alt" id="gallery">
 <div class="wrap">
-<div class="head">
-<div class="divider" style="color:var(--rose)"><svg height="22" width="34"><use href="#lotus"></use></svg></div>
+<div class="sec-head">
 <h2>स्माइल एंड ग्लो के अंदर</h2>
-<p>हमारे क्लिनिक की असली तस्वीरें — स्वाइप करें या तीर दबाएँ।</p>
+<p>हमारे क्लिनिकों की असली तस्वीरें।</p>
 </div>
-<div aria-label="Clinic photo gallery" aria-roledescription="carousel" class="car">
-<button aria-label="Previous photo" class="car-btn prev" type="button">‹</button>
-<div class="car-track g-track" tabindex="0">
-<figure aria-label="1 of 6" aria-roledescription="slide" class="g-slide" role="group"><img alt="Smile &amp; Glow signboard listing dental, skin &amp; hair and nutrition services" loading="lazy" src="/assets/img/gallery-sign.webp"/><figcaption>हमारा साइनबोर्ड — दांत | त्वचा और बाल | न्यूट्रिशन</figcaption></figure>
-<figure aria-label="2 of 6" aria-roledescription="slide" class="g-slide" role="group"><img alt="Smile &amp; Glow clinic building in daylight" loading="lazy" src="/assets/img/gallery-building.webp"/><figcaption>दिन में आशियाना क्लिनिक</figcaption></figure>
-<figure aria-label="3 of 6" aria-roledescription="slide" class="g-slide" role="group"><img alt="Smile &amp; Glow clinic at night" loading="lazy" src="/assets/img/gallery-night.webp"/><figcaption>आशियाना में शाम को खुला</figcaption></figure>
-<figure aria-label="4 of 6" aria-roledescription="slide" class="g-slide" role="group"><img alt="Dental treatment room with chair and equipment" loading="lazy" src="/assets/img/gallery-treatment-room.webp"/><figcaption>डेंटल ट्रीटमेंट रूम</figcaption></figure>
-<figure aria-label="5 of 6" aria-roledescription="slide" class="g-slide" role="group"><img alt="Hair PRP treatment in progress" loading="lazy" src="/assets/img/gallery-hair-prp.webp"/><figcaption>हेयर PRP उपचार के दौरान</figcaption></figure>
-<figure aria-label="6 of 6" aria-roledescription="slide" class="g-slide" role="group"><img alt="Lit clinic entrance" loading="lazy" src="/assets/img/gallery-entrance.webp"/><figcaption>स्माइल एंड ग्लो में आपका स्वागत है</figcaption></figure>
-</div>
-<button aria-label="Next photo" class="car-btn next" type="button">›</button>
-<div aria-hidden="true" class="car-dots"></div>
+<div class="gallery-grid">
+<figure class="g-item"><img alt="Smile &amp; Glow signboard listing dental, skin &amp; hair and nutrition services" height="600" loading="lazy" src="/assets/img/gallery-sign.webp" width="800"/><figcaption>हमारा साइनबोर्ड — दांत | त्वचा और बाल | न्यूट्रिशन</figcaption></figure>
+<figure class="g-item"><img alt="Smile &amp; Glow clinic building in daylight" height="600" loading="lazy" src="/assets/img/gallery-building.webp" width="800"/><figcaption>दिन में आशियाना क्लिनिक</figcaption></figure>
+<figure class="g-item"><img alt="Smile &amp; Glow clinic at night" height="600" loading="lazy" src="/assets/img/gallery-night.webp" width="800"/><figcaption>आशियाना में शाम को खुला</figcaption></figure>
+<figure class="g-item"><img alt="Lit clinic entrance" height="600" loading="lazy" src="/assets/img/gallery-entrance.webp" width="800"/><figcaption>स्माइल एंड ग्लो में आपका स्वागत है</figcaption></figure>
 </div>
 </div>
 </section>
-<!-- JOURNEY -->
-<section id="journey" style="padding-top:20px">
-<div class="wrap">
-<div class="head">
-<h2>आपकी विज़िट, कदम-दर-कदम</h2>
-<p>पहले मैसेज से फ़ॉलो-अप तक, साफ़ और इत्मीनान से देखभाल।</p>
-</div>
-<div class="inside">
-<div class="inside-pic"><img alt="Dr. Pallavi in the dental treatment room at the clinic" src="/assets/img/clinic-treatment-room.webp"/></div>
-<div class="inside-txt">
-<p style="color:var(--rose);font-weight:600;margin-bottom:6px">हमारा क्लिनिक</p>
-<h3>आराम के लिए बना आधुनिक ट्रीटमेंट रूम</h3>
-<p>हर प्रक्रिया साफ़-सुथरे, आधुनिक उपकरणों वाले कमरे में होती है — आधुनिक डेंटल चेयर और स्टेरिलाइज़्ड औज़ारों के साथ। आपको डॉ. पल्लवी ख़ुद देखती हैं।</p>
-<a class="btn rose" href="#contact" style="margin-top:8px">अपनी विज़िट बुक करें →</a>
-</div>
-</div>
-<div class="steps">
-<div class="step"><h3>बुक करें</h3><p>कॉल, WhatsApp या नीचे दिए फ़ॉर्म से समय चुनें।</p></div>
-<div class="step"><h3>परामर्श</h3><p>आपके दांत, त्वचा या बालों की समस्या की पूरी जाँच।</p></div>
-<div class="step"><h3>प्लान</h3><p>विकल्प, सेशन और ख़र्च साफ़-साफ़ — कोई सरप्राइज़ नहीं।</p></div>
-<div class="step"><h3>स्माइल एंड ग्लो</h3><p>ध्यान से उपचार, साथ में आफ़्टरकेयर और फ़ॉलो-अप।</p></div>
-</div>
-</div>
-</section>
-<!-- INSTAGRAM -->
-<section style="padding-top:0">
-<div class="wrap">
-<div class="insta">
-<svg class="lotus-bg" style="color:#fff" viewbox="0 0 64 40"><use href="#lotus"></use></svg>
+<!-- VISIT -->
+<section id="journey">
+<div class="wrap visit">
+<div class="visit-pic"><img alt="Dr. Pallavi in the dental treatment room at the clinic" height="760" loading="lazy" src="/assets/img/clinic-treatment-room.webp" width="640"/></div>
 <div>
-<div class="count">20K+</div>
-<h2>Instagram पर हमारे समुदाय से जुड़ें</h2>
-<p>रोज़ाना टिप्स, ईमानदार रिव्यू और असली नतीजे — @smileandglowclinic</p>
+<h2 class="visit-h">आपकी विज़िट, कदम-दर-कदम</h2>
+<p class="body">हर प्रक्रिया साफ़-सुथरे, आधुनिक उपकरणों वाले कमरे में होती है — आधुनिक डेंटल चेयर और स्टेरिलाइज़्ड औज़ारों के साथ। आपको डॉ. पल्लवी ख़ुद देखती हैं।</p>
+<ol class="steps">
+<li><h4>बुक करें</h4><p>कॉल, WhatsApp या नीचे दिए फ़ॉर्म से समय चुनें।</p></li>
+<li><h4>परामर्श</h4><p>आपके दांत, त्वचा या बालों की समस्या की पूरी जाँच।</p></li>
+<li><h4>प्लान</h4><p>विकल्प, सेशन और ख़र्च साफ़-साफ़ — कोई सरप्राइज़ नहीं।</p></li>
+<li><h4>इलाज और फ़ॉलो-अप</h4><p>ध्यान से उपचार, साथ में आफ़्टरकेयर और फ़ॉलो-अप।</p></li>
+</ol>
+<div class="cta-row">
+<a class="btn rose" href="#book-form">अपनी विज़िट बुक करें</a>
+<a class="link" href="https://www.instagram.com/smileandglowclinic/" rel="noopener" target="_blank">Instagram पर रोज़ के टिप्स — @smileandglowclinic</a>
 </div>
-<a class="btn" href="https://www.instagram.com/smileandglowclinic/" rel="noopener" target="_blank">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" fill="currentColor" r="1"></circle></svg>
-          @smileandglowclinic को फ़ॉलो करें
-        </a>
 </div>
 </div>
 </section>
 <!-- FAQ -->
-<section id="faq" style="padding-top:20px">
-<div class="wrap">
-<div class="head"><h2>अक्सर पूछे जाने वाले सवाल</h2><p>लखनऊ के हमारे क्लिनिक, समय और उपचार से जुड़े सवालों के जवाब।</p></div>
+<section class="alt" id="faq">
+<div class="wrap faq-grid">
+<div class="faq-side">
+<h2>अक्सर पूछे जाने वाले सवाल</h2>
+<p>लखनऊ के हमारे क्लिनिक, समय और उपचार से जुड़े सवालों के जवाब।</p>
+<a class="link" href="#book-form">WhatsApp पर पूछें</a>
+</div>
 <div class="faq">
 <details><summary>लखनऊ में स्माइल एंड ग्लो क्लिनिक कहाँ हैं?</summary><p>हमारी दो शाखाएँ हैं: आई.टी. चौराहा — गेट नं. 4, 1/2 शिवस्थली, फ़ैज़ाबाद रोड, आई.टी. गर्ल्स कॉलेज के सामने, हसनगंज, लखनऊ 226007; और आशियाना — SS-771, आस्था हॉस्पिटल के पीछे, सेक्टर H, LDA कॉलोनी, लखनऊ 226012।</p></details>
 <details><summary>क्लिनिक का समय क्या है?</summary><p>आई.टी. चौराहा सोमवार से शनिवार, सुबह 11:00 से दोपहर 3:00 बजे तक खुला रहता है। आशियाना सोमवार से शनिवार, शाम 4:00 से रात 9:00 बजे तक खुला रहता है। रविवार को दोनों शाखाओं में केवल अपॉइंटमेंट से मरीज़ देखे जाते हैं।</p></details>
@@ -618,45 +455,42 @@
 </div>
 </section>
 <!-- CONTACT -->
-<section id="contact" style="padding-top:20px">
+<section id="contact">
 <div class="wrap">
-<div class="head">
-<div class="divider" style="color:var(--rose)"><svg height="22" width="34"><use href="#lotus"></use></svg></div>
-<h2>अपना अपॉइंटमेंट बुक करें</h2>
+<div class="sec-head">
+<h2>क्लिनिक और समय</h2>
 <p>अपनी जानकारी भेजें, हम WhatsApp पर आपका समय कन्फ़र्म करेंगे।</p>
 </div>
 <div class="branches">
 <article class="branch">
 <div class="branch-map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Smile%20%26%20Glow%20-%20I.T%20Chauraha%2C%20Faizabad%20Rd%2C%20Lucknow&amp;z=16&amp;output=embed" title="Map to Smile &amp; Glow I.T Chauraha"></iframe></div>
 <div class="branch-body">
-<span class="branch-tag">शाखा 1</span>
 <h3>आई.टी. चौराहा</h3>
-<div class="row-i"><i><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></i><span>गेट नं. 4, 1/2 शिवस्थली, फ़ैज़ाबाद रोड, आई.टी. गर्ल्स कॉलेज के सामने, न्यू हैदराबाद, हसनगंज, लखनऊ, उत्तर प्रदेश 226007</span></div>
-<div class="row-i"><i><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></i><div class="hours"><div><span>सोमवार – शनिवार</span><b>सुबह 11:00 – दोपहर 3:00</b></div><div><span>रविवार</span><b>केवल अपॉइंटमेंट से</b></div></div></div>
-<div class="row-i"><i><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></i><span><a href="tel:+917275433783">+91 72754 33783</a></span></div>
-<a class="grate" href="https://maps.google.com/?cid=17579297340809890606" rel="noopener" target="_blank"><span class="stars">★★★★★</span> <b>4.9</b> <span>Google पर · 13 रिव्यू</span></a>
+<div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><span>गेट नं. 4, 1/2 शिवस्थली, फ़ैज़ाबाद रोड, आई.टी. गर्ल्स कॉलेज के सामने, न्यू हैदराबाद, हसनगंज, लखनऊ, उत्तर प्रदेश 226007</span></div>
+<div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div class="hours"><div><span>सोमवार – शनिवार</span><b>सुबह 11:00 – दोपहर 3:00</b></div><div><span>रविवार</span><b>केवल अपॉइंटमेंट से</b></div></div></div>
+<div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><span><a href="tel:+917275433783">+91 72754 33783</a></span></div>
+<p class="grate"><b>4.9</b> Google पर · 13 रिव्यू</p>
 <div class="branch-actions"><a class="btn rose" data-branch="I.T Chauraha" href="#book-form">यहाँ बुक करें</a><a class="btn ghost" href="https://maps.google.com/?cid=17579297340809890606" rel="noopener" target="_blank">रास्ता देखें</a></div>
 </div>
 </article>
 <article class="branch">
 <div class="branch-map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=26.797045%2C80.912754&amp;z=16&amp;output=embed" title="Map to Smile &amp; Glow Aashiyana"></iframe></div>
 <div class="branch-body">
-<span class="branch-tag">शाखा 2</span>
 <h3>आशियाना</h3>
-<div class="row-i"><i><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></i><span>SS-771, आस्था हॉस्पिटल के पीछे, सेक्टर H, LDA कॉलोनी, आशियाना, लखनऊ, उत्तर प्रदेश 226012</span></div>
-<div class="row-i"><i><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></i><div class="hours"><div><span>सोमवार – शनिवार (शाम)</span><b>शाम 4:00 – रात 9:00</b></div><div><span>रविवार</span><b>केवल अपॉइंटमेंट से</b></div></div></div>
-<div class="row-i"><i><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></i><span><a href="tel:+917275433783">+91 72754 33783</a></span></div>
-<a class="grate" href="https://maps.google.com/?cid=7330207607150827761" rel="noopener" target="_blank"><span class="stars">★★★★★</span> <b>5.0</b> <span>Google पर · 8 रिव्यू</span></a>
+<div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><span>SS-771, आस्था हॉस्पिटल के पीछे, सेक्टर H, LDA कॉलोनी, आशियाना, लखनऊ, उत्तर प्रदेश 226012</span></div>
+<div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div class="hours"><div><span>सोमवार – शनिवार (शाम)</span><b>शाम 4:00 – रात 9:00</b></div><div><span>रविवार</span><b>केवल अपॉइंटमेंट से</b></div></div></div>
+<div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><span><a href="tel:+917275433783">+91 72754 33783</a></span></div>
+<p class="grate"><b>5.0</b> Google पर · 8 रिव्यू</p>
 <div class="branch-actions"><a class="btn rose" data-branch="Aashiyana" href="#book-form">यहाँ बुक करें</a><a class="btn ghost" href="https://maps.google.com/?cid=7330207607150827761" rel="noopener" target="_blank">रास्ता देखें</a></div>
 </div>
 </article>
 </div>
-<div class="box booking" id="book-form">
+<div class="booking" id="book-form">
 <h3>समय का अनुरोध करें</h3>
 <form id="book">
 <div class="row2">
-<label>नाम<input name="name" placeholder="आपका नाम" required=""/></label>
-<label>फ़ोन<input name="phone" placeholder="मोबाइल नंबर" required="" type="tel"/></label>
+<label>नाम<input autocomplete="name" name="name" placeholder="आपका नाम" required=""/></label>
+<label>फ़ोन<input autocomplete="tel" name="phone" placeholder="मोबाइल नंबर" required="" type="tel"/></label>
 </div>
 <label>शाखा
               <select name="branch">
@@ -676,7 +510,7 @@
 <label>पसंदीदा तारीख़<input name="date" type="date"/></label>
 </div>
 <label>संदेश (वैकल्पिक)<textarea name="msg" placeholder="अपनी समस्या संक्षेप में बताएँ" rows="3"></textarea></label>
-<button class="btn rose" type="submit">WhatsApp पर भेजें →</button>
+<button class="btn rose" type="submit">WhatsApp पर भेजें</button>
 <p class="note">आपकी जानकारी के साथ WhatsApp खुलेगा — इस साइट पर कुछ भी सेव नहीं होता।</p>
 </form>
 </div>
@@ -686,95 +520,59 @@
 <footer>
 <div class="wrap">
 <div class="foot">
-<a aria-label="Dr. Pallavi's Clinic" class="brand-img" href="#top"><img alt="Dr. Pallavi's Clinic — Dental and Aesthetic Expert" src="/assets/img/logo.png"/></a>
+<a aria-label="Smile &amp; Glow home" class="brand-img" href="#top"><img alt="Smile &amp; Glow logo" height="56" loading="lazy" src="/assets/img/logo-sm.webp" width="58"/><span class="brand-txt"><b>स्माइल एंड ग्लो</b></span></a>
 <span>दांत · त्वचा · बाल — <a href="https://www.instagram.com/smileandglowclinic/" rel="noopener" target="_blank">@smileandglowclinic</a></span>
 </div>
 <nav aria-label="Popular treatments" class="foot-links"><b>लोकप्रिय उपचार:</b> <a href="/root-canal-treatment-lucknow/">रूट कैनाल</a> · <a href="/dental-implants-lucknow/">डेंटल इम्प्लांट</a> · <a href="/teeth-whitening-lucknow/">दांतों की सफ़ेदी</a> · <a href="/laser-hair-removal-lucknow/">लेज़र हेयर रिडक्शन</a> · <a href="/hair-prp-treatment-lucknow/">हेयर PRP</a> · <a href="/chemical-peel-lucknow/">केमिकल पील</a></nav>
 <p class="disclaimer">उपचार के परिणाम हर व्यक्ति में अलग हो सकते हैं। इस वेबसाइट की जानकारी केवल सामान्य जागरूकता के लिए है और डॉक्टर से परामर्श का विकल्प नहीं है।</p>
 <div class="foot-bottom">
-<span>© <span id="yr"></span> स्माइल एंड ग्लो, लखनऊ — आई.टी. चौराहा और आशियाना · डॉ. पल्लवी, डेंटल और एस्थेटिक विशेषज्ञ</span>
+<span>© <span id="yr">2026</span> स्माइल एंड ग्लो, लखनऊ — आई.टी. चौराहा और आशियाना · डॉ. पल्लवी, डेंटल और एस्थेटिक विशेषज्ञ</span>
 <div aria-label="Language" class="lang" role="group">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
 <a href="/" hreflang="en" lang="en">English</a>
 <a aria-current="page" href="/hi/" hreflang="hi" lang="hi">हिंदी</a>
 </div>
 </div>
 </div>
 </footer>
-<a aria-label="Chat on WhatsApp" class="wa js-wa" href="#" rel="noopener" target="_blank">
-<svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"></path></svg>
+<!-- FLOAT -->
+<a aria-label="Chat on WhatsApp" class="wa js-wa" href="https://wa.me/917275433783" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"></path></svg>
 </a>
+<div aria-label="Contact the clinic" class="mbar" role="group">
+<a class="btn ghost" href="tel:+917275433783">कॉल करें</a>
+<a class="btn wa-btn js-wa" href="https://wa.me/917275433783" rel="noopener" target="_blank">WhatsApp</a>
+</div>
+<!-- /FLOAT -->
 <script>
   // ==== EDIT THIS: clinic WhatsApp number, international format, digits only (e.g. 919876543210) ====
-  const CLINIC_WHATSAPP = "917275433783"; // from Google listing — confirm this number is on WhatsApp
-
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  const CLINIC_WHATSAPP = "917275433783";
   const waBase = "https://wa.me/" + CLINIC_WHATSAPP;
+  const yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
   document.querySelectorAll('.js-wa').forEach(a => a.href = waBase + "?text=" + encodeURIComponent("Hi Smile & Glow Clinic, I'd like to book an appointment."));
-  
 
-  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x === t));
-    document.querySelectorAll('.panel').forEach(p => p.hidden = p.id !== t.dataset.tab);
-  }));
-  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => document.getElementById('links').classList.remove('open')));
+  const menuBtn = document.querySelector('.menu-btn'), links = document.getElementById('links');
+  if (menuBtn) menuBtn.addEventListener('click', () => { const o = links.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', o); });
+  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); menuBtn && menuBtn.setAttribute('aria-expanded', 'false'); }));
 
-  document.querySelectorAll('[data-branch]').forEach(a=>a.addEventListener('click',()=>{document.querySelector('#book select[name=branch]').value=a.dataset.branch;}));
-  document.querySelectorAll('.lz-link').forEach(a=>a.addEventListener('click',()=>{document.querySelector('#book select[name=treatment]').value=a.dataset.treat;}));
-  document.getElementById('book').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = new FormData(e.target);
-    const lines = [
-      "Hi Smile & Glow Clinic, I'd like to book an appointment.",
-      "Name: " + f.get('name'),
-      "Phone: " + f.get('phone'),
-      "Branch: " + f.get('branch'),
-      "Treatment: " + f.get('treatment'),
-      f.get('date') ? "Preferred date: " + f.get('date') : "",
-      f.get('msg') ? "Note: " + f.get('msg') : ""
-    ].filter(Boolean).join("\n");
-    window.open(waBase + "?text=" + encodeURIComponent(lines), "_blank");
-  });
-
-
-  // ===== Carousels =====
-  (function(){
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Hero fade slideshow
-    document.querySelectorAll('.hero-car').forEach(car=>{
-      const slides=[...car.querySelectorAll('.hs')], dots=[...car.querySelectorAll('.hdots button')];
-      let i=0, timer=null;
-      const show=n=>{ i=(n+slides.length)%slides.length;
-        slides.forEach((s,k)=>{s.classList.toggle('is-active',k===i); s.setAttribute('aria-hidden',k!==i)});
-        dots.forEach((d,k)=>d.setAttribute('aria-selected',k===i)); };
-      const play=()=>{ if(reduce||timer) return; timer=setInterval(()=>show(i+1),4500); };
-      const stop=()=>{ clearInterval(timer); timer=null; };
-      dots.forEach((d,k)=>d.addEventListener('click',()=>{show(k); stop(); play();}));
-      car.addEventListener('mouseenter',stop); car.addEventListener('mouseleave',play);
-      car.addEventListener('focusin',stop); car.addEventListener('focusout',play);
-      document.addEventListener('visibilitychange',()=>document.hidden?stop():play());
-      play();
+  const book = document.getElementById('book');
+  if (book) {
+    document.querySelectorAll('[data-branch]').forEach(a => a.addEventListener('click', () => { book.branch.value = a.dataset.branch; }));
+    document.querySelectorAll('[data-treat]').forEach(a => a.addEventListener('click', () => { book.treatment.value = a.dataset.treat; }));
+    book.addEventListener('submit', e => {
+      e.preventDefault();
+      const f = new FormData(book);
+      const lines = [
+        "Hi Smile & Glow Clinic, I'd like to book an appointment.",
+        "Name: " + f.get('name'),
+        "Phone: " + f.get('phone'),
+        "Branch: " + f.get('branch'),
+        "Treatment: " + f.get('treatment'),
+        f.get('date') ? "Preferred date: " + f.get('date') : "",
+        f.get('msg') ? "Note: " + f.get('msg') : ""
+      ].filter(Boolean).join("\n");
+      window.open(waBase + "?text=" + encodeURIComponent(lines), "_blank");
     });
-    // Swipe carousels (gallery, laser)
-    document.querySelectorAll('.car').forEach(car=>{
-      const track=car.querySelector('.car-track'), items=[...track.children];
-      const prev=car.querySelector('.prev'), next=car.querySelector('.next'), dotsWrap=car.querySelector('.car-dots');
-      const step=()=>{ const a=items[0], b=items[1]; return b? b.offsetLeft-a.offsetLeft : track.clientWidth; };
-      const perView=()=>Math.max(1,Math.round(track.clientWidth/step()));
-      let dots=[];
-      const build=()=>{ const pages=Math.max(1,items.length-perView()+1); dotsWrap.innerHTML=''; dots=[];
-        for(let k=0;k<pages;k++){const s=document.createElement('span'); dotsWrap.appendChild(s); dots.push(s);} update(); };
-      const update=()=>{ const idx=Math.round(track.scrollLeft/step()); dots.forEach((d,k)=>d.classList.toggle('on',k===Math.min(idx,dots.length-1)));
-        const max=track.scrollWidth-track.clientWidth-4; prev.disabled=track.scrollLeft<=4; next.disabled=track.scrollLeft>=max; };
-      prev.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'}));
-      next.addEventListener('click',()=>track.scrollBy({left:step(),behavior:reduce?'auto':'smooth'}));
-      track.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){e.preventDefault();next.click();} if(e.key==='ArrowLeft'){e.preventDefault();prev.click();} });
-      let raf; track.addEventListener('scroll',()=>{cancelAnimationFrame(raf); raf=requestAnimationFrame(update);},{passive:true});
-      window.addEventListener('resize',build);
-      build();
-    });
-  })();
-
+  }
 </script>
 </body>
 </html>

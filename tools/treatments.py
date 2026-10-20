@@ -295,53 +295,55 @@ BY_SLUG = {t["slug"]: t for t in TREATMENTS}
 
 EXTRA_CSS = """
 /* ---------- Treatment pages ---------- */
-.crumbs{font-size:.9rem;color:var(--muted);padding:22px 0 0}
-.crumbs a{color:var(--muted);text-decoration:none}
-.crumbs a:hover{color:var(--rose)}
-.crumbs span{margin:0 6px;opacity:.6}
-.t-hero{padding:28px 0 56px}
-.t-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
-.t-hero h1{font-size:clamp(2rem,4.4vw,3.1rem);margin:10px 0 16px}
-.t-hero .lead{font-size:1.08rem;color:var(--muted);margin-bottom:24px;max-width:600px}
-.t-pic{position:relative;border-radius:28px;overflow:hidden;border:6px solid var(--surface);box-shadow:var(--shadow);aspect-ratio:4/3;background:var(--bg-2)}
-.t-pic img{width:100%;height:100%;object-fit:cover}
-.t-pic .real{position:absolute;right:12px;top:12px;line-height:1;background:var(--rose);color:#fff;font-weight:600;font-size:.78rem;padding:6px 11px;border-radius:999px}
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 0}
-.fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
-.fact span{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
-.fact b{display:block;color:var(--green);font-size:1.02rem;margin-top:4px}
-.t-sec{padding:44px 0}
-.t-sec h2{font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:16px}
-.t-two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.t-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+.crumbs{font-size:var(--t-s);color:var(--muted);padding:20px 0 0}
+.crumbs a{color:var(--muted);display:inline-block;padding:8px 0}
+.crumbs a:hover{color:var(--accent-text)}
+.crumbs span{margin:0 8px}
+.t-hero{padding:16px 0 56px}
+.t-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.t-hero .cat{color:var(--accent-text);font-weight:600;margin-bottom:6px}
+.t-hero h1{font-size:var(--t-3xl);margin:0 0 16px}
+.t-hero .lead{font-size:var(--t-l);color:var(--muted);margin-bottom:24px}
+.t-pic{position:relative;margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+.t-pic img{width:100%;height:100%;object-fit:cover;display:block}
+.t-pic figcaption{position:absolute;left:12px;bottom:12px;background:var(--surface);color:var(--ink);font-weight:600;font-size:var(--t-xs);padding:6px 12px;border-radius:999px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 28px;margin:32px 0 0}
+.fact span{display:block;font-size:var(--t-s);color:var(--muted)}
+.fact b{display:block;color:var(--ink);font-size:var(--t-l);font-weight:600;line-height:1.3;margin-top:2px}
+.t-sec{padding:56px 0}
+.t-sec h2{font-size:var(--t-2xl);margin-bottom:18px}
+.t-two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.t-card{background:var(--surface);border-radius:var(--radius);padding:28px}
 .t-card ul{padding-left:20px;color:var(--muted)}
-.t-card li{margin:6px 0}
-.t-steps{counter-reset:ts;list-style:none;padding:0;display:grid;gap:12px}
-.t-steps li{counter-increment:ts;position:relative;padding:16px 18px 16px 64px;background:var(--surface);border:1px solid var(--line);border-radius:16px}
-.t-steps li::before{content:counter(ts);position:absolute;left:16px;top:14px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--rose-soft);color:var(--rose);font-weight:700}
-.t-steps b{display:block;color:var(--ink)}
-.t-steps p{color:var(--muted);margin:2px 0 0}
-.price-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface)}
+.t-card li{margin:8px 0}
+.t-steps{counter-reset:ts;list-style:none;padding:0;display:grid;gap:18px}
+.t-steps li{counter-increment:ts;display:grid;grid-template-columns:40px 1fr;gap:2px 14px}
+.t-steps li::before{content:counter(ts);grid-row:span 2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand);font-weight:700}
+.t-steps b{display:block;color:var(--ink);font-size:var(--t-l);font-weight:600;line-height:1.3}
+.t-steps p{color:var(--muted)}
+.price-wrap{overflow-x:auto;border-radius:var(--radius);background:var(--surface)}
 .price{width:100%;border-collapse:collapse;min-width:420px}
-.price th,.price td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
-.price th{background:var(--bg-2);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.price td:last-child{font-weight:700;color:var(--green);white-space:nowrap}
-.price tr:last-child td{border-bottom:0}
-.price-note{font-size:.9rem;color:var(--muted);margin-top:12px}
-.doc-box{display:flex;gap:18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.price th,.price td{text-align:left;padding:14px 20px}
+.price tbody tr + tr td{border-top:1px solid var(--bg-2)}
+.price th{background:var(--bg-2);font-size:var(--t-s);font-weight:600;color:var(--muted)}
+.price td:last-child{font-weight:600;color:var(--ink);white-space:nowrap}
+.price-note{font-size:var(--t-s);color:var(--muted);margin-top:12px}
+.doc-box{display:flex;gap:18px;align-items:center;background:var(--surface);border-radius:var(--radius);padding:22px 24px}
 .doc-box img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.doc-box p{margin:0;color:var(--muted)}
+.doc-box p{color:var(--muted)}
 .doc-box b{color:var(--ink)}
-.t-branches{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.t-branch{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
-.t-branch h3{font-size:1.25rem;margin-bottom:6px}
-.t-branch p{color:var(--muted);margin:4px 0;font-size:.95rem}
-.t-branch a{color:var(--rose);font-weight:600;text-decoration:none}
+.t-branches{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.t-branch{background:var(--surface);border-radius:var(--radius);overflow:hidden}
+.t-branch img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.t-branch div{padding:20px 24px 24px}
+.t-branch h3{font-size:var(--t-xl);margin-bottom:6px}
+.t-branch p{color:var(--muted);margin:4px 0}
+.t-branch a{display:inline-block;padding:8px 0}
 .related{display:flex;flex-wrap:wrap;gap:10px}
-.related a{background:var(--surface);border:1.5px solid var(--line);color:var(--green);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600}
-.related a:hover{border-color:var(--rose);color:var(--rose)}
-.t-updated{font-size:.85rem;color:var(--muted);margin-top:18px}
-@media (max-width:900px){.t-hero-grid,.t-two,.t-branches{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}}
+.related a{display:inline-flex;align-items:center;min-height:44px;background:var(--surface);color:var(--brand);padding:0 20px;border-radius:999px;text-decoration:none;font-weight:600}
+.related a:hover{color:var(--accent-text)}
+.t-updated{font-size:var(--t-s);color:var(--muted);margin-top:18px}
+@media (max-width:900px){.t-hero-grid,.t-two,.t-branches{grid-template-columns:1fr}.t-hero .lead{font-size:var(--t-m)}.facts{grid-template-columns:1fr 1fr}.t-pic{aspect-ratio:16/10}}
 @media (max-width:340px){.facts{grid-template-columns:1fr}}
 """
 
@@ -360,11 +362,11 @@ def wa_link(treatment):
 def extract(src):
     """Pull the shared pieces out of the homepage so every page stays in sync."""
     css = re.search(r"<style>(.*?)</style>", src, re.S).group(1)
-    fonts = re.search(r'(<link rel="preconnect" href="https://fonts\.googleapis\.com">.*?</noscript>)', src, re.S).group(1)
+    fonts = re.search(r'<!-- FONTS -->(.*?)<!-- /FONTS -->', src, re.S).group(1)
     sprite = re.search(r'(<svg width="0" height="0" style="position:absolute" aria-hidden="true">.*?</svg>)', src, re.S)
     header = re.search(r"(<header>.*?</header>)", src, re.S).group(1)
     footer = re.search(r"(<footer>.*?</footer>)", src, re.S).group(1)
-    wa_btn = re.search(r'(<a class="wa js-wa".*?</a>)', src, re.S).group(1)
+    wa_btn = re.search(r'<!-- FLOAT -->(.*?)<!-- /FLOAT -->', src, re.S).group(1)
     # make in-page links point back to the homepage sections
     header = re.sub(r'href="#', 'href="/#', header)
     footer = re.sub(r'href="#', 'href="/#', footer)
@@ -405,7 +407,9 @@ def page(t, parts):
     care = "".join(f"<li>{e(x)}</li>" for x in t["aftercare"])
     faqs = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in t["faqs"])
     rel = "".join(f'<a href="/{s}/">{e(BY_SLUG[s]["name"])} in Lucknow</a>' for s in t["related"])
-    real = '<span class="real">At our clinic</span>' if t.get("real_photo") else ""
+    real = '<figcaption>At our clinic</figcaption>' if t.get("real_photo") else ""
+    from PIL import Image
+    w, h = Image.open(Path(__file__).resolve().parent.parent / "assets" / "img" / t["image"]).size
     wa = wa_link(t["name"].lower())
     ld = json.dumps(schema(t, url), ensure_ascii=False, separators=(",", ":"))
     return f"""<!doctype html>
@@ -417,9 +421,10 @@ def page(t, parts):
 <meta name="description" content="{html.escape(t['description'])}">
 <link rel="canonical" href="{url}">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#d4126b">
-<link rel="icon" type="image/png" href="/assets/img/logo.png">
-<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<meta name="theme-color" content="#1b5c8c">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Smile &amp; Glow">
 <meta property="og:title" content="{html.escape(t['title'])}">
@@ -444,15 +449,15 @@ def page(t, parts):
   <section class="t-hero">
     <div class="wrap t-hero-grid">
       <div>
-        <span class="tag">✿ {e(t['category'])} · Smile &amp; Glow, Lucknow</span>
+        <p class="cat">{e(t['category'])} · Smile &amp; Glow, Lucknow</p>
         <h1>{e(t['name'])} in Lucknow</h1>
         <p class="lead">{t['intro']}</p>
         <div class="cta-row">
-          <a class="btn rose" href="{wa}" target="_blank" rel="noopener">Book on WhatsApp →</a>
+          <a class="btn rose" href="{wa}" target="_blank" rel="noopener">Book on WhatsApp</a>
           <a class="btn ghost" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
         </div>
       </div>
-      <div class="t-pic"><img src="/assets/img/{t['image']}" alt="{html.escape(t['image_alt'])}" fetchpriority="high">{real}</div>
+      <figure class="t-pic"><img src="/assets/img/{t['image']}" width="{w}" height="{h}" alt="{html.escape(t['image_alt'])}" fetchpriority="high">{real}</figure>
     </div>
     <div class="wrap"><div class="facts">{facts}</div></div>
   </section>
@@ -477,7 +482,7 @@ def page(t, parts):
       <div class="t-card"><h2>Aftercare</h2><ul>{care}</ul></div>
       <div>
         <h2>Your doctor</h2>
-        <div class="doc-box"><img src="/assets/img/clinic-treatment-room.webp" alt="Dr. Pallavi at Smile &amp; Glow" loading="lazy">
+        <div class="doc-box"><img src="/assets/img/doctor-thumb.webp" width="84" height="84" alt="Dr. Pallavi at Smile &amp; Glow" loading="lazy">
           <p><b>Dr. Pallavi</b> — BDS, MDS (Maxillofacial Medicine &amp; Radiology), FMC (Fellow in Cosmetology), PG Diploma in Nutrition.<br>Dental Registration No. {REG_NO}</p></div>
         <p class="t-updated">Consultations in Hindi and English. Treatment results vary from person to person.</p>
       </div>
@@ -487,7 +492,7 @@ def page(t, parts):
   <section class="t-sec" id="faq">
     <div class="wrap">
       <h2>{e(t['name'])} — frequently asked questions</h2>
-      <div class="faq" style="max-width:none">{faqs}</div>
+      <div class="faq">{faqs}</div>
     </div>
   </section>
 
@@ -495,11 +500,11 @@ def page(t, parts):
     <div class="wrap">
       <h2>Book at our Lucknow clinics</h2>
       <div class="t-branches">
-        <div class="t-branch"><h3>I.T Chauraha</h3><p>Gate No. 4, 1/2 Shivsthali, Faizabad Rd, opp. IT Girls College, Hasanganj, Lucknow 226007</p><p>Mon–Sat 11:00 AM – 3:00 PM · Sunday by appointment</p><p><a href="https://maps.google.com/?cid=17579297340809890606" target="_blank" rel="noopener">Get directions →</a></p></div>
-        <div class="t-branch"><h3>Aashiyana</h3><p>SS-771, behind Aastha Hospital, Sector H, LDA Colony, Lucknow 226012</p><p>Mon–Sat 4:00 PM – 9:00 PM · Sunday by appointment</p><p><a href="https://maps.google.com/?cid=7330207607150827761" target="_blank" rel="noopener">Get directions →</a></p></div>
+        <div class="t-branch"><img src="/assets/img/gallery-sign.webp" width="800" height="600" loading="lazy" alt="Smile &amp; Glow signboard"><div><h3>I.T Chauraha</h3><p>Gate No. 4, 1/2 Shivsthali, Faizabad Rd, opp. IT Girls College, Hasanganj, Lucknow 226007</p><p>Mon–Sat 11:00 AM – 3:00 PM · Sunday by appointment</p><p><a class="link" href="https://maps.google.com/?cid=17579297340809890606" target="_blank" rel="noopener">Get directions</a></p></div></div>
+        <div class="t-branch"><img src="/assets/img/gallery-building.webp" width="800" height="600" loading="lazy" alt="Smile &amp; Glow Aashiyana clinic building"><div><h3>Aashiyana</h3><p>SS-771, behind Aastha Hospital, Sector H, LDA Colony, Lucknow 226012</p><p>Mon–Sat 4:00 PM – 9:00 PM · Sunday by appointment</p><p><a class="link" href="https://maps.google.com/?cid=7330207607150827761" target="_blank" rel="noopener">Get directions</a></p></div></div>
       </div>
       <div class="cta-row" style="margin-top:22px">
-        <a class="btn rose" href="{wa}" target="_blank" rel="noopener">Book {e(t['short'])} on WhatsApp →</a>
+        <a class="btn rose" href="{wa}" target="_blank" rel="noopener">Book {e(t['short'])} on WhatsApp</a>
         <a class="btn ghost" href="/#contact">See all booking options</a>
       </div>
       <h2 style="margin-top:44px">Related treatments</h2>
@@ -514,9 +519,11 @@ def page(t, parts):
 {parts['wa_btn']}
 
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  const yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
   document.querySelectorAll('.js-wa').forEach(a => a.href = {json.dumps(wa)});
-  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => document.getElementById('links').classList.remove('open')));
+  const menuBtn = document.querySelector('.menu-btn'), links = document.getElementById('links');
+  if (menuBtn) menuBtn.addEventListener('click', () => {{ const o = links.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', o); }});
+  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 </script>
 </body>
 </html>

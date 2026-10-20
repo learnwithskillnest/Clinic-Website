@@ -58,7 +58,12 @@ def clinic(slug, name, street, postcode, lat, lng, opens, closes, cid, rating, r
         "@id": f"{SITE}/#{slug}",
         "name": name,
         "alternateName": ["Smile and Glow Clinic", "Dr. Pallavi's Clinic"],
+        "description": ("Dental, skin, hair and laser clinic run by Dr. Pallavi (BDS, MDS, FMC). "
+                        "Root canal, implants, teeth whitening, chemical peels, hair PRP and laser hair reduction."),
         "url": f"{SITE}/",
+        "priceRange": "₹₹",
+        "currenciesAccepted": "INR",
+        "areaServed": {"@type": "City", "name": "Lucknow"},
         "image": f"{SITE}/assets/img/gallery-sign.webp",
         "logo": f"{SITE}/assets/img/logo.png",
         "telephone": PHONE,
@@ -82,6 +87,8 @@ def clinic(slug, name, street, postcode, lat, lng, opens, closes, cid, rating, r
 def json_ld(lang, page_url, faqs):
     graph = [
         {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Smile & Glow",
+         "description": "Dental, skin, hair and laser clinics in Lucknow, run by Dr. Pallavi.",
+         "areaServed": {"@type": "City", "name": "Lucknow"},
          "alternateName": ["Smile and Glow Clinic", "Dr. Pallavi's Clinic"], "url": f"{SITE}/",
          "logo": f"{SITE}/assets/img/logo.png", "telephone": PHONE, "sameAs": [INSTAGRAM],
          "founder": {"@id": f"{SITE}/#dr-pallavi"},
