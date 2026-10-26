@@ -19,7 +19,8 @@ from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString, Comment, Doctype
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from treatments import build_treatments, TREATMENTS, REG_NO  # noqa: E402
+from treatments import build_treatments, TREATMENTS, REG_NO
+from extras import build_extras  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://smileandglow.co.in"
@@ -211,6 +212,9 @@ def main():
         elif a.has_attr("aria-current"):
             del a["aria-current"]
     missing = translate(soup, d)
+    for a_tag in soup.select("a[href]"):  # point tool links at their Hindi versions
+        a_tag["href"] = {"/cost-calculator/": "/hi/cost-calculator/", "/skin-quiz/": "/hi/skin-quiz/",
+                         "/treatment-guide/": "/hi/samjhiye/"}.get(a_tag["href"], a_tag["href"])
     set_ld(soup, json_ld("hi", f"{SITE}/hi/", faqs_from(soup)))
 
     out = ROOT / "hi" / "index.html"
@@ -219,6 +223,7 @@ def main():
 
     # 3) Treatment pages + shared stylesheet
     slugs = build_treatments(ROOT, src)
+    extra = build_extras(ROOT, src, str(soup))
 
     # 4) Sitemap
     alt = ('    <xhtml:link rel="alternate" hreflang="en" href="{s}/"/>\n'
@@ -227,12 +232,13 @@ def main():
     urls = [f"  <url>\n    <loc>{SITE}/</loc>\n    <lastmod>2026-10-19</lastmod>\n{alt}  </url>",
             f"  <url>\n    <loc>{SITE}/hi/</loc>\n    <lastmod>2026-10-19</lastmod>\n{alt}  </url>"]
     urls += [f"  <url>\n    <loc>{SITE}/{slug}/</loc>\n    <lastmod>2026-10-19</lastmod>\n  </url>" for slug in slugs]
+    urls += [f"  <url>\n    <loc>{SITE}{p}</loc>\n    <lastmod>2026-10-26</lastmod>\n  </url>" for p in extra]
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
         + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8")
 
-    print(f"Built {out.relative_to(ROOT)}, {len(slugs)} treatment pages, sitemap.xml; refreshed JSON-LD in index.html")
+    print(f"Built {out.relative_to(ROOT)}, {len(slugs)} treatment pages, {len(extra)} tool pages, sitemap.xml; refreshed JSON-LD in index.html")
     if missing:
         print(f"\n{len(missing)} visible text(s) without a Hindi translation (add them to i18n/hi.json):")
         for m in sorted(missing):

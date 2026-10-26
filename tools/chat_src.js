@@ -183,7 +183,7 @@
     info("both", ["both", "same visit", "one visit", "dental and skin", "skin and dental", "together", "dono", "दोनों", "एक साथ"],
       "Yes — that's the idea behind Smile &amp; Glow. Tell us both concerns when you book and we'll plan your visit accordingly.",
       "हाँ — Smile &amp; Glow का यही मकसद है। बुक करते समय दोनों समस्याएँ बताएँ, हम उसी हिसाब से आपकी विज़िट प्लान करेंगे।",
-      [["wa", "both a dental and a skin concern"]]),
+      [["wa", "a combined dental + skin visit"], ["form"]]),
 
     info("language", ["hindi", "english", "language", "bhasha", "हिंदी", "भाषा", "अंग्रेज़ी"],
       "Consultations are available in both Hindi and English. You can also ask me in Hindi.",
@@ -199,6 +199,26 @@
       "Patients rate us <b>4.9★</b> on Google at I.T Chauraha (13 reviews) and <b>5.0★</b> at Aashiyana (8 reviews).",
       "Google पर मरीज़ों ने आई.टी. चौराहा को <b>4.9★</b> (13 रिव्यू) और आशियाना को <b>5.0★</b> (8 रिव्यू) दिए हैं।",
       [["link", MAP_IT, PAGE_HI ? "Google रिव्यू" : "Read Google reviews", 1]]),
+
+    info("calculator", ["calculator", "calculate", "estimate", "total cost", "total price", "how much total", "kul kharch", "कैलकुलेटर", "कुल खर्च", "अनुमान"],
+      "Use our " + a(PAGE_HI ? "/hi/cost-calculator/" : "/cost-calculator/", "cost calculator") + " — pick a treatment, the option and the number of teeth or sessions, and it shows the price range. You can send the estimate to us on WhatsApp.",
+      "हमारा " + a("/hi/cost-calculator/", "कीमत कैलकुलेटर") + " इस्तेमाल करें — ट्रीटमेंट, विकल्प और दांत या सेशन की संख्या चुनें, और अनुमानित कीमत देखें। अनुमान WhatsApp पर भी भेज सकते हैं।",
+      [["link", PAGE_HI ? "/hi/cost-calculator/" : "/cost-calculator/", PAGE_HI ? "कैलकुलेटर खोलें" : "Open the calculator"]]),
+
+    info("quiz", ["skin type", "quiz", "my skin", "oily", "dry", "combination skin", "sensitive skin", "which skin", "skin test", "त्वचा का प्रकार", "क्विज़", "ऑयली", "रूखी", "स्किन टाइप"],
+      "Take our free " + a(PAGE_HI ? "/hi/skin-quiz/" : "/skin-quiz/", "skin type quiz") + " — six questions, then you get your likely skin type and a simple morning and night routine.",
+      "हमारा मुफ़्त " + a("/hi/skin-quiz/", "स्किन टाइप क्विज़") + " करें — छह सवाल, फिर आपकी त्वचा का प्रकार और सुबह-रात का आसान रूटीन।",
+      [["link", PAGE_HI ? "/hi/skin-quiz/" : "/skin-quiz/", PAGE_HI ? "क्विज़ शुरू करें" : "Start the quiz"]]),
+
+    info("aftercare", ["aftercare", "after care", "after treatment", "care after", "instructions", "precautions", "what to do after", "parhez", "परहेज़", "परहेज", "देखभाल", "बाद में क्या"],
+      "Aftercare for root canal, implants, whitening, laser hair reduction, hair PRP and chemical peels is on our " + a("/aftercare/", "aftercare page") + ", in English and Hindi. Always follow any specific instructions Dr. Pallavi gives you.",
+      "रूट कैनाल, इम्प्लांट, व्हाइटनिंग, लेज़र, हेयर PRP और केमिकल पील के बाद की देखभाल हमारे " + a("/aftercare/", "देखभाल पेज") + " पर हिंदी और अंग्रेज़ी में है। डॉ. पल्लवी के बताए ख़ास निर्देश हमेशा मानें।",
+      [["link", "/aftercare/", PAGE_HI ? "देखभाल पेज" : "Aftercare page"], ["call"]]),
+
+    info("guide", ["which treatment", "which is better", "difference", "vs", "versus", "or bridge", "bridge", "denture", "filling", "extraction", "kaun sa", "konsa", "कौन सा", "फ़र्क", "अंतर"],
+      "Our " + a("/treatment-guide/", "treatment guide") + " compares the choices patients ask about most: implant vs bridge vs denture, filling vs root canal, whitening vs veneers, peel vs laser toning, laser vs waxing, and hair PRP. Dr. Pallavi confirms the best option at your check-up.",
+      "हमारे " + a("/hi/samjhiye/", "आसान भाषा में समझिए") + " पेज पर रूट कैनाल, इम्प्लांट, व्हाइटनिंग, लेज़र, पील और हेयर PRP की सरल हिंदी जानकारी है। अंग्रेज़ी में " + a("/treatment-guide/", "तुलना गाइड") + " भी है। सही विकल्प डॉ. पल्लवी जांच में बताएँगी।",
+      [["link", PAGE_HI ? "/hi/samjhiye/" : "/treatment-guide/", PAGE_HI ? "आसान भाषा में समझिए" : "Open the guide"]]),
 
     info("thanks", ["thanks", "thank", "thank you", "ok", "okay", "great", "bye", "dhanyavad", "shukriya", "धन्यवाद", "शुक्रिया", "ठीक"],
       "You're welcome! If you need anything else, just ask — or message us on WhatsApp.",
@@ -235,7 +255,13 @@
     var s = 0, used = {};
     item.k.forEach(function (k) {
       k = k.toLowerCase();
-      if (k.indexOf(" ") > -1 || /[^\x00-\x7f]/.test(k)) { if (text.indexOf(k) > -1) s += k.indexOf(" ") > -1 ? 3 : 2; return; }
+      if (k.indexOf(" ") > -1 || /[^\x00-\x7f]/.test(k)) {
+        if (text.indexOf(" " + k) > -1 || (/[^\x00-\x7f]/.test(k) && text.indexOf(k) > -1)) {
+          s += k.indexOf(" ") > -1 ? 3 : 2;
+          k.split(" ").forEach(function (part) { var n = words.indexOf(part); if (n > -1) used[n] = 1; }); // a phrase uses up its words
+        }
+        return;
+      }
       for (var i = 0; i < words.length; i++) {
         var w = words[i]; if (used[i]) continue;
         if (w === k) { s += 2; used[i] = 1; return; }
@@ -252,6 +278,7 @@
     KB.forEach(function (item) {
       var s = score(text, words, item);
       if ((item.treatment || item.id === "it" || item.id === "aashiyana" || item.id === "sunday") && s) s += 0.5; // specific beats generic ("price", "timing")
+      if (/^(calculator|quiz|aftercare|guide)$/.test(item.id) && s) s += 2;                          // tools beat the topic they're about
       if (s > bestS) { best = item; bestS = s; }
     });
     if (!best) return { html: hi ? FALLBACK_HI : FALLBACK_EN, act: [["wa"], ["chips"]], hi: hi };

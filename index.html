@@ -215,6 +215,17 @@
   .steps p{color:var(--muted)}
   @media (max-width:900px){.visit{grid-template-columns:1fr;gap:28px}}
 
+  /* ---------- Patient tools ---------- */
+  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none}
+  .tools-grid a{display:flex;flex-direction:column;gap:6px;height:100%;padding:22px 24px;border-radius:var(--radius);background:var(--surface);text-decoration:none;color:var(--ink)}
+  .tools-grid a:hover h3{color:var(--accent-text)}
+  .tools-grid h3{font-size:var(--t-l);color:var(--brand)}
+  .tools-grid p{color:var(--muted);font-size:var(--t-s)}
+  .combo{margin-top:28px;padding:20px 24px;border-radius:var(--radius);background:var(--brand-soft);display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .combo p{color:var(--ink)}
+  @media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.tools-grid{grid-template-columns:1fr}}
+
   /* ---------- FAQ ---------- */
   .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:start}
   .faq-side h2{font-size:var(--t-2xl);margin-bottom:10px}
@@ -438,8 +449,28 @@
     </div>
   </section>
 
+  <!-- TOOLS -->
+  <section id="tools" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Plan your visit</h2>
+        <p>Free tools to help you choose a treatment and know the cost before you come in.</p>
+      </div>
+      <ul class="tools-grid">
+        <li><a href="/cost-calculator/"><h3>Cost calculator</h3><p>Pick a treatment and see the price range in seconds.</p></a></li>
+        <li><a href="/skin-quiz/"><h3>Skin type quiz</h3><p>Six questions, then a simple routine for your skin.</p></a></li>
+        <li><a href="/treatment-guide/"><h3>Which treatment is right for me?</h3><p>Implant or bridge, peel or laser — simple comparisons.</p></a></li>
+        <li><a href="/aftercare/"><h3>Aftercare</h3><p>What to do after your treatment, in English and Hindi.</p></a></li>
+      </ul>
+      <div class="combo">
+        <p><b>Teeth and skin in one visit.</b> Dr. Pallavi treats both — tell us both concerns when you book.</p>
+        <a class="btn rose" href="#book-form" data-treat="Dental + skin (one visit)">Book a combined visit</a>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section id="faq" class="alt">
+  <section id="faq">
     <div class="wrap faq-grid">
       <div class="faq-side">
         <h2>Frequently asked questions</h2>
@@ -463,7 +494,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="alt">
     <div class="wrap">
       <div class="sec-head">
         <h2>Clinics and timings</h2>
@@ -512,6 +543,7 @@
                   <optgroup label="Dental"><option value="Dental check-up">Dental check-up</option><option value="Root canal">Root canal</option><option value="Implants">Implants</option><option value="Smile makeover / whitening">Smile makeover / whitening</option><option value="Oral medicine / X-ray">Oral medicine / X-ray</option><option value="Kids dentistry">Kids dentistry</option></optgroup>
                   <optgroup label="Skin &amp; hair"><option value="Chemical peel">Chemical peel</option><option value="Acne &amp; scars">Acne &amp; scars</option><option value="Anti-ageing">Anti-ageing</option><option value="Face PRP / glow facial">Face PRP / glow facial</option><option value="Hair PRP">Hair PRP</option><option value="Skincare consultation">Skincare consultation</option></optgroup>
                   <optgroup label="Laser"><option value="Laser hair reduction">Laser hair reduction</option><option value="Laser toning">Laser toning</option><option value="Carbon laser peel">Carbon laser peel</option><option value="Fractional laser (scars)">Fractional laser (scars)</option><option value="IPL photofacial">IPL photofacial</option><option value="Laser tattoo removal">Laser tattoo removal</option></optgroup>
+                  <option value="Dental + skin (one visit)">Dental + skin (one visit)</option>
                   <option value="Other">Other</option>
                 </select>
               </label>
@@ -533,6 +565,7 @@
       <span>Dental · Skin · Hair — <a href="https://www.instagram.com/smileandglowclinic/" target="_blank" rel="noopener">@smileandglowclinic</a></span>
     </div>
     <nav class="foot-links" aria-label="Popular treatments"><b>Popular treatments:</b> <a href="/root-canal-treatment-lucknow/">Root canal</a> · <a href="/dental-implants-lucknow/">Dental implants</a> · <a href="/teeth-whitening-lucknow/">Teeth whitening</a> · <a href="/laser-hair-removal-lucknow/">Laser hair reduction</a> · <a href="/hair-prp-treatment-lucknow/">Hair PRP</a> · <a href="/chemical-peel-lucknow/">Chemical peel</a></nav>
+    <nav class="foot-links" aria-label="Patient tools" style="margin-top:4px"><b>Patient tools:</b> <a href="/cost-calculator/">Cost calculator</a> · <a href="/skin-quiz/">Skin type quiz</a> · <a href="/treatment-guide/">Which treatment?</a> · <a href="/aftercare/">Aftercare</a></nav>
     <p class="disclaimer">Treatment results vary from person to person. The information on this website is for general awareness and is not a substitute for a consultation with a doctor.</p>
     <div class="foot-bottom">
       <span>© <span id="yr">2026</span> Smile &amp; Glow, Lucknow — I.T Chauraha &amp; Aashiyana · Dr. Pallavi, Dental &amp; Aesthetic Expert</span>
@@ -552,7 +585,7 @@
   <a class="btn ghost" href="tel:+917275433783">Call</a>
   <a class="btn wa-btn js-wa" href="https://wa.me/917275433783" target="_blank" rel="noopener">WhatsApp</a>
 </div>
-<script src="/assets/chat.js?v=2" defer></script>
+<script src="/assets/chat.js?v=3" defer></script>
 <!-- /FLOAT -->
 
 <script>

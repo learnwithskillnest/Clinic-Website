@@ -216,6 +216,17 @@
   .steps p{color:var(--muted)}
   @media (max-width:900px){.visit{grid-template-columns:1fr;gap:28px}}
 
+  /* ---------- Patient tools ---------- */
+  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none}
+  .tools-grid a{display:flex;flex-direction:column;gap:6px;height:100%;padding:22px 24px;border-radius:var(--radius);background:var(--surface);text-decoration:none;color:var(--ink)}
+  .tools-grid a:hover h3{color:var(--accent-text)}
+  .tools-grid h3{font-size:var(--t-l);color:var(--brand)}
+  .tools-grid p{color:var(--muted);font-size:var(--t-s)}
+  .combo{margin-top:28px;padding:20px 24px;border-radius:var(--radius);background:var(--brand-soft);display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .combo p{color:var(--ink)}
+  @media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.tools-grid{grid-template-columns:1fr}}
+
   /* ---------- FAQ ---------- */
   .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:start}
   .faq-side h2{font-size:var(--t-2xl);margin-bottom:10px}
@@ -431,8 +442,27 @@
 </div>
 </div>
 </section>
+<!-- TOOLS -->
+<section class="alt" id="tools">
+<div class="wrap">
+<div class="sec-head">
+<h2>अपनी विज़िट प्लान करें</h2>
+<p>मुफ़्त टूल, जिनसे आप आने से पहले ही ट्रीटमेंट चुन सकें और कीमत जान सकें।</p>
+</div>
+<ul class="tools-grid">
+<li><a href="/hi/cost-calculator/"><h3>कीमत कैलकुलेटर</h3><p>ट्रीटमेंट चुनें और तुरंत अनुमानित कीमत देखें।</p></a></li>
+<li><a href="/hi/skin-quiz/"><h3>स्किन टाइप क्विज़</h3><p>छह सवाल, फिर आपकी त्वचा के लिए आसान रूटीन।</p></a></li>
+<li><a href="/hi/samjhiye/"><h3>आसान भाषा में समझिए</h3><p>रूट कैनाल, इम्प्लांट, लेज़र, पील — आसान हिंदी में जानकारी।</p></a></li>
+<li><a href="/aftercare/"><h3>इलाज के बाद देखभाल</h3><p>इलाज के बाद क्या करें — हिंदी और अंग्रेज़ी में।</p></a></li>
+</ul>
+<div class="combo">
+<p><b>दांत और त्वचा, एक ही विज़िट में।</b> डॉ. पल्लवी दोनों का इलाज करती हैं — बुक करते समय दोनों समस्याएँ बताएँ।</p>
+<a class="btn rose" data-treat="Dental + skin (one visit)" href="#book-form">एक साथ विज़िट बुक करें</a>
+</div>
+</div>
+</section>
 <!-- FAQ -->
-<section class="alt" id="faq">
+<section id="faq">
 <div class="wrap faq-grid">
 <div class="faq-side">
 <h2>अक्सर पूछे जाने वाले सवाल</h2>
@@ -455,7 +485,7 @@
 </div>
 </section>
 <!-- CONTACT -->
-<section id="contact">
+<section class="alt" id="contact">
 <div class="wrap">
 <div class="sec-head">
 <h2>क्लिनिक और समय</h2>
@@ -504,6 +534,7 @@
 <optgroup label="दांत"><option value="Dental check-up">दांतों की जाँच</option><option value="Root canal">रूट कैनाल</option><option value="Implants">इम्प्लांट</option><option value="Smile makeover / whitening">स्माइल मेकओवर / व्हाइटनिंग</option><option value="Oral medicine / X-ray">ओरल मेडिसिन / एक्स-रे</option><option value="Kids dentistry">बच्चों की दंत चिकित्सा</option></optgroup>
 <optgroup label="त्वचा और बाल"><option value="Chemical peel">केमिकल पील</option><option value="Acne &amp; scars">मुहांसे और दाग</option><option value="Anti-ageing">एंटी-एजिंग</option><option value="Face PRP / glow facial">फ़ेस PRP / ग्लो फ़ेशियल</option><option value="Hair PRP">हेयर PRP</option><option value="Skincare consultation">स्किनकेयर परामर्श</option></optgroup>
 <optgroup label="लेज़र"><option value="Laser hair reduction">लेज़र हेयर रिडक्शन</option><option value="Laser toning">लेज़र टोनिंग</option><option value="Carbon laser peel">कार्बन लेज़र पील</option><option value="Fractional laser (scars)">फ्रैक्शनल लेज़र (दाग)</option><option value="IPL photofacial">IPL फ़ोटोफ़ेशियल</option><option value="Laser tattoo removal">लेज़र टैटू रिमूवल</option></optgroup>
+<option value="Dental + skin (one visit)">दांत + त्वचा (एक ही विज़िट)</option>
 <option value="Other">अन्य</option>
 </select>
 </label>
@@ -524,6 +555,7 @@
 <span>दांत · त्वचा · बाल — <a href="https://www.instagram.com/smileandglowclinic/" rel="noopener" target="_blank">@smileandglowclinic</a></span>
 </div>
 <nav aria-label="Popular treatments" class="foot-links"><b>लोकप्रिय उपचार:</b> <a href="/root-canal-treatment-lucknow/">रूट कैनाल</a> · <a href="/dental-implants-lucknow/">डेंटल इम्प्लांट</a> · <a href="/teeth-whitening-lucknow/">दांतों की सफ़ेदी</a> · <a href="/laser-hair-removal-lucknow/">लेज़र हेयर रिडक्शन</a> · <a href="/hair-prp-treatment-lucknow/">हेयर PRP</a> · <a href="/chemical-peel-lucknow/">केमिकल पील</a></nav>
+<nav aria-label="Patient tools" class="foot-links" style="margin-top:4px"><b>मरीज़ों के लिए टूल:</b> <a href="/hi/cost-calculator/">कीमत कैलकुलेटर</a> · <a href="/hi/skin-quiz/">स्किन टाइप क्विज़</a> · <a href="/hi/samjhiye/">आसान भाषा में समझिए</a> · <a href="/aftercare/">इलाज के बाद देखभाल</a></nav>
 <p class="disclaimer">उपचार के परिणाम हर व्यक्ति में अलग हो सकते हैं। इस वेबसाइट की जानकारी केवल सामान्य जागरूकता के लिए है और डॉक्टर से परामर्श का विकल्प नहीं है।</p>
 <div class="foot-bottom">
 <span>© <span id="yr">2026</span> स्माइल एंड ग्लो, लखनऊ — आई.टी. चौराहा और आशियाना · डॉ. पल्लवी, डेंटल और एस्थेटिक विशेषज्ञ</span>
@@ -542,7 +574,7 @@
 <a class="btn ghost" href="tel:+917275433783">कॉल करें</a>
 <a class="btn wa-btn js-wa" href="https://wa.me/917275433783" rel="noopener" target="_blank">WhatsApp</a>
 </div>
-<script defer="" src="/assets/chat.js?v=2"></script>
+<script defer="" src="/assets/chat.js?v=3"></script>
 <!-- /FLOAT -->
 <script>
   // ==== EDIT THIS: clinic WhatsApp number, international format, digits only (e.g. 919876543210) ====

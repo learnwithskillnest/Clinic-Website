@@ -296,7 +296,7 @@ BY_SLUG = {t["slug"]: t for t in TREATMENTS}
 EXTRA_CSS = """
 /* ---------- Treatment pages ---------- */
 .crumbs{font-size:var(--t-s);color:var(--muted);padding:20px 0 0}
-.crumbs a{color:var(--muted);display:inline-block;padding:8px 0}
+.crumbs a{color:var(--muted);display:inline-block;padding:8px 4px}
 .crumbs a:hover{color:var(--accent-text)}
 .crumbs span{margin:0 8px}
 .t-hero{padding:16px 0 56px}

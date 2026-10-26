@@ -30,3 +30,9 @@
 - [Home (Hindi)](https://smileandglow.co.in/hi/)
 - [FAQs](https://smileandglow.co.in/#faq)
 - [Branches and booking](https://smileandglow.co.in/#contact)
+- [Cost calculator](https://smileandglow.co.in/cost-calculator/): estimate treatment costs by option and number of teeth or sessions ([Hindi](https://smileandglow.co.in/hi/cost-calculator/))
+- [Skin type quiz](https://smileandglow.co.in/skin-quiz/): 6 questions, likely skin type and a simple routine ([Hindi](https://smileandglow.co.in/hi/skin-quiz/))
+- [Which treatment is right for me?](https://smileandglow.co.in/treatment-guide/): implant vs bridge vs denture, filling vs root canal vs extraction, cleaning vs whitening vs veneers, peel vs laser toning, acne marks vs scars, laser vs waxing, hair fall options
+- [Aasan bhasha mein samjhiye (Hindi explainers)](https://smileandglow.co.in/hi/samjhiye/): plain-Hindi explanations of RCT, implants, whitening, laser, peels, hair PRP, sunscreen
+- [Aftercare](https://smileandglow.co.in/aftercare/): aftercare instructions for each treatment in English and Hindi
+- Combined visits: patients can book dental and skin care in the same appointment
