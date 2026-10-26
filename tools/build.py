@@ -173,7 +173,19 @@ def translate(soup, d):
     return missing
 
 
+def build_chat():
+    """assets/chat.js from tools/chat_src.js, with prices taken from the treatment pages."""
+    prices = {}
+    for t in TREATMENTS:
+        first = re.search(r"₹[\d,]+", t["prices"][0][1]).group(0)
+        prices[t["slug"]] = {"from": first, "rows": [list(r) for r in t["prices"]]}
+    js = (ROOT / "tools" / "chat_src.js").read_text(encoding="utf-8")
+    js = js.replace("__PRICES__", json.dumps(prices, ensure_ascii=False))
+    (ROOT / "assets" / "chat.js").write_text(js, encoding="utf-8")
+
+
 def main():
+    build_chat()
     src = (ROOT / "index.html").read_text(encoding="utf-8")
     d = json.loads((ROOT / "i18n" / "hi.json").read_text(encoding="utf-8"))
 
