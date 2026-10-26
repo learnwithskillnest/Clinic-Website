@@ -287,12 +287,12 @@
     "@media (prefers-reduced-motion:no-preference){.sgc-m{animation:sgcIn .18s ease-out}@keyframes sgcIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}}";
 
   var T = PAGE_HI ? {
-    open: "सवाल पूछें", title: "Smile & Glow सहायक", sub: "आमतौर पर तुरंत जवाब", ph: "अपना सवाल लिखें…", send: "भेजें", close: "बंद करें",
+    open: "हमसे बात करें", title: "Smile & Glow सहायक", sub: "आमतौर पर तुरंत जवाब", ph: "अपना सवाल लिखें…", send: "भेजें", close: "बंद करें",
     hello: "नमस्ते! मैं Smile & Glow का सहायक हूँ। समय, पता, ट्रीटमेंट, कीमत या अपॉइंटमेंट — कुछ भी पूछें।",
     note: "जवाब इस वेबसाइट की जानकारी से हैं। आपका लिखा कहीं सेव नहीं होता।",
     wa: "WhatsApp पर बुक करें", call: "कॉल करें", form: "बुकिंग फ़ॉर्म", page: "पूरी कीमत और जानकारी"
   } : {
-    open: "Ask a question", title: "Smile & Glow assistant", sub: "Instant answers about the clinic", ph: "Type your question…", send: "Send", close: "Close",
+    open: "Chat with us", title: "Smile & Glow assistant", sub: "Instant answers about the clinic", ph: "Type your question…", send: "Send", close: "Close",
     hello: "Hi! I'm the Smile & Glow assistant. Ask me about timings, locations, treatments, prices or booking.",
     note: "Answers come from this website. Nothing you type is stored.",
     wa: "Book on WhatsApp", call: "Call", form: "Booking form", page: "Full prices & details"
