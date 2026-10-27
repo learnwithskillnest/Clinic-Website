@@ -20,7 +20,9 @@ from bs4 import BeautifulSoup, NavigableString, Comment, Doctype
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from treatments import build_treatments, TREATMENTS, REG_NO
-from extras import build_extras  # noqa: E402
+from extras import build_extras, hi_parts
+from extras2 import build_extras2
+from treatments import extract  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://smileandglow.co.in"
@@ -112,10 +114,10 @@ def json_ld(lang, page_url, faqs):
          "sameAs": [INSTAGRAM]},
         clinic("it-chauraha", "Smile & Glow – I.T Chauraha",
                "Gate No. 4, 1/2 Shivsthali, Faizabad Rd, opp. IT Girls College, New Hyderabad, Hasanganj",
-               "226007", 26.8710086, 80.9419724, "11:00", "15:00", CID_IT, "4.9", "13", [JUSTDIAL_IT]),
+               "226007", 26.8710086, 80.9419724, "11:00", "15:00", CID_IT, "4.9", "14", [JUSTDIAL_IT]),
         clinic("aashiyana", "Smile & Glow – Aashiyana",
                "SS-771, behind Aastha Hospital, Sector H, LDA Colony, Aashiyana",
-               "226012", 26.797045, 80.912754, "16:00", "21:00", CID_AA, "5.0", "8"),
+               "226012", 26.797045, 80.912754, "16:00", "21:00", CID_AA, "5.0", "15"),
         {"@type": "WebSite", "@id": f"{SITE}/#website", "url": f"{SITE}/", "name": "Smile & Glow",
          "inLanguage": ["en", "hi"], "publisher": {"@id": f"{SITE}/#org"}},
         {"@type": ["WebPage", "MedicalWebPage"], "@id": f"{page_url}#webpage", "url": page_url,
@@ -214,7 +216,8 @@ def main():
     missing = translate(soup, d)
     for a_tag in soup.select("a[href]"):  # point tool links at their Hindi versions
         a_tag["href"] = {"/cost-calculator/": "/hi/cost-calculator/", "/skin-quiz/": "/hi/skin-quiz/",
-                         "/treatment-guide/": "/hi/samjhiye/"}.get(a_tag["href"], a_tag["href"])
+                         "/treatment-guide/": "/hi/samjhiye/",
+                         "/dental-emergency/": "/hi/dental-emergency/", "/before-your-visit/": "/hi/before-your-visit/"}.get(a_tag["href"], a_tag["href"])
     set_ld(soup, json_ld("hi", f"{SITE}/hi/", faqs_from(soup)))
 
     out = ROOT / "hi" / "index.html"
@@ -224,6 +227,7 @@ def main():
     # 3) Treatment pages + shared stylesheet
     slugs = build_treatments(ROOT, src)
     extra = build_extras(ROOT, src, str(soup))
+    extra += build_extras2(ROOT, extract(src), hi_parts(str(soup)))
 
     # 4) Sitemap
     alt = ('    <xhtml:link rel="alternate" hreflang="en" href="{s}/"/>\n'

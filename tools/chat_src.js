@@ -166,8 +166,8 @@
       [["link", HOME + "#services", PAGE_HI ? "सभी ट्रीटमेंट" : "All treatments"]]),
 
     info("pain", ["painful", "pain", "hurt", "hurts", "dard", "dukhega", "scared", "fear", "dar", "दर्द", "डर", "दुखेगा"],
-      "Most treatments are comfortable. Root canal treatment is done under local anaesthesia, so most patients feel little more than a regular filling — it's usually the infection beforehand that hurts. Laser hair reduction uses a cooled handpiece. Tell Dr. Pallavi if you're anxious and she'll go step by step.",
-      "ज़्यादातर ट्रीटमेंट आरामदायक होते हैं। रूट कैनाल लोकल एनेस्थीसिया में होता है, इसलिए ज़्यादातर मरीज़ों को सामान्य फ़िलिंग जितना ही महसूस होता है — दर्द आमतौर पर पहले के इन्फ़ेक्शन से होता है। लेज़र हेयर रिडक्शन में ठंडा हैंडपीस इस्तेमाल होता है। घबराहट हो तो डॉ. पल्लवी को बताएँ।",
+      "Most treatments are comfortable. Root canal treatment is done under local anaesthesia, so most patients feel little more than a regular filling — it's usually the infection beforehand that hurts. Laser hair reduction uses a cooled handpiece. Tell Dr. Pallavi if you're anxious and she'll go step by step — and see our page for " + a("/scared-of-the-dentist/", "nervous patients") + ".",
+      "ज़्यादातर ट्रीटमेंट आरामदायक होते हैं। रूट कैनाल लोकल एनेस्थीसिया में होता है, इसलिए ज़्यादातर मरीज़ों को सामान्य फ़िलिंग जितना ही महसूस होता है — दर्द आमतौर पर पहले के इन्फ़ेक्शन से होता है। लेज़र हेयर रिडक्शन में ठंडा हैंडपीस इस्तेमाल होता है। घबराहट हो तो डॉ. पल्लवी को बताएँ — घबराहट वाले मरीज़ों के लिए " + a("/scared-of-the-dentist/", "यह पेज") + " (अंग्रेज़ी) देखें।",
       [["wa"]]),
 
     info("indian", ["indian skin", "dark skin", "brown skin", "skin type", "safe", "side effect", "side effects", "patch test", "सुरक्षित", "साइड इफ़ेक्ट", "साइड इफेक्ट"],
@@ -196,9 +196,9 @@
       []),
 
     info("reviews", ["review", "reviews", "rating", "ratings", "google", "good", "best", "रिव्यू", "रेटिंग"],
-      "Patients rate us <b>4.9★</b> on Google at I.T Chauraha (13 reviews) and <b>5.0★</b> at Aashiyana (8 reviews).",
-      "Google पर मरीज़ों ने आई.टी. चौराहा को <b>4.9★</b> (13 रिव्यू) और आशियाना को <b>5.0★</b> (8 रिव्यू) दिए हैं।",
-      [["link", MAP_IT, PAGE_HI ? "Google रिव्यू" : "Read Google reviews", 1]]),
+      "Patients rate us <b>4.9★</b> on Google at I.T Chauraha (14 reviews) and <b>5.0★</b> at Aashiyana (15 reviews).",
+      "Google पर मरीज़ों ने आई.टी. चौराहा को <b>4.9★</b> (14 रिव्यू) और आशियाना को <b>5.0★</b> (15 रिव्यू) दिए हैं।",
+      [["link", MAP_IT, PAGE_HI ? "Google रिव्यू" : "Read Google reviews", 1], ["link", "/review/", PAGE_HI ? "रिव्यू लिखें" : "Write a review"]]),
 
     info("calculator", ["calculator", "calculate", "estimate", "total cost", "total price", "how much total", "kul kharch", "कैलकुलेटर", "कुल खर्च", "अनुमान"],
       "Use our " + a(PAGE_HI ? "/hi/cost-calculator/" : "/cost-calculator/", "cost calculator") + " — pick a treatment, the option and the number of teeth or sessions, and it shows the price range. You can send the estimate to us on WhatsApp.",
@@ -219,6 +219,21 @@
       "Our " + a("/treatment-guide/", "treatment guide") + " compares the choices patients ask about most: implant vs bridge vs denture, filling vs root canal, whitening vs veneers, peel vs laser toning, laser vs waxing, and hair PRP. Dr. Pallavi confirms the best option at your check-up.",
       "हमारे " + a("/hi/samjhiye/", "आसान भाषा में समझिए") + " पेज पर रूट कैनाल, इम्प्लांट, व्हाइटनिंग, लेज़र, पील और हेयर PRP की सरल हिंदी जानकारी है। अंग्रेज़ी में " + a("/treatment-guide/", "तुलना गाइड") + " भी है। सही विकल्प डॉ. पल्लवी जांच में बताएँगी।",
       [["link", PAGE_HI ? "/hi/samjhiye/" : "/treatment-guide/", PAGE_HI ? "आसान भाषा में समझिए" : "Open the guide"]]),
+
+    info("previsit", ["medical history", "history form", "before visit", "before my visit", "what to bring", "what should i bring", "documents", "क्या लाना", "मेडिकल हिस्ट्री"],
+      "Fill our 2-minute " + a(PAGE_HI ? "/hi/before-your-visit/" : "/before-your-visit/", "before-your-visit form") + " — it sends your medical history to us on WhatsApp so check-in is quicker. Bring your medicine strips and any old reports or X-rays.",
+      "2 मिनट का " + a("/hi/before-your-visit/", "विज़िट से पहले फ़ॉर्म") + " भरें — यह आपकी मेडिकल जानकारी WhatsApp पर हमें भेज देता है। अपनी दवाओं के पत्ते और पुरानी रिपोर्ट या एक्स-रे साथ लाएँ।",
+      [["link", PAGE_HI ? "/hi/before-your-visit/" : "/before-your-visit/", PAGE_HI ? "फ़ॉर्म खोलें" : "Open the form"]]),
+
+    info("diet", ["diet", "food", "nutrition", "vitamin", "vitamins", "protein", "khana", "khaana", "डाइट", "पोषण", "विटामिन", "खान-पान"],
+      "Dr. Pallavi also has a PG Diploma in Nutrition. See " + a("/food-for-teeth-and-skin/", "food for healthy teeth, skin and hair") + " for simple Indian diet tips — or ask for a diet plan with your treatment.",
+      "डॉ. पल्लवी के पास पोषण में PG डिप्लोमा भी है। दांत, त्वचा और बालों के लिए आसान भारतीय खान-पान टिप्स " + a("/food-for-teeth-and-skin/", "यहाँ") + " (अंग्रेज़ी) देखें — या इलाज के साथ डाइट प्लान पूछें।",
+      [["link", "/food-for-teeth-and-skin/", PAGE_HI ? "खान-पान टिप्स" : "Diet tips"], ["wa", "diet advice"]]),
+
+    info("kidscorner", ["brushing chart", "certificate", "toothpaste", "kids corner", "baby teeth", "milk teeth", "milk tooth", "toddler", "दूध के दांत", "टूथपेस्ट"],
+      "Our " + a("/kids/", "kids' corner") + " has first-visit tips, how much toothpaste to use by age, a printable 2-minute brushing chart and a brave-patient certificate.",
+      "हमारे " + a("/kids/", "बच्चों के कोने") + " (अंग्रेज़ी) में पहली विज़िट के टिप्स, उम्र के हिसाब से टूथपेस्ट की मात्रा, ब्रशिंग चार्ट और सर्टिफ़िकेट है।",
+      [["link", "/kids/", PAGE_HI ? "बच्चों का कोना" : "Kids' corner"], ["wa", "a check-up for my child"]]),
 
     info("thanks", ["thanks", "thank", "thank you", "ok", "okay", "great", "bye", "dhanyavad", "shukriya", "धन्यवाद", "शुक्रिया", "ठीक"],
       "You're welcome! If you need anything else, just ask — or message us on WhatsApp.",
@@ -273,12 +288,12 @@
   function answer(q) {
     var text = norm(q), words = text.trim().split(" ");
     var hi = PAGE_HI || /[ऀ-ॿ]/.test(q);
-    if (URGENT.some(function (u) { return text.indexOf(u) > -1; })) return { html: hi ? URGENT_HI : URGENT_EN, act: [["call"], ["wa", "an urgent appointment"]], hi: hi };
+    if (URGENT.some(function (u) { return text.indexOf(u) > -1; })) return { html: hi ? URGENT_HI : URGENT_EN, act: [["call"], ["link", hi ? "/hi/dental-emergency/" : "/dental-emergency/", hi ? "अभी क्या करें" : "What to do now"], ["wa", "an urgent appointment"]], hi: hi };
     var best = null, bestS = 0;
     KB.forEach(function (item) {
       var s = score(text, words, item);
       if ((item.treatment || item.id === "it" || item.id === "aashiyana" || item.id === "sunday") && s) s += 0.5; // specific beats generic ("price", "timing")
-      if (/^(calculator|quiz|aftercare|guide)$/.test(item.id) && s) s += 2;                          // tools beat the topic they're about
+      if (/^(calculator|quiz|aftercare|guide|previsit|diet|kidscorner)$/.test(item.id) && s) s += 2;                          // tools beat the topic they're about
       if (s > bestS) { best = item; bestS = s; }
     });
     if (!best) return { html: hi ? FALLBACK_HI : FALLBACK_EN, act: [["wa"], ["chips"]], hi: hi };
