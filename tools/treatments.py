@@ -32,8 +32,8 @@ TREATMENTS = [
         "book_value": "Root canal",
         "title": "Root Canal Treatment in Lucknow – Cost | Smile & Glow",
         "description": "Root canal treatment in Lucknow by Dr. Pallavi at I.T Chauraha & Aashiyana. Typical cost ₹3,000–₹8,000 per tooth. Visits, procedure, aftercare & FAQs.",
-        "image": "dental-root-canal.webp",
-        "image_alt": "Dental model showing the inside of a tooth for root canal treatment",
+        "image": "ai-root-canal.webp",
+        "image_alt": "Illustration of a tooth cross-section showing the pulp and root canals",
         "intro": ("A root canal saves a tooth whose inner pulp has become infected or inflamed, instead of pulling it out. "
                   "At Smile &amp; Glow, Dr. Pallavi carries out root canal treatment under local anaesthesia, plans it from an X-ray, "
                   "and explains the cost before starting."),
@@ -79,8 +79,8 @@ TREATMENTS = [
         "book_value": "Implants",
         "title": "Dental Implants in Lucknow – Cost per Tooth | Smile & Glow",
         "description": "Dental implants in Lucknow by Dr. Pallavi at I.T Chauraha & Aashiyana. Typical cost ₹20,000–₹45,000 per tooth. Procedure, healing time, suitability & FAQs.",
-        "image": "dental-implants.webp",
-        "image_alt": "Dental implant model with a titanium post and crown",
+        "image": "ai-dental-implant.webp",
+        "image_alt": "Illustration of a dental implant: titanium post, abutment and crown in the jawbone",
         "intro": ("A dental implant replaces a missing tooth with a small titanium post placed in the jawbone and a natural-looking crown on top. "
                   "Unlike a bridge, it doesn't need the neighbouring teeth to be cut down, and it helps preserve the jawbone."),
         "facts": [("Total treatment time", "3–6 months"), ("Implant placement", "About 1 hour per implant"), ("Anaesthesia", "Local"), ("Typical cost", "From ₹20,000 per tooth")],
@@ -122,8 +122,8 @@ TREATMENTS = [
         "book_value": "Smile makeover / whitening",
         "title": "Teeth Whitening in Lucknow – Cost & Results | Smile & Glow",
         "description": "Professional teeth whitening in Lucknow by Dr. Pallavi. Typical cost ₹4,000–₹15,000 per session. Who it suits, what to expect, aftercare & FAQs.",
-        "image": "dental-whitening.webp",
-        "image_alt": "Clear teeth whitening tray held in two hands",
+        "image": "ai-teeth-whitening.webp",
+        "image_alt": "Close-up of a bright, white smile",
         "intro": ("Professional teeth whitening safely lightens stains from tea, coffee, tobacco and ageing under a dentist's supervision. "
                   "Before whitening, we check your teeth and gums, because cavities and sensitivity need treating first."),
         "facts": [("Session time", "45–60 min"), ("Visits", "Usually 1"), ("Downtime", "None"), ("Typical cost", "₹4,000–₹15,000")],
@@ -163,8 +163,8 @@ TREATMENTS = [
         "book_value": "Laser hair reduction",
         "title": "Laser Hair Removal in Lucknow – Cost | Smile & Glow",
         "description": "Laser hair reduction (laser hair removal) in Lucknow by Dr. Pallavi. From ₹1,500 per session; full face ₹3,500–₹5,000. Sessions, safety for Indian skin & FAQs.",
-        "image": "hero-laser-machine.webp",
-        "image_alt": "Laser hair reduction machine with handpiece",
+        "image": "ai-laser-hair-removal.webp",
+        "image_alt": "Laser hair-reduction handpiece being used on a forearm",
         "intro": ("Laser hair reduction (often called laser hair removal) targets the hair root with light, giving long-lasting reduction of unwanted hair. "
                   "Every plan at Smile &amp; Glow starts with a skin assessment and patch test, and the settings are chosen for your skin type."),
         "facts": [("Sessions", "6–8, about 4–6 weeks apart"), ("Session time", "15–60 min (by area)"), ("Downtime", "None to minimal"), ("Typical cost", "From ₹1,500 per session")],
@@ -252,8 +252,8 @@ TREATMENTS = [
         "book_value": "Chemical peel",
         "title": "Chemical Peel in Lucknow – Cost per Session | Smile & Glow",
         "description": "Chemical peels in Lucknow for tan, pigmentation, acne and dull skin by Dr. Pallavi. From ₹1,500 per session. Peel types, downtime, aftercare & FAQs.",
-        "image": "skin-chemical-peel.webp",
-        "image_alt": "Facial skin treatment in a clinic",
+        "image": "ai-chemical-peel.webp",
+        "image_alt": "Skincare serums, a brush and a bowl laid out for a chemical peel",
         "intro": ("A clinical chemical peel applies a carefully chosen solution that removes the dull outer layer of skin, helping with tan, pigmentation, acne, marks and fine lines. "
                   "The peel type and strength are chosen for your skin, so Indian skin is treated safely."),
         "facts": [("Sessions", "4–6, every 2–3 weeks"), ("Session time", "20–30 min"), ("Downtime", "0–5 days (depends on peel)"), ("Typical cost", "From ₹1,500 per session")],
