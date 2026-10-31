@@ -110,13 +110,15 @@
   @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brand-img img{background:#fff;border-radius:12px;padding:3px}}
   :root[data-theme="dark"] .brand-img img{background:#fff;border-radius:12px;padding:3px}
   .brand-txt b{display:block;font-family:"Playfair Display","Mukta",serif;font-weight:600;font-size:var(--t-l);color:var(--accent-text)}
-  .brand-txt small{display:block;font-size:var(--t-xs);color:var(--muted);margin-top:2px}
+  .brand-txt small{display:block;font-size:var(--t-xs);color:var(--muted);margin-top:2px;white-space:nowrap}
+  @media (max-width:1300px) and (min-width:861px){.brand-txt small{display:none}}
+  @media (max-width:440px){.brand-txt small{display:none}}
   .links{display:flex;gap:4px;align-items:center}
   .links a{text-decoration:none;font-weight:500;color:var(--muted);padding:10px 10px;border-radius:8px;white-space:nowrap}
   .links a:hover{color:var(--accent-text)}
   .links .btn{color:var(--accent-ink);margin-left:8px;padding:10px 20px}
   .menu-btn{display:none;background:none;border:0;color:var(--ink);cursor:pointer;width:48px;height:48px;place-items:center}
-  @media (max-width:1080px) and (min-width:861px){.brand-txt small{display:none}.links a{padding:10px 7px}}
+  @media (max-width:1080px) and (min-width:861px){.brand-txt small{display:none}.links a{padding:10px 6px}}
   @media (max-width:860px){
     .links{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:12px 20px 20px;border-bottom:1px solid var(--bg-2);gap:2px}
     .links.open{display:flex}
@@ -231,7 +233,8 @@
   .feat p{color:var(--brand-ink);opacity:.9}
   .feat-cta{flex-shrink:0;padding:12px 20px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;white-space:nowrap}
   .t-ico{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--brand-soft);color:var(--brand);flex-shrink:0}
-  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none}
+  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none}
+  @media (max-width:1160px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
   .tools-grid a{display:grid;grid-template-columns:44px 1fr;gap:2px 14px;height:100%;padding:18px 20px;border-radius:var(--radius);background:var(--surface);text-decoration:none;color:var(--ink);transition:transform .15s}
   .tools-grid a:hover{transform:translateY(-2px)}
   .tools-grid .t-ico{grid-row:span 2}
@@ -264,6 +267,33 @@
   :root[data-theme="dark"] .rv-stars{color:#f2c94c}
   @media (max-width:900px){.rv-grid{grid-template-columns:1fr 1fr}}
   @media (max-width:600px){.rv-grid{grid-template-columns:1fr}}
+
+  /* ---------- Open now, listen, skin weather ---------- */
+  .open-badge{display:inline-flex;align-items:center;gap:8px;font-size:var(--t-s);font-weight:600;color:var(--muted)}
+  .open-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:#8a94a3;flex-shrink:0}
+  .open-badge.is-open{color:#14713c}.open-badge.is-open::before{background:#1f9d55}
+  .open-badge.is-soon{color:#8a5a00}.open-badge.is-soon::before{background:#e0a100}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .open-badge.is-open{color:#6fdc9a}:root:not([data-theme="light"]) .open-badge.is-soon{color:#f2c94c}}
+  :root[data-theme="dark"] .open-badge.is-open{color:#6fdc9a}:root[data-theme="dark"] .open-badge.is-soon{color:#f2c94c}
+  .hero-open{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:18px}
+  .hero-open[hidden]{display:none}
+  .listen-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;border:0;background:var(--brand-soft);color:var(--brand);font-family:inherit;font-size:var(--t-s);font-weight:600;cursor:pointer;margin-left:8px;flex-shrink:0}
+  .listen-btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+  @media (max-width:1180px) and (min-width:861px){.listen-btn span{display:none}.listen-btn{padding:0 12px}}
+  @media (max-width:860px){.listen-btn{margin-left:auto;margin-right:4px}}
+  @media (max-width:400px){.listen-btn span{display:none}.listen-btn{padding:0 12px}}
+  .sw-wrap{margin-top:-36px;margin-bottom:24px;position:relative;z-index:1}
+  .skin-weather{background:var(--surface);border-radius:var(--radius);padding:18px 22px;display:grid;grid-template-columns:auto 1fr;gap:6px 24px;align-items:center;box-shadow:0 1px 0 var(--bg-2)}
+  .skin-weather[hidden]{display:none}
+  .sw-head{display:flex;align-items:center;gap:8px;color:var(--brand);font-weight:700}
+  .sw-stats{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0}
+  .sw-stats div{display:flex;gap:6px;align-items:baseline}
+  .sw-stats dt{color:var(--muted);font-size:var(--t-s)}
+  .sw-stats dd{margin:0;font-weight:700;color:var(--ink)}
+  .sw-stats .uv-vhigh dd,.sw-stats .uv-ext dd,.sw-stats .aq-bad dd{color:var(--accent-text)}
+  .sw-tip{grid-column:1/-1;color:var(--ink);max-width:none}
+  .sw-src{grid-column:1/-1;font-size:var(--t-xs);color:var(--muted)}
+  @media (max-width:700px){.skin-weather{grid-template-columns:1fr}.sw-wrap{margin-top:-24px}}
 
   /* ---------- FAQ ---------- */
   .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:start}
@@ -365,6 +395,7 @@
 <a class="btn rose" href="#book-form">परामर्श बुक करें</a>
 <a class="btn ghost" href="tel:+917275433783">कॉल करें +91 72754 33783</a>
 </div>
+<p class="hero-open" data-open-summary="" hidden=""></p>
 <p class="hero-tools">पहले कीमत जानें: <a class="link" href="/hi/cost-calculator/">मुफ़्त कीमत कैलकुलेटर</a> · <a class="link" href="/hi/skin-quiz/">स्किन टाइप क्विज़</a></p>
 <div class="facts-row">
 <div><b>4.9★</b>Google रेटिंग</div>
@@ -375,6 +406,7 @@
 <figure class="hero-pic"><img alt="Diode laser hair-reduction handpiece on a clinic counter" fetchpriority="high" height="1000" src="/assets/img/ai-laser-handpiece.webp" width="800"/></figure>
 </div>
 </section>
+<div class="wrap sw-wrap"><aside aria-live="polite" class="skin-weather" hidden="" id="skin-weather"></aside></div>
 <!-- TOOLS -->
 <section aria-labelledby="tools-h" class="tools-band" id="tools">
 <div class="wrap">
@@ -394,6 +426,8 @@
 <li><a href="/aftercare/"><span aria-hidden="true" class="t-ico"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"></path></svg></span><h3>इलाज के बाद देखभाल</h3><p>इलाज के बाद क्या करें — हिंदी और अंग्रेज़ी में।</p></a></li>
 <li><a href="/kids/"><span aria-hidden="true" class="t-ico"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="7" r="3.5"></circle><path d="M5 21c0-4 3.1-7 7-7s7 3 7 7"></path></svg></span><h3>बच्चों का कोना</h3><p>पहली विज़िट के टिप्स, ब्रशिंग चार्ट और बहादुर मरीज़ का सर्टिफ़िकेट (अंग्रेज़ी)।</p></a></li>
 <li><a href="/food-for-teeth-and-skin/"><span aria-hidden="true" class="t-ico"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M12 7c-1-2.5-3-3.5-5-3 .3 2 1.8 3.3 5 3zM12 7c4-1.5 8 .8 8 6.2C20 18 16.5 21 14 21c-1 0-1.5-.5-2-.5s-1 .5-2 .5c-2.5 0-6-3-6-7.8C4 7.8 8 5.5 12 7z"></path></svg></span><h3>दांत और त्वचा के लिए खाना</h3><p>पोषण में प्रशिक्षित डॉक्टर से रोज़ के भारतीय खान-पान के टिप्स (अंग्रेज़ी)।</p></a></li>
+<li><a href="/hi/myth-or-fact/"><span aria-hidden="true" class="t-ico"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M9 9a3 3 0 1 1 4 2.8c-.6.3-1 .9-1 1.6V14M12 17.5h.01"></path><circle cx="12" cy="12" r="9.5"></circle></svg></span><h3>मिथक या सच?</h3><p>त्वचा और दांतों की 10 आम बातें — खुद को परखें और स्कोर शेयर करें।</p></a></li>
+<li><a href="/hi/ask/"><span aria-hidden="true" class="t-ico"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path><path d="M12 8v4M12 15h.01"></path></svg></span><h3>डॉ. पल्लवी से पूछें</h3><p>त्वचा या दांत का सवाल भेजें — जवाब WhatsApp या Instagram पर।</p></a></li>
 </ul>
 <div class="combo">
 <p><b>दांत और त्वचा, एक ही विज़िट में।</b> डॉ. पल्लवी दोनों का इलाज करती हैं — बुक करते समय दोनों समस्याएँ बताएँ।</p>
@@ -574,6 +608,7 @@
 <div class="branch-map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Smile%20%26%20Glow%20-%20I.T%20Chauraha%2C%20Faizabad%20Rd%2C%20Lucknow&amp;z=16&amp;output=embed" title="Map to Smile &amp; Glow I.T Chauraha"></iframe></div>
 <div class="branch-body">
 <h3>आई.टी. चौराहा</h3>
+<span class="open-badge" data-open="it"></span>
 <div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><span>गेट नं. 4, 1/2 शिवस्थली, फ़ैज़ाबाद रोड, आई.टी. गर्ल्स कॉलेज के सामने, न्यू हैदराबाद, हसनगंज, लखनऊ, उत्तर प्रदेश 226007</span></div>
 <div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div class="hours"><div><span>सोमवार – शनिवार</span><b>सुबह 11:00 – दोपहर 3:00</b></div><div><span>रविवार</span><b>केवल अपॉइंटमेंट से</b></div></div></div>
 <div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><span><a href="tel:+917275433783">+91 72754 33783</a></span></div>
@@ -585,6 +620,7 @@
 <div class="branch-map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=26.797045%2C80.912754&amp;z=16&amp;output=embed" title="Map to Smile &amp; Glow Aashiyana"></iframe></div>
 <div class="branch-body">
 <h3>आशियाना</h3>
+<span class="open-badge" data-open="aa"></span>
 <div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><span>SS-771, आस्था हॉस्पिटल के पीछे, सेक्टर H, LDA कॉलोनी, आशियाना, लखनऊ, उत्तर प्रदेश 226012</span></div>
 <div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div class="hours"><div><span>सोमवार – शनिवार (शाम)</span><b>शाम 4:00 – रात 9:00</b></div><div><span>रविवार</span><b>केवल अपॉइंटमेंट से</b></div></div></div>
 <div class="row-i"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><span><a href="tel:+917275433783">+91 72754 33783</a></span></div>
@@ -634,7 +670,7 @@
 <span>दांत · त्वचा · बाल — <a href="https://www.instagram.com/smileandglowclinic/" rel="noopener" target="_blank">@smileandglowclinic</a></span>
 </div>
 <nav aria-label="Popular treatments" class="foot-links"><b>लोकप्रिय उपचार:</b> <a href="/root-canal-treatment-lucknow/">रूट कैनाल</a> · <a href="/dental-implants-lucknow/">डेंटल इम्प्लांट</a> · <a href="/teeth-whitening-lucknow/">दांतों की सफ़ेदी</a> · <a href="/laser-hair-removal-lucknow/">लेज़र हेयर रिडक्शन</a> · <a href="/hair-prp-treatment-lucknow/">हेयर PRP</a> · <a href="/chemical-peel-lucknow/">केमिकल पील</a></nav>
-<nav aria-label="Patient tools" class="foot-links" style="margin-top:4px"><b>मरीज़ों के लिए टूल:</b> <a href="/hi/cost-calculator/">कीमत कैलकुलेटर</a> · <a href="/hi/skin-quiz/">स्किन टाइप क्विज़</a> · <a href="/hi/samjhiye/">आसान भाषा में समझिए</a> · <a href="/aftercare/">इलाज के बाद देखभाल</a> · <a href="/hi/before-your-visit/">विज़िट से पहले</a> · <a href="/hi/dental-emergency/">दांत की इमरजेंसी</a> · <a href="/kids/">बच्चों का कोना</a> · <a href="/scared-of-the-dentist/">घबराहट वाले मरीज़</a> · <a href="/food-for-teeth-and-skin/">खान-पान टिप्स</a></nav>
+<nav aria-label="Patient tools" class="foot-links" style="margin-top:4px"><b>मरीज़ों के लिए टूल:</b> <a href="/hi/cost-calculator/">कीमत कैलकुलेटर</a> · <a href="/hi/skin-quiz/">स्किन टाइप क्विज़</a> · <a href="/hi/samjhiye/">आसान भाषा में समझिए</a> · <a href="/aftercare/">इलाज के बाद देखभाल</a> · <a href="/hi/before-your-visit/">विज़िट से पहले</a> · <a href="/hi/dental-emergency/">दांत की इमरजेंसी</a> · <a href="/kids/">बच्चों का कोना</a> · <a href="/scared-of-the-dentist/">घबराहट वाले मरीज़</a> · <a href="/food-for-teeth-and-skin/">खान-पान टिप्स</a> · <a href="/hi/myth-or-fact/">मिथक या सच?</a> · <a href="/hi/ask/">डॉ. पल्लवी से पूछें</a></nav>
 <p class="disclaimer">उपचार के परिणाम हर व्यक्ति में अलग हो सकते हैं। इस वेबसाइट की जानकारी केवल सामान्य जागरूकता के लिए है और डॉक्टर से परामर्श का विकल्प नहीं है।</p>
 <div class="foot-bottom">
 <span>© <span id="yr">2026</span> स्माइल एंड ग्लो, लखनऊ — आई.टी. चौराहा और आशियाना · डॉ. पल्लवी, डेंटल और एस्थेटिक विशेषज्ञ</span>
@@ -653,7 +689,8 @@
 <a class="btn ghost" href="tel:+917275433783">कॉल करें</a>
 <a class="btn wa-btn js-wa" href="https://wa.me/917275433783" rel="noopener" target="_blank">WhatsApp</a>
 </div>
-<script defer="" src="/assets/chat.js?v=5"></script>
+<script defer="" src="/assets/chat.js?v=6"></script>
+<script defer="" src="/assets/site-extras.js?v=1"></script>
 <script>if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <!-- /FLOAT -->
 <script>

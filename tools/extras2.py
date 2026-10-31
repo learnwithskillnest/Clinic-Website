@@ -52,6 +52,20 @@ CSS = """
 .cert{max-width:720px;margin:16px 0;padding:36px 28px;border-radius:var(--radius);background:var(--surface);text-align:center;border:3px dashed var(--brand)}
 .cert h2{font-size:var(--t-2xl)}
 .cert .who{font-family:"Playfair Display","Mukta",serif;font-size:var(--t-2xl);color:var(--accent-text);margin:10px 0;min-height:1.3em;border-bottom:2px solid var(--bg-2)}
+.brush-box{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-top:16px}
+.mouth{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;width:220px;height:170px;padding:10px;border-radius:50% 50% 46% 46%/40% 40% 60% 60%;background:#f3c6cf}
+.mouth .q{display:grid;place-items:center;text-align:center;border-radius:14px;background:#fff;color:#1d2733;font-weight:600;font-size:var(--t-xs);padding:4px;transition:transform .2s,background .2s}
+.mouth .q.on{background:var(--brand);color:var(--brand-ink);transform:scale(1.06)}
+.mouth .q.done{background:#d9f2e3;color:#14532d}
+.brush-time{font-family:"Playfair Display","Mukta",serif;font-size:3.5rem;line-height:1;color:var(--brand);font-variant-numeric:tabular-nums}
+.brush-now{font-size:var(--t-l);font-weight:600;color:var(--ink);margin:6px 0 14px}
+.bt-sound{display:inline-flex;gap:8px;align-items:center;margin-top:10px;font-size:var(--t-s);color:var(--muted)}
+.bt-sound input{width:20px;height:20px;min-height:0;margin:0;flex-shrink:0}
+.cheer{margin-top:18px;padding:16px 18px;border-radius:12px;background:#d9f2e3;color:#14532d}
+.cheer[hidden]{display:none}
+.cheer b{display:block;font-size:var(--t-l)}
+@media (prefers-reduced-motion: reduce){.mouth .q{transition:none}.mouth .q.on{transform:none}}
+@media (max-width:600px){.brush-box{grid-template-columns:1fr;justify-items:center;text-align:center}.brush-side .cta-row{justify-content:center}}
 .print-only{display:none}
 @media (max-width:760px){.cards,.review-grid,.checks{grid-template-columns:1fr}}
 @media print{.no-print{display:none!important}.print-only{display:block}body{background:#fff}.tool{padding:0}.cert,.card{border-color:#1b5c8c}}
@@ -339,6 +353,29 @@ KIDS_JS = r"""<script>
     document.body.dataset.print = b.dataset.print; window.print();
   }));
   window.addEventListener('afterprint', () => { delete document.body.dataset.print; });
+  // ---- brushing timer ----
+  const Q=['Top left','Top right','Bottom left','Bottom right'], TOTAL=120;
+  const tEl=document.getElementById('bt-time'), nowEl=document.getElementById('bt-now'), start=document.getElementById('bt-start'),
+        reset=document.getElementById('bt-reset'), cheer=document.getElementById('bt-cheer'), snd=document.getElementById('bt-sound'),
+        quads=[...document.querySelectorAll('.mouth .q')];
+  let left=TOTAL, timer=null, ac=null;
+  const beep=(f,d)=>{ if(!snd.checked) return; try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const o=ac.createOscillator(), g=ac.createGain(); o.frequency.value=f; o.connect(g); g.connect(ac.destination); g.gain.setValueAtTime(.15,ac.currentTime); g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d); o.start(); o.stop(ac.currentTime+d);}catch(e){} };
+  const paint=()=>{ const m=Math.floor(left/60), sec=left%60; tEl.textContent=m+':'+(sec<10?'0':'')+sec;
+    const qi=Math.min(3,Math.floor((TOTAL-left)/30)); quads.forEach((q,k)=>{q.classList.toggle('on',timer&&k===qi); q.classList.toggle('done',k<qi||left===0);}); };
+  const stop=()=>{ clearInterval(timer); timer=null; start.textContent='Start'; };
+  start.addEventListener('click',()=>{
+    if(timer){ stop(); nowEl.textContent='Paused'; paint(); return; }
+    if(left===0){ left=TOTAL; cheer.hidden=true; }
+    start.textContent='Pause'; beep(660,.2);
+    nowEl.textContent='Brush: '+Q[Math.min(3,Math.floor((TOTAL-left)/30))];
+    timer=setInterval(()=>{ left--; 
+      if(left>0 && (TOTAL-left)%30===0){ beep(880,.25); nowEl.textContent='Now brush: '+Q[(TOTAL-left)/30]; }
+      if(left<=0){ left=0; stop(); nowEl.textContent='All done!'; cheer.hidden=false; beep(523,.15); setTimeout(()=>beep(659,.15),160); setTimeout(()=>beep(784,.3),320); }
+      paint(); },1000);
+    paint();
+  });
+  reset.addEventListener('click',()=>{ stop(); left=TOTAL; cheer.hidden=true; nowEl.textContent='Ready when you are!'; paint(); });
+  paint();
 })();
 </script>"""
 
@@ -374,6 +411,23 @@ def kids_page(parts):
     <li>Ask us about fluoride varnish and sealants for back teeth.</li>
     <li>Thumb-sucking beyond age 4–5? Mention it at the check-up.</li></ul></article>
 </div>
+
+<section class="card brush no-print" id="timer" aria-labelledby="timer-h" style="margin-top:28px;max-width:900px">
+  <h2 id="timer-h">2-minute brushing timer</h2>
+  <p>Press start and brush each part of the mouth for 30 seconds. Brush gently in small circles.</p>
+  <div class="brush-box">
+    <div class="mouth" aria-hidden="true">
+      <span class="q q1">Top left</span><span class="q q2">Top right</span><span class="q q3">Bottom left</span><span class="q q4">Bottom right</span>
+    </div>
+    <div class="brush-side">
+      <div class="brush-time" id="bt-time">2:00</div>
+      <p class="brush-now" id="bt-now" aria-live="polite">Ready when you are!</p>
+      <div class="cta-row"><button type="button" class="btn rose" id="bt-start">Start</button><button type="button" class="btn ghost" id="bt-reset">Reset</button></div>
+      <label class="bt-sound"><input type="checkbox" id="bt-sound" checked> Sound</label>
+    </div>
+  </div>
+  <div class="cheer" id="bt-cheer" hidden><b>Well done, superstar!</b> Two minutes of brushing — your teeth are sparkling. Tick your brushing chart below.</div>
+</section>
 
 <section class="printable card" id="chart" style="margin-top:28px;max-width:900px">
   <h2>2-minute brushing chart</h2>

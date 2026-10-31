@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from treatments import build_treatments, TREATMENTS, REG_NO
 from extras import build_extras, hi_parts
 from extras2 import build_extras2
+from extras3 import build_extras3
 from treatments import extract  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -218,7 +219,8 @@ def main():
     for a_tag in soup.select("a[href]"):  # point tool links at their Hindi versions
         a_tag["href"] = {"/cost-calculator/": "/hi/cost-calculator/", "/skin-quiz/": "/hi/skin-quiz/",
                          "/treatment-guide/": "/hi/samjhiye/",
-                         "/dental-emergency/": "/hi/dental-emergency/", "/before-your-visit/": "/hi/before-your-visit/"}.get(a_tag["href"], a_tag["href"])
+                         "/dental-emergency/": "/hi/dental-emergency/", "/before-your-visit/": "/hi/before-your-visit/",
+                         "/myth-or-fact/": "/hi/myth-or-fact/", "/ask/": "/hi/ask/"}.get(a_tag["href"], a_tag["href"])
     set_ld(soup, json_ld("hi", f"{SITE}/hi/", faqs_from(soup)))
 
     out = ROOT / "hi" / "index.html"
@@ -229,6 +231,7 @@ def main():
     slugs = build_treatments(ROOT, src)
     extra = build_extras(ROOT, src, str(soup))
     extra += build_extras2(ROOT, extract(src), hi_parts(str(soup)))
+    extra += build_extras3(ROOT, extract(src), hi_parts(str(soup)))
 
     # 4) Sitemap
     alt = ('    <xhtml:link rel="alternate" hreflang="en" href="{s}/"/>\n'

@@ -50,6 +50,9 @@
       "<b>आई.टी. चौराहा</b>: सोमवार–शनिवार, सुबह 11:00 – दोपहर 3:00<br><b>आशियाना</b>: सोमवार–शनिवार, शाम 4:00 – रात 9:00<br><b>रविवार</b>: दोनों क्लिनिक सिर्फ़ अपॉइंटमेंट पर।",
       [["form"], ["wa"]]),
 
+    info("opennow", ["open now", "opened now", "is it open", "are you open", "open today", "open right now", "closed now", "abhi khula", "khula hai", "abhi open", "अभी खुला", "खुला है", "आज खुला"],
+      "", "", [["form"], ["call"]]),
+
     info("sunday", ["sunday", "ravivar", "itwar", "रविवार", "संडे"],
       "On Sundays both branches see patients <b>by appointment only</b>. Message us on WhatsApp to fix a Sunday slot.",
       "रविवार को दोनों क्लिनिक <b>सिर्फ़ अपॉइंटमेंट पर</b> खुलते हैं। रविवार का समय तय करने के लिए WhatsApp करें।",
@@ -235,6 +238,16 @@
       "हमारे " + a("/kids/", "बच्चों के कोने") + " (अंग्रेज़ी) में पहली विज़िट के टिप्स, उम्र के हिसाब से टूथपेस्ट की मात्रा, ब्रशिंग चार्ट और सर्टिफ़िकेट है।",
       [["link", "/kids/", PAGE_HI ? "बच्चों का कोना" : "Kids' corner"], ["wa", "a check-up for my child"]]),
 
+    info("myth", ["myth", "myths", "fact", "true or false", "game", "mithak", "मिथक", "सच या झूठ", "गेम"],
+      "Play our " + a(PAGE_HI ? "/hi/myth-or-fact/" : "/myth-or-fact/", "Myth or Fact? game") + " — 10 common skin and dental beliefs, with Dr. Pallavi's explanation for each. Share your score with friends!",
+      "हमारा " + a("/hi/myth-or-fact/", "मिथक या सच? गेम") + " खेलें — त्वचा और दांतों से जुड़ी 10 आम बातें, हर एक पर डॉ. पल्लवी की सलाह के साथ।",
+      [["link", PAGE_HI ? "/hi/myth-or-fact/" : "/myth-or-fact/", PAGE_HI ? "गेम खेलें" : "Play the game"]]),
+
+    info("ask", ["ask doctor", "ask dr", "ask a question", "question for doctor", "ask pallavi", "online consultation", "sawal", "सवाल पूछ", "डॉक्टर से पूछ"],
+      "Send your question to Dr. Pallavi with the " + a(PAGE_HI ? "/hi/ask/" : "/ask/", "Ask Dr. Pallavi") + " form. It goes to the clinic on WhatsApp, and popular questions may be answered in her Instagram videos. For a diagnosis, please book a consultation.",
+      "" + a("/hi/ask/", "डॉ. पल्लवी से पूछें") + " फ़ॉर्म से अपना सवाल भेजें। यह WhatsApp पर क्लिनिक को जाता है, और चुने हुए सवालों के जवाब Instagram वीडियो में दिए जा सकते हैं। जांच के लिए परामर्श बुक करें।",
+      [["link", PAGE_HI ? "/hi/ask/" : "/ask/", PAGE_HI ? "सवाल भेजें" : "Ask a question"]]),
+
     info("thanks", ["thanks", "thank", "thank you", "ok", "okay", "great", "bye", "dhanyavad", "shukriya", "धन्यवाद", "शुक्रिया", "ठीक"],
       "You're welcome! If you need anything else, just ask — or message us on WhatsApp.",
       "आपका स्वागत है! कुछ और पूछना हो तो बेझिझक पूछें — या WhatsApp करें।",
@@ -293,10 +306,20 @@
     KB.forEach(function (item) {
       var s = score(text, words, item);
       if ((item.treatment || item.id === "it" || item.id === "aashiyana" || item.id === "sunday") && s) s += 0.5; // specific beats generic ("price", "timing")
-      if (/^(calculator|quiz|aftercare|guide|previsit|diet|kidscorner)$/.test(item.id) && s) s += 2;                          // tools beat the topic they're about
+      if (/^(calculator|quiz|aftercare|guide|previsit|diet|kidscorner|opennow|myth|ask)$/.test(item.id) && s) s += 2;                          // tools beat the topic they're about
       if (s > bestS) { best = item; bestS = s; }
     });
     if (!best) return { html: hi ? FALLBACK_HI : FALLBACK_EN, act: [["wa"], ["chips"]], hi: hi };
+    if (best.id === "opennow") {
+      var st = window.sgOpenStatus;
+      if (!st) return { html: hi ? best.hi || KB[1].hi : KB[1].en, act: best.act, hi: hi };
+      var NOW = hi ? "अभी की स्थिति (भारतीय समय):" : "Right now (India time):";
+      var a = st("it"), b = st("aa");
+      // status() uses the page language; build our own wording if the chat language differs
+      var html = NOW + "<br><b>" + (hi ? "आई.टी. चौराहा" : "I.T Chauraha") + "</b>: " + a.text + "<br><b>" + (hi ? "आशियाना" : "Aashiyana") + "</b>: " + b.text +
+        "<br><small>" + (hi ? "सोमवार–शनिवार: आई.टी. चौराहा सुबह 11–दोपहर 3, आशियाना शाम 4–रात 9। रविवार सिर्फ़ अपॉइंटमेंट पर।" : "Mon–Sat: I.T Chauraha 11 AM–3 PM, Aashiyana 4–9 PM. Sunday by appointment only.") + "</small>";
+      return { html: html, act: best.act, hi: hi };
+    }
     return { html: hi ? best.hi : best.en, act: best.act, hi: hi };
   }
 

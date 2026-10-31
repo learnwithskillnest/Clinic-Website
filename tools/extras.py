@@ -267,7 +267,7 @@ def shell(parts, *, lang, path, title, desc, body, alt=None, ld=None, script="",
 <meta property="og:image" content="{SITE}/assets/img/gallery-sign.webp">
 <meta property="og:locale" content="{'hi_IN' if lang == 'hi' else 'en_IN'}">
 {parts['fonts']}
-<link rel="stylesheet" href="/assets/site.css?v=3">
+<link rel="stylesheet" href="/assets/site.css?v=4">
 {ld_html}
 </head>
 <body>
