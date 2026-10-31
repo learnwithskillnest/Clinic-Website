@@ -159,7 +159,8 @@ def translate(soup, d):
         if isinstance(node, (Comment, Doctype)):
             continue
         parent = node.parent
-        if parent.name in ("script", "style", "noscript", "title") or parent.find_parent(class_="lang"):
+        if parent.name in ("script", "style", "noscript", "title") or parent.find_parent(class_="lang") \
+                or parent.find_parent(attrs={"translate": "no"}) or parent.get("translate") == "no":
             continue
         raw = str(node)
         key = raw.strip()

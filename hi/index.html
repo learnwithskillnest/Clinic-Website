@@ -248,6 +248,23 @@
   @media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}.tools-feature{grid-template-columns:1fr}}
   @media (max-width:600px){.tools-grid{grid-template-columns:1fr}.feat{flex-wrap:wrap;padding:22px}.feat-cta{width:100%;text-align:center}.tools-band .sec-head{text-align:left}}
 
+  /* ---------- Reviews ---------- */
+  .rv-sum{display:flex;flex-wrap:wrap;gap:12px;margin:-16px 0 28px}
+  .rv-sum a{display:flex;align-items:baseline;gap:10px;padding:10px 18px;border-radius:999px;background:var(--surface);text-decoration:none;color:var(--muted);min-height:44px}
+  .rv-sum b{font-size:var(--t-l);color:var(--ink)}
+  .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+  .rv{margin:0;background:var(--surface);border-radius:var(--radius);padding:22px 24px;display:flex;flex-direction:column;gap:14px;height:100%}
+  .rv blockquote{margin:0}
+  .rv-stars{display:block;color:#8a6200;letter-spacing:2px;margin-bottom:8px}
+  .rv p{color:var(--ink);max-width:none}
+  .rv figcaption{margin-top:auto;font-size:var(--t-s);color:var(--muted)}
+  .rv figcaption b{display:block;color:var(--ink)}
+  .rv-cta{margin-top:28px}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rv-stars{color:#f2c94c}}
+  :root[data-theme="dark"] .rv-stars{color:#f2c94c}
+  @media (max-width:900px){.rv-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.rv-grid{grid-template-columns:1fr}}
+
   /* ---------- FAQ ---------- */
   .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:start}
   .faq-side h2{font-size:var(--t-2xl);margin-bottom:10px}
@@ -475,8 +492,34 @@
 </div>
 </div>
 </section>
+<!-- REVIEWS -->
+<section aria-labelledby="reviews-h" id="reviews">
+<div class="wrap">
+<div class="sec-head">
+<h2 id="reviews-h">Google पर मरीज़ क्या कहते हैं</h2>
+<p>हमारी Google लिस्टिंग के असली रिव्यू, बिल्कुल वैसे ही जैसे मरीज़ों ने लिखे (अंग्रेज़ी में)।</p>
+</div>
+<div class="rv-sum">
+<a href="https://maps.google.com/?cid=17579297340809890606" rel="noopener" target="_blank"><b>4.9★</b><span>आई.टी. चौराहा · 14 रिव्यू</span></a>
+<a href="https://maps.google.com/?cid=7330207607150827761" rel="noopener" target="_blank"><b>5.0★</b><span>आशियाना · 15 रिव्यू</span></a>
+</div>
+<div class="rv-grid">
+<figure class="rv"><blockquote lang="en" translate="no"><span aria-label="5 out of 5 stars" class="rv-stars">★★★★★</span><p>“The doctor is just mind blowing. She understood my problem and helped me to recover from my dark circles and dry skin. She is really polite friendly and helpful in nature. Great to be here.”</p></blockquote><figcaption><b translate="no">Juhi B.</b><span>Google रिव्यू · आशियाना · जुलाई 2026</span></figcaption></figure>
+<figure class="rv"><blockquote lang="en" translate="no"><span aria-label="5 out of 5 stars" class="rv-stars">★★★★★</span><p>“Dr. Pallavi is a great doctor! She’s very understanding and listens to your concerns. She takes time with the patient to help them with their health issue. She ensured I had a smooth prep, surgery, and follow-up. I highly recommend her to anyone looking for a specialist. I am extremely happy post teeth extraction.”</p></blockquote><figcaption><b translate="no">Ajeet J.</b><span>Google रिव्यू · आई.टी. चौराहा · 2023</span></figcaption></figure>
+<figure class="rv"><blockquote lang="en" translate="no"><span aria-label="5 out of 5 stars" class="rv-stars">★★★★★</span><p>“Good experience and my acne and hair both improves....i highly recommend everyone to visit here if u having problems related to skin and hair”</p></blockquote><figcaption><b translate="no">Sanjana G.</b><span>Google रिव्यू · आशियाना · अक्टूबर 2026</span></figcaption></figure>
+<figure class="rv"><blockquote lang="en" translate="no"><span aria-label="5 out of 5 stars" class="rv-stars">★★★★★</span><p>“I had a very good experience with Dr Pallavi”s consultation. She was quite through and meticulous with her diagnosis and empathetic in her approach. I 100% recommend her for any dental needs.”</p></blockquote><figcaption><b translate="no">Abhishek S.</b><span>Google रिव्यू · आई.टी. चौराहा · 2023</span></figcaption></figure>
+<figure class="rv"><blockquote lang="en" translate="no"><span aria-label="5 out of 5 stars" class="rv-stars">★★★★★</span><p>“One of the best dental clinic in Lucknow I am facing toothache around last 1 month and after a one meet with Dr now I am feel relief thank you doctors ❤️”</p></blockquote><figcaption><b translate="no">Gunjan M.</b><span>Google रिव्यू · आशियाना · दिसंबर 2025</span></figcaption></figure>
+<figure class="rv"><blockquote lang="en" translate="no"><span aria-label="5 out of 5 stars" class="rv-stars">★★★★★</span><p>“Best clinic.. Must give a try... Dr. Pallavi is very humble in nature. She gives proper attention and time and  suggests the best treatment.”</p></blockquote><figcaption><b translate="no">Priya S.</b><span>Google रिव्यू · आई.टी. चौराहा · 2024</span></figcaption></figure>
+</div>
+<div class="cta-row rv-cta">
+<a class="btn ghost" href="https://maps.google.com/?cid=17579297340809890606" rel="noopener" target="_blank">आई.टी. चौराहा के सभी रिव्यू</a>
+<a class="btn ghost" href="https://maps.google.com/?cid=7330207607150827761" rel="noopener" target="_blank">आशियाना के सभी रिव्यू</a>
+<a class="link" href="/review/">हमारे यहाँ आए हैं? रिव्यू लिखें</a>
+</div>
+</div>
+</section>
 <!-- VISIT -->
-<section id="journey">
+<section class="alt" id="journey">
 <div class="wrap visit">
 <div class="visit-pic"><img alt="Dr. Pallavi in the dental treatment room at the clinic" height="760" loading="lazy" src="/assets/img/clinic-treatment-room.webp" width="640"/></div>
 <div>
@@ -497,7 +540,7 @@
 </div>
 </section>
 <!-- FAQ -->
-<section class="alt" id="faq">
+<section id="faq">
 <div class="wrap faq-grid">
 <div class="faq-side">
 <h2>अक्सर पूछे जाने वाले सवाल</h2>
@@ -520,7 +563,7 @@
 </div>
 </section>
 <!-- CONTACT -->
-<section id="contact">
+<section class="alt" id="contact">
 <div class="wrap">
 <div class="sec-head">
 <h2>क्लिनिक और समय</h2>
@@ -610,7 +653,7 @@
 <a class="btn ghost" href="tel:+917275433783">कॉल करें</a>
 <a class="btn wa-btn js-wa" href="https://wa.me/917275433783" rel="noopener" target="_blank">WhatsApp</a>
 </div>
-<script defer="" src="/assets/chat.js?v=4"></script>
+<script defer="" src="/assets/chat.js?v=5"></script>
 <script>if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <!-- /FLOAT -->
 <script>

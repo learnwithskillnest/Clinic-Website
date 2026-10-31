@@ -247,6 +247,23 @@
   @media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}.tools-feature{grid-template-columns:1fr}}
   @media (max-width:600px){.tools-grid{grid-template-columns:1fr}.feat{flex-wrap:wrap;padding:22px}.feat-cta{width:100%;text-align:center}.tools-band .sec-head{text-align:left}}
 
+  /* ---------- Reviews ---------- */
+  .rv-sum{display:flex;flex-wrap:wrap;gap:12px;margin:-16px 0 28px}
+  .rv-sum a{display:flex;align-items:baseline;gap:10px;padding:10px 18px;border-radius:999px;background:var(--surface);text-decoration:none;color:var(--muted);min-height:44px}
+  .rv-sum b{font-size:var(--t-l);color:var(--ink)}
+  .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+  .rv{margin:0;background:var(--surface);border-radius:var(--radius);padding:22px 24px;display:flex;flex-direction:column;gap:14px;height:100%}
+  .rv blockquote{margin:0}
+  .rv-stars{display:block;color:#8a6200;letter-spacing:2px;margin-bottom:8px}
+  .rv p{color:var(--ink);max-width:none}
+  .rv figcaption{margin-top:auto;font-size:var(--t-s);color:var(--muted)}
+  .rv figcaption b{display:block;color:var(--ink)}
+  .rv-cta{margin-top:28px}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rv-stars{color:#f2c94c}}
+  :root[data-theme="dark"] .rv-stars{color:#f2c94c}
+  @media (max-width:900px){.rv-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.rv-grid{grid-template-columns:1fr}}
+
   /* ---------- FAQ ---------- */
   .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:start}
   .faq-side h2{font-size:var(--t-2xl);margin-bottom:10px}
@@ -482,8 +499,35 @@
     </div>
   </section>
 
+  <!-- REVIEWS -->
+  <section id="reviews" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="reviews-h">What patients say on Google</h2>
+        <p>Real reviews from our Google listings, shown exactly as patients wrote them.</p>
+      </div>
+      <div class="rv-sum">
+        <a href="https://maps.google.com/?cid=17579297340809890606" target="_blank" rel="noopener"><b>4.9★</b><span>I.T Chauraha · 14 reviews</span></a>
+        <a href="https://maps.google.com/?cid=7330207607150827761" target="_blank" rel="noopener"><b>5.0★</b><span>Aashiyana · 15 reviews</span></a>
+      </div>
+      <div class="rv-grid">
+        <figure class="rv"><blockquote translate="no" lang="en"><span class="rv-stars" aria-label="5 out of 5 stars">★★★★★</span><p>“The doctor is just mind blowing. She understood my problem and helped me to recover from my dark circles and dry skin. She is really polite friendly and helpful in nature. Great to be here.”</p></blockquote><figcaption><b translate="no">Juhi B.</b><span>Google review · Aashiyana · Jul 2026</span></figcaption></figure>
+        <figure class="rv"><blockquote translate="no" lang="en"><span class="rv-stars" aria-label="5 out of 5 stars">★★★★★</span><p>“Dr. Pallavi is a great doctor! She’s very understanding and listens to your concerns. She takes time with the patient to help them with their health issue. She ensured I had a smooth prep, surgery, and follow-up. I highly recommend her to anyone looking for a specialist. I am extremely happy post teeth extraction.”</p></blockquote><figcaption><b translate="no">Ajeet J.</b><span>Google review · I.T Chauraha · 2023</span></figcaption></figure>
+        <figure class="rv"><blockquote translate="no" lang="en"><span class="rv-stars" aria-label="5 out of 5 stars">★★★★★</span><p>“Good experience and my acne and hair both improves....i highly recommend everyone to visit here if u having problems related to skin and hair”</p></blockquote><figcaption><b translate="no">Sanjana G.</b><span>Google review · Aashiyana · Oct 2026</span></figcaption></figure>
+        <figure class="rv"><blockquote translate="no" lang="en"><span class="rv-stars" aria-label="5 out of 5 stars">★★★★★</span><p>“I had a very good experience with Dr Pallavi”s consultation. She was quite through and meticulous with her diagnosis and empathetic in her approach. I 100% recommend her for any dental needs.”</p></blockquote><figcaption><b translate="no">Abhishek S.</b><span>Google review · I.T Chauraha · 2023</span></figcaption></figure>
+        <figure class="rv"><blockquote translate="no" lang="en"><span class="rv-stars" aria-label="5 out of 5 stars">★★★★★</span><p>“One of the best dental clinic in Lucknow I am facing toothache around last 1 month and after a one meet with Dr now I am feel relief thank you doctors ❤️”</p></blockquote><figcaption><b translate="no">Gunjan M.</b><span>Google review · Aashiyana · Dec 2025</span></figcaption></figure>
+        <figure class="rv"><blockquote translate="no" lang="en"><span class="rv-stars" aria-label="5 out of 5 stars">★★★★★</span><p>“Best clinic.. Must give a try... Dr. Pallavi is very humble in nature. She gives proper attention and time and  suggests the best treatment.”</p></blockquote><figcaption><b translate="no">Priya S.</b><span>Google review · I.T Chauraha · 2024</span></figcaption></figure>
+      </div>
+      <div class="cta-row rv-cta">
+        <a class="btn ghost" href="https://maps.google.com/?cid=17579297340809890606" target="_blank" rel="noopener">All I.T Chauraha reviews</a>
+        <a class="btn ghost" href="https://maps.google.com/?cid=7330207607150827761" target="_blank" rel="noopener">All Aashiyana reviews</a>
+        <a class="link" href="/review/">Visited us? Write a review</a>
+      </div>
+    </div>
+  </section>
+
   <!-- VISIT -->
-  <section id="journey">
+  <section id="journey" class="alt">
     <div class="wrap visit">
       <div class="visit-pic"><img loading="lazy" src="/assets/img/clinic-treatment-room.webp" width="640" height="760" alt="Dr. Pallavi in the dental treatment room at the clinic"></div>
       <div>
@@ -505,7 +549,7 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="alt">
+  <section id="faq">
     <div class="wrap faq-grid">
       <div class="faq-side">
         <h2>Frequently asked questions</h2>
@@ -529,7 +573,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="alt">
     <div class="wrap">
       <div class="sec-head">
         <h2>Clinics and timings</h2>
@@ -621,7 +665,7 @@
   <a class="btn ghost" href="tel:+917275433783">Call</a>
   <a class="btn wa-btn js-wa" href="https://wa.me/917275433783" target="_blank" rel="noopener">WhatsApp</a>
 </div>
-<script src="/assets/chat.js?v=4" defer></script>
+<script src="/assets/chat.js?v=5" defer></script>
 <script>if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));</script>
 <!-- /FLOAT -->
 

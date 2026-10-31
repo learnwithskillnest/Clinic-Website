@@ -198,7 +198,7 @@
     info("reviews", ["review", "reviews", "rating", "ratings", "google", "good", "best", "रिव्यू", "रेटिंग"],
       "Patients rate us <b>4.9★</b> on Google at I.T Chauraha (14 reviews) and <b>5.0★</b> at Aashiyana (15 reviews).",
       "Google पर मरीज़ों ने आई.टी. चौराहा को <b>4.9★</b> (14 रिव्यू) और आशियाना को <b>5.0★</b> (15 रिव्यू) दिए हैं।",
-      [["link", MAP_IT, PAGE_HI ? "Google रिव्यू" : "Read Google reviews", 1], ["link", "/review/", PAGE_HI ? "रिव्यू लिखें" : "Write a review"]]),
+      [["link", HOME + "#reviews", PAGE_HI ? "मरीज़ों के रिव्यू" : "Read patient reviews"], ["link", "/review/", PAGE_HI ? "रिव्यू लिखें" : "Write a review"]]),
 
     info("calculator", ["calculator", "calculate", "estimate", "total cost", "total price", "how much total", "kul kharch", "कैलकुलेटर", "कुल खर्च", "अनुमान"],
       "Use our " + a(PAGE_HI ? "/hi/cost-calculator/" : "/cost-calculator/", "cost calculator") + " — pick a treatment, the option and the number of teeth or sessions, and it shows the price range. You can send the estimate to us on WhatsApp.",
