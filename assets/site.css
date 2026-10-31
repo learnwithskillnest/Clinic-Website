@@ -187,17 +187,35 @@
   @media (max-width:900px){.visit{grid-template-columns:1fr;gap:28px}}
 
   /* ---------- Patient tools ---------- */
-  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none}
-  .tools-grid a{display:flex;flex-direction:column;gap:6px;height:100%;padding:22px 24px;border-radius:var(--radius);background:var(--surface);text-decoration:none;color:var(--ink)}
+  .tools-band{background:var(--brand-soft)}
+  .tools-band .sec-head{text-align:center;margin:0 auto 32px}
+  .tools-band .sec-head p{margin:0 auto}
+  .pill{display:inline-block;margin-bottom:10px!important;padding:4px 14px;border-radius:999px;background:var(--accent);color:var(--accent-ink)!important;font-weight:700;font-size:var(--t-xs)}
+  .tools-feature{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+  .feat{display:flex;align-items:center;gap:18px;padding:26px 28px;border-radius:var(--radius);background:var(--brand);color:var(--brand-ink);text-decoration:none;transition:transform .15s}
+  .feat:hover{transform:translateY(-2px)}
+  .feat .t-ico{background:var(--brand-ink);color:var(--brand);width:56px;height:56px}
+  .feat-txt{flex:1;min-width:0}
+  .feat h3{font-size:var(--t-xl);color:var(--brand-ink);margin-bottom:4px}
+  .feat p{color:var(--brand-ink);opacity:.9}
+  .feat-cta{flex-shrink:0;padding:12px 20px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;white-space:nowrap}
+  .t-ico{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--brand-soft);color:var(--brand);flex-shrink:0}
+  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none}
+  .tools-grid a{display:grid;grid-template-columns:44px 1fr;gap:2px 14px;height:100%;padding:18px 20px;border-radius:var(--radius);background:var(--surface);text-decoration:none;color:var(--ink);transition:transform .15s}
+  .tools-grid a:hover{transform:translateY(-2px)}
+  .tools-grid .t-ico{grid-row:span 2}
   .tools-grid a:hover h3{color:var(--accent-text)}
-  .tools-grid h3{font-size:var(--t-l);color:var(--brand)}
+  .tools-grid h3{font-size:var(--t-l);color:var(--brand);line-height:1.3}
   .tools-grid p{color:var(--muted);font-size:var(--t-s)}
+  .tools-band .combo{background:var(--surface)}
+  @media (prefers-reduced-motion: reduce){.feat,.tools-grid a{transition:none}.feat:hover,.tools-grid a:hover{transform:none}}
+  .hero-tools{margin-top:16px;font-size:var(--t-s);color:var(--muted)}
   #cal{margin-top:6px}
   #cal[hidden]{display:none}
   .combo{margin-top:28px;padding:20px 24px;border-radius:var(--radius);background:var(--brand-soft);display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
   .combo p{color:var(--ink)}
-  @media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}}
-  @media (max-width:520px){.tools-grid{grid-template-columns:1fr}}
+  @media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}.tools-feature{grid-template-columns:1fr}}
+  @media (max-width:600px){.tools-grid{grid-template-columns:1fr}.feat{flex-wrap:wrap;padding:22px}.feat-cta{width:100%;text-align:center}.tools-band .sec-head{text-align:left}}
 
   /* ---------- FAQ ---------- */
   .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;align-items:start}
