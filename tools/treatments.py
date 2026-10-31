@@ -501,7 +501,7 @@ def page(t, parts):
     <div class="wrap">
       <h2>Book at our Lucknow clinics</h2>
       <div class="t-branches">
-        <div class="t-branch"><img src="/assets/img/gallery-sign.webp" width="800" height="600" loading="lazy" alt="Smile &amp; Glow signboard"><div><h3>I.T Chauraha</h3><p>Gate No. 4, 1/2 Shivsthali, Faizabad Rd, opp. IT Girls College, Hasanganj, Lucknow 226007</p><p>Mon–Sat 11:00 AM – 3:00 PM · Sunday by appointment</p><p><a class="link" href="https://maps.google.com/?cid=17579297340809890606" target="_blank" rel="noopener">Get directions</a></p></div></div>
+        <div class="t-branch"><img src="/assets/img/real-it-signboard.webp" width="800" height="600" loading="lazy" alt="Smile &amp; Glow signboard at the I.T Chauraha clinic"><div><h3>I.T Chauraha</h3><p>Gate No. 4, 1/2 Shivsthali, Faizabad Rd, opp. IT Girls College, Hasanganj, Lucknow 226007</p><p>Mon–Sat 11:00 AM – 3:00 PM · Sunday by appointment</p><p><a class="link" href="https://maps.google.com/?cid=17579297340809890606" target="_blank" rel="noopener">Get directions</a></p></div></div>
         <div class="t-branch"><img src="/assets/img/gallery-building.webp" width="800" height="600" loading="lazy" alt="Smile &amp; Glow Aashiyana clinic building"><div><h3>Aashiyana</h3><p>SS-771, behind Aastha Hospital, Sector H, LDA Colony, Lucknow 226012</p><p>Mon–Sat 4:00 PM – 9:00 PM · Sunday by appointment</p><p><a class="link" href="https://maps.google.com/?cid=7330207607150827761" target="_blank" rel="noopener">Get directions</a></p></div></div>
       </div>
       <div class="cta-row" style="margin-top:22px">
