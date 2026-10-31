@@ -71,8 +71,8 @@ def page_wrap(h1, lead, inner):
 # ---------------------------------------------------------------- emergency
 EMERG = {
     "en": {
-        "title": "Dental Emergency in Lucknow — Toothache, Broken or Knocked-out Tooth | Smile & Glow",
-        "desc": "What to do right now for severe toothache, a knocked-out or broken tooth, swelling or bleeding after extraction — and when to go to hospital. Call Smile & Glow, Lucknow: +91 72754 33783.",
+        "title": "Dental Emergency in Lucknow: What to Do Now | Smile & Glow",
+        "desc": "Severe toothache, knocked-out or broken tooth, swelling or bleeding? What to do now and when to go to hospital. Smile & Glow Lucknow: +91 72754 33783.",
         "crumb": "Dental emergency", "h1": "Dental emergency? What to do right now",
         "lead": "Simple first steps until you can see a dentist — and the signs that mean you should go to a hospital straight away.",
         "call": "Call the clinic now", "alert": "In pain or had an accident? Call us and we'll try to see you as soon as possible.",
@@ -100,7 +100,7 @@ EMERG = {
         "fine": "This page is first-aid guidance only and doesn't replace an examination. If in doubt, call us or go to the nearest hospital.",
     },
     "hi": {
-        "title": "दांत की इमरजेंसी, लखनऊ — तेज़ दांत दर्द, टूटा या गिरा दांत | स्माइल एंड ग्लो",
+        "title": "दांत की इमरजेंसी, लखनऊ: अभी क्या करें | स्माइल एंड ग्लो",
         "desc": "तेज़ दांत दर्द, गिरा या टूटा दांत, सूजन या दांत निकलवाने के बाद खून — अभी क्या करें और कब अस्पताल जाएँ। स्माइल एंड ग्लो, लखनऊ: +91 72754 33783।",
         "crumb": "दांत की इमरजेंसी", "h1": "दांत की इमरजेंसी? अभी क्या करें",
         "lead": "डेंटिस्ट तक पहुँचने से पहले के आसान कदम — और वे लक्षण जिनमें तुरंत अस्पताल जाना चाहिए।",
@@ -277,7 +277,7 @@ def anxiety_page(parts):
 <p class="fine">Tell us on the form or when booking that you feel nervous — we'll plan extra time for you.</p>
 </div>"""
     path = "/scared-of-the-dentist/"
-    return path, shell(parts, lang="en", path=path, title="Scared of the Dentist? Gentle Dental Care in Lucknow | Smile & Glow",
+    return path, shell(parts, lang="en", path=path, title="Scared of the Dentist? Gentle Dental Care | Smile & Glow Lucknow",
                        desc="Nervous about dental treatment? What happens at your first visit, how pain is controlled and how you stay in control at Smile & Glow, Lucknow.",
                        body=page_wrap("Scared of the dentist?", "You're not alone — and you're in charge. Here's exactly what to expect.", inner),
                        crumbs="Scared of the dentist?")
@@ -323,8 +323,8 @@ def food_page(parts):
 <p class="fine">General information for healthy adults and children. If you have diabetes, kidney disease, are pregnant or follow a medical diet, please ask your doctor first.</p>
 </div>"""
     path = "/food-for-teeth-and-skin/"
-    return path, shell(parts, lang="en", path=path, title="Food for Healthy Teeth, Skin and Hair — Indian Diet Tips | Smile & Glow Lucknow",
-                       desc="Simple Indian diet tips for healthy teeth and gums, clear skin, less hair fall and children's teeth — from Dr. Pallavi (PG Diploma in Nutrition), Smile & Glow Lucknow.",
+    return path, shell(parts, lang="en", path=path, title="Food for Healthy Teeth, Skin & Hair | Smile & Glow Lucknow",
+                       desc="Simple Indian diet tips for healthy teeth and gums, clear skin, less hair fall and kids' teeth, from Dr. Pallavi (PG Diploma in Nutrition), Lucknow.",
                        body=page_wrap("Food for healthy teeth, skin and hair", "Everyday Indian food habits that help — from a doctor trained in nutrition.", inner),
                        crumbs="Food for teeth & skin")
 
@@ -400,8 +400,8 @@ def kids_page(parts):
 
 <div class="cta-row no-print" style="margin-top:28px"><a class="btn rose" href="{wa("Hi Smile & Glow Clinic, I'd like to book a dental check-up for my child.")}" target="_blank" rel="noopener">Book a check-up for your child</a><a class="btn ghost" href="/food-for-teeth-and-skin/">Food tips for kids' teeth</a></div>"""
     path = "/kids/"
-    return path, shell(parts, lang="en", path=path, title="Kids' Dental Corner — First Visit, Brushing Chart & Certificate | Smile & Glow Lucknow",
-                       desc="Children's dental care tips from Smile & Glow, Lucknow: when to start, how much toothpaste, preparing for the first visit — plus a printable brushing chart and brave-patient certificate.",
+    return path, shell(parts, lang="en", path=path, title="Kids' Dental Corner: Tips & Brushing Chart | Smile & Glow Lucknow",
+                       desc="Kids' dental tips from Smile & Glow, Lucknow: when to start, how much toothpaste, the first visit, plus a printable brushing chart and certificate.",
                        body=page_wrap("Kids' dental corner", "Healthy milk teeth, happy visits — with a free brushing chart and a brave-patient certificate to print.", inner),
                        crumbs="Kids' corner", script=KIDS_JS)
 

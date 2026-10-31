@@ -402,7 +402,7 @@ def calc_page(parts, lang):
 # ---------------------------------------------------------------- 2) skin quiz
 QUIZ = {
     "en": {
-        "title": "Skin Type Quiz — Find Your Skin Type in 1 Minute | Smile & Glow Lucknow",
+        "title": "Skin Type Quiz: Find Your Skin Type | Smile & Glow Lucknow",
         "desc": "Free 6-question skin type quiz by Smile & Glow, Lucknow. Find out if your skin is oily, dry, combination, normal or sensitive, and get a simple routine.",
         "crumb": "Skin type quiz", "h1": "What's your skin type?",
         "lead": "Six quick questions. You'll get your likely skin type and a simple, budget-friendly routine.",
@@ -441,7 +441,7 @@ QUIZ = {
         "and_sensitive": "and sensitive",
     },
     "hi": {
-        "title": "स्किन टाइप क्विज़ — 1 मिनट में अपनी त्वचा का प्रकार जानें | स्माइल एंड ग्लो लखनऊ",
+        "title": "स्किन टाइप क्विज़: अपनी त्वचा का प्रकार जानें | स्माइल एंड ग्लो",
         "desc": "स्माइल एंड ग्लो, लखनऊ का मुफ़्त 6 सवालों का स्किन टाइप क्विज़। जानें आपकी त्वचा ऑयली, रूखी, मिली-जुली, नॉर्मल या संवेदनशील है, और आसान रूटीन पाएँ।",
         "crumb": "स्किन टाइप क्विज़", "h1": "आपकी त्वचा कैसी है?",
         "lead": "छह आसान सवाल। आपको अपनी त्वचा का प्रकार और एक सरल, बजट में रूटीन मिलेगा।",
@@ -649,7 +649,7 @@ def guide_page(parts):
 </section>"""
     path = "/treatment-guide/"
     return path, shell(parts, lang="en", path=path,
-                       title="Which Dental or Skin Treatment Is Right for Me? | Smile & Glow Lucknow",
+                       title="Which Dental or Skin Treatment Is Right for Me? | Smile & Glow",
                        desc="Implant vs bridge, filling vs root canal, peel vs laser toning, laser vs waxing, hair PRP — simple comparisons with Lucknow prices from Smile & Glow.",
                        body=body, crumbs="Treatment guide",
                        ld=[{"@type": "FAQPage", "@id": f"{SITE}{path}#faq", "inLanguage": "en", "mainEntity": faq}])
@@ -710,7 +710,7 @@ def samjhiye_page(parts):
   </div>
 </section>"""
     path = "/hi/samjhiye/"
-    return path, shell(parts, lang="hi", path=path, title="आसान भाषा में समझिए — दांत और त्वचा के इलाज | स्माइल एंड ग्लो लखनऊ",
+    return path, shell(parts, lang="hi", path=path, title="आसान भाषा में समझिए: दांत और त्वचा का इलाज | स्माइल एंड ग्लो",
                        desc="रूट कैनाल, इम्प्लांट, दांत सफ़ेद करना, लेज़र, केमिकल पील, हेयर PRP और सनस्क्रीन — आसान हिंदी में, स्माइल एंड ग्लो लखनऊ से।",
                        body=body, crumbs="आसान भाषा में समझिए",
                        ld=[{"@type": "FAQPage", "@id": f"{SITE}{path}#faq", "inLanguage": "hi", "mainEntity": faq}])
@@ -742,7 +742,7 @@ def aftercare_page(parts):
   </div>
 </section>"""
     path = "/aftercare/"
-    return path, shell(parts, lang="en", path=path, title="Aftercare After Dental & Skin Treatment (English + Hindi) | Smile & Glow",
+    return path, shell(parts, lang="en", path=path, title="Aftercare After Dental & Skin Treatment | Smile & Glow Lucknow",
                        desc="Aftercare for root canal, implants, teeth whitening, laser hair reduction, hair PRP and chemical peels — in English and Hindi, from Smile & Glow, Lucknow.",
                        body=body, crumbs="Aftercare")
 
