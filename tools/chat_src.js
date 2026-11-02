@@ -1,5 +1,7 @@
 /* Smile & Glow clinic assistant.
-   Runs entirely in the visitor's browser: no server, no AI service, nothing stored or sent.
+   Runs entirely in the visitor's browser: no server, no AI service, nothing stored.
+   Optional voice (mic + read aloud) uses the browser's own speech features; on Chrome, spoken audio is
+   converted to text by the browser's speech service.
    Answers come from the clinic information below. Booking is handed over to WhatsApp.
    Built from tools/chat_src.js by tools/build.py (prices are filled in from tools/treatments.py). */
 (function () {
@@ -347,6 +349,13 @@
     ".sgc-form button{min-height:44px;padding:0 16px;border:0;border-radius:999px;background:var(--accent,#c2125f);color:var(--accent-ink,#fff);font-family:inherit;font-size:1rem;font-weight:600;cursor:pointer}" +
     ".sgc-note{font-size:.8125rem;color:var(--muted,#525d6b);text-align:center;padding:0 12px 8px;background:var(--surface,#fff)}" +
     ".sgc-typing{opacity:.7;font-style:italic}" +
+    ".sgc-hbtns{display:flex;align-items:center;gap:2px}" +
+    ".sgc-spk{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:inherit;cursor:pointer;border-radius:10px;opacity:.75}" +
+    ".sgc-spk[aria-pressed=true]{opacity:1;background:rgba(255,255,255,.18)}" +
+    ".sgc-spk:focus-visible,.sgc-x:focus-visible{outline:2px solid currentColor;outline-offset:-4px}" +
+    ".sgc-form .sgc-mic{flex:none;width:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:var(--brand-soft,#e3eef8);color:var(--brand,#1b5c8c)}" +
+    ".sgc-form .sgc-mic.on{background:var(--accent,#c2125f);color:var(--accent-ink,#fff)}" +
+    "@media (prefers-reduced-motion:no-preference){.sgc-form .sgc-mic.on{animation:sgcPulse 1.2s ease-in-out infinite}@keyframes sgcPulse{0%,100%{box-shadow:0 0 0 0 rgba(194,18,95,.45)}50%{box-shadow:0 0 0 8px rgba(194,18,95,0)}}}" +
     "@media (max-width:700px){.sgc-launch{right:12px;bottom:calc(84px + env(safe-area-inset-bottom))}" +
     ".sgc-panel{right:0;left:0;bottom:0;width:100%;height:min(85vh,640px);border-radius:18px 18px 0 0;padding-bottom:env(safe-area-inset-bottom)}}" +
     "@media (prefers-reduced-motion:no-preference){.sgc-m{animation:sgcIn .18s ease-out}@keyframes sgcIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}}";
@@ -355,13 +364,30 @@
     open: "हमसे बात करें", title: "Smile & Glow सहायक", sub: "आमतौर पर तुरंत जवाब", ph: "अपना सवाल लिखें…", send: "भेजें", close: "बंद करें",
     hello: "नमस्ते! मैं Smile & Glow का सहायक हूँ। समय, पता, ट्रीटमेंट, कीमत या अपॉइंटमेंट — कुछ भी पूछें।",
     note: "जवाब इस वेबसाइट की जानकारी से हैं। आपका लिखा कहीं सेव नहीं होता।",
+    noteVoice: " बोलकर पूछने पर आपके ब्राउज़र की स्पीच सेवा इस्तेमाल होती है।",
+    voiceHint: "🎤 बटन दबाकर हिंदी या अंग्रेज़ी में बोलकर भी पूछ सकते हैं।",
+    mic: "बोलकर पूछें", listening: "सुन रहा हूँ… बोलिए", speak: "जवाब बोलकर सुनाएँ",
+    micDenied: "माइक्रोफ़ोन की अनुमति नहीं मिली। ब्राउज़र की सेटिंग में इस वेबसाइट के लिए माइक्रोफ़ोन चालू करें, या सवाल लिखें।",
+    noSpeech: "कुछ सुनाई नहीं दिया। 🎤 दबाकर फिर से बोलें।",
     wa: "WhatsApp पर बुक करें", call: "कॉल करें", form: "बुकिंग फ़ॉर्म", page: "पूरी कीमत और जानकारी"
   } : {
     open: "Chat with us", title: "Smile & Glow assistant", sub: "Instant answers about the clinic", ph: "Type your question…", send: "Send", close: "Close",
     hello: "Hi! I'm the Smile & Glow assistant. Ask me about timings, locations, treatments, prices or booking.",
     note: "Answers come from this website. Nothing you type is stored.",
+    noteVoice: " Voice questions use your browser's speech service.",
+    voiceHint: "Tap 🎤 to ask by voice, in English or Hinglish. For Hindi, use the हिंदी website.",
+    mic: "Ask by voice", listening: "Listening… speak now", speak: "Read answers aloud",
+    micDenied: "The microphone is blocked. Allow it for this site in your browser settings, or type your question.",
+    noSpeech: "I didn't hear anything. Tap 🎤 and try again.",
     wa: "Book on WhatsApp", call: "Call", form: "Booking form", page: "Full prices & details"
   };
+
+  /* Voice: speech-to-text and text-to-speech built into the visitor's browser. Free, no account.
+     The mic only appears where the browser supports speech recognition (Chrome, Edge, Safari, Samsung Internet). */
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var TTS = "speechSynthesis" in window && typeof window.SpeechSynthesisUtterance === "function";
+  var MIC_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>';
+  var SPK_SVG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
 
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   var launch = document.createElement("button");
@@ -369,12 +395,87 @@
   launch.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg><span>' + T.open + "</span>";
   var panel = document.createElement("div");
   panel.className = "sgc-panel"; panel.hidden = true; panel.setAttribute("role", "dialog"); panel.setAttribute("aria-label", T.title);
-  panel.innerHTML = '<div class="sgc-head"><div><b>' + T.title + "</b><small>" + T.sub + '</small></div><button type="button" class="sgc-x" aria-label="' + T.close + '">×</button></div>' +
+  panel.innerHTML = '<div class="sgc-head"><div><b>' + T.title + "</b><small>" + T.sub + '</small></div><div class="sgc-hbtns">' +
+    (TTS ? '<button type="button" class="sgc-spk" aria-pressed="false" aria-label="' + T.speak + '" title="' + T.speak + '">' + SPK_SVG + "</button>" : "") +
+    '<button type="button" class="sgc-x" aria-label="' + T.close + '">×</button></div></div>' +
     '<div class="sgc-log" role="log" aria-live="polite"></div>' +
-    '<form class="sgc-form" autocomplete="off"><input type="text" maxlength="300" aria-label="' + T.ph + '" placeholder="' + T.ph + '"><button type="submit">' + T.send + "</button></form>" +
-    '<div class="sgc-note">' + T.note + "</div>";
+    '<form class="sgc-form" autocomplete="off">' +
+    (SR ? '<button type="button" class="sgc-mic" aria-pressed="false" aria-label="' + T.mic + '" title="' + T.mic + '">' + MIC_SVG + "</button>" : "") +
+    '<input type="text" maxlength="300" aria-label="' + T.ph + '" placeholder="' + T.ph + '"><button type="submit">' + T.send + "</button></form>" +
+    '<div class="sgc-note">' + T.note + (SR ? T.noteVoice : "") + "</div>";
   document.body.appendChild(launch); document.body.appendChild(panel);
   var log = panel.querySelector(".sgc-log"), form = panel.querySelector("form"), input = form.querySelector("input");
+  var micBtn = panel.querySelector(".sgc-mic"), spkBtn = panel.querySelector(".sgc-spk");
+
+  /* ---------- Voice ---------- */
+  var speakOn = false, viaVoice = false, rec = null, listening = false, micCancel = false;
+  try { speakOn = localStorage.getItem("sgcSpeak") === "1"; } catch (e) {}
+  function setSpk(on) {
+    speakOn = on; if (spkBtn) spkBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    try { localStorage.setItem("sgcSpeak", on ? "1" : "0"); } catch (e) {}
+    if (!on && TTS) speechSynthesis.cancel();
+  }
+  function plain(html) {
+    var d = document.createElement("div");
+    d.innerHTML = html.replace(/<br\s*\/?>|<\/li>|<ul>|<small>/gi, ". ");
+    return d.textContent.replace(/[★•]/g, " ").replace(/\s+/g, " ").replace(/([:।!?])\s*\./g, "$1").replace(/(\.\s*){2,}/g, ". ").trim();
+  }
+  function pickVoice(lang) {
+    var vs = speechSynthesis.getVoices() || [], prefix = null;
+    for (var i = 0; i < vs.length; i++) {
+      var l = (vs[i].lang || "").replace("_", "-").toLowerCase();
+      if (l === lang + "-in") return vs[i];
+      if (!prefix && l.indexOf(lang) === 0) prefix = vs[i];
+    }
+    return prefix;
+  }
+  function say(html, hi) {
+    if (!TTS) return;
+    try {
+      speechSynthesis.cancel();
+      var v = pickVoice(hi ? "hi" : "en");
+      // Chrome stops long utterances after ~15 seconds, so speak sentence by sentence (speak() queues them).
+      plain(html).replace(/([.!?।])\s+/g, "$1\u0001").split("\u0001").forEach(function (part) {
+        if (part.trim().length < 2) return;
+        var u = new SpeechSynthesisUtterance(part);
+        u.lang = hi ? "hi-IN" : "en-IN"; u.rate = 0.95; if (v) u.voice = v;
+        speechSynthesis.speak(u);
+      });
+    } catch (e) {}
+  }
+  if (TTS) { try { speechSynthesis.getVoices(); } catch (e) {} } // starts loading voices early on Chrome
+  if (spkBtn) { setSpk(speakOn); spkBtn.addEventListener("click", function () { setSpk(!speakOn); }); }
+
+  function micState(on) {
+    listening = on; micBtn.classList.toggle("on", on); micBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    input.placeholder = on ? T.listening : T.ph;
+  }
+  function stopMic() { if (rec && listening) { micCancel = true; try { rec.abort(); } catch (e) {} } }
+  if (micBtn) micBtn.addEventListener("click", function () {
+    if (listening) { try { rec.stop(); } catch (e) {} return; }
+    if (TTS) speechSynthesis.cancel();
+    var heard = "", failed = false; micCancel = false;
+    rec = new SR();
+    rec.lang = PAGE_HI ? "hi-IN" : "en-IN";
+    rec.interimResults = true; rec.maxAlternatives = 1; rec.continuous = false;
+    rec.onstart = function () { micState(true); input.value = ""; };
+    rec.onresult = function (e) {
+      var s = ""; for (var i = 0; i < e.results.length; i++) s += e.results[i][0].transcript;
+      heard = s; input.value = s;
+    };
+    rec.onerror = function (e) {
+      failed = true;
+      if (e.error === "not-allowed" || e.error === "service-not-allowed") bubble("sgc-bot", T.micDenied, true);
+      else if (e.error === "no-speech") bubble("sgc-bot", T.noSpeech, true);
+    };
+    rec.onend = function () {
+      micState(false);
+      if (micCancel) return;
+      var q = (heard || "").trim();
+      if (q && !(failed && !heard)) { input.value = ""; viaVoice = true; ask(q); }
+    };
+    try { rec.start(); } catch (e) { micState(false); }
+  });
 
   function scroll() { log.scrollTop = log.scrollHeight; }
   function bubble(cls, html, isText) {
@@ -411,18 +512,20 @@
     var t = bubble("sgc-bot sgc-typing", "…", true);
     setTimeout(function () {
       var r = answer(q); t.classList.remove("sgc-typing"); t.innerHTML = r.html; actions(r.act, r.hi); scroll();
+      if (viaVoice || speakOn) say(r.html, r.hi);
+      viaVoice = false;
     }, 350);
   }
   var started = false;
   function open() {
     panel.hidden = false; launch.hidden = true; launch.setAttribute("aria-expanded", "true");
-    if (!started) { started = true; bubble("sgc-bot", T.hello); actions([["chips"]], PAGE_HI); }
+    if (!started) { started = true; bubble("sgc-bot", T.hello + (SR ? " " + T.voiceHint : "")); actions([["chips"]], PAGE_HI); }
     setTimeout(function () { if (window.matchMedia("(min-width:701px)").matches) input.focus(); }, 50);
   }
-  function close() { panel.hidden = true; launch.hidden = false; launch.setAttribute("aria-expanded", "false"); launch.focus({ preventScroll: true }); }
+  function close() { stopMic(); if (TTS) speechSynthesis.cancel(); panel.hidden = true; launch.hidden = false; launch.setAttribute("aria-expanded", "false"); launch.focus({ preventScroll: true }); }
   launch.addEventListener("click", open);
   panel.querySelector(".sgc-x").addEventListener("click", close);
   panel.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
-  form.addEventListener("submit", function (e) { e.preventDefault(); var q = input.value; input.value = ""; ask(q); });
+  form.addEventListener("submit", function (e) { e.preventDefault(); stopMic(); var q = input.value; input.value = ""; ask(q); });
   window.sgChatAnswer = answer; // used by the site's tests
 })();
