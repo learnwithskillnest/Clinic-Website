@@ -2,7 +2,7 @@
    Pages: network first, so visitors always get the latest version when online; cached copy only when offline.
    CSS and JS: network first too. Fonts and images: from cache, refreshed in the background. */
 const VERSION = "sg-2026-11-02";
-const CORE = ["/", "/hi/", "/dental-emergency/", "/hi/dental-emergency/", "/assets/site.css", "/assets/chat.js?v=7",
+const CORE = ["/", "/hi/", "/dental-emergency/", "/hi/dental-emergency/", "/assets/site.css", "/assets/chat.js?v=8",
   "/assets/img/logo-sm.webp", "/assets/fonts/mukta-latin-400.woff2", "/assets/fonts/mukta-latin-600.woff2", "/assets/fonts/playfair-latin-600.woff2"];
 
 self.addEventListener("install", e => {
