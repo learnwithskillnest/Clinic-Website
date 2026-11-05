@@ -1,5 +1,6 @@
 /* Smile & Glow: shared page extras, loaded on every page.
    1. Live "open now" badges   2. Listen (read aloud) button   3. Skin weather for Lucknow (homepage only)
+   4. Festive banner (homepage only, shows automatically between START and END below)
    Runs in the browser; nothing is stored or sent anywhere except the free Open-Meteo weather request. */
 (function () {
   "use strict";
@@ -191,4 +192,60 @@
       box.hidden = false;
     }).catch(function () { /* stay hidden if weather can't be fetched */ });
   }
+  /* ---------------- 4. Festive banner (Dhanteras / Diwali / Bhai Dooj 2026) ----------------
+     Shows on the homepage only, from START until END (India time), then disappears by itself.
+     No discounts or free treatment (Dental Council of India advertising rules): gift cards at normal price,
+     festive appointment slots and health tips only. To reuse next year, change the dates and texts. */
+  (function () {
+    var START = Date.parse("2026-11-04T00:00:00+05:30"), END = Date.parse("2026-11-11T00:00:00+05:30");
+    var DIWALI_OVER = Date.parse("2026-11-09T00:00:00+05:30");
+    var now = Date.now(), path = location.pathname;
+    if (now < START || now >= END || (path !== "/" && path !== "/index.html" && path !== "/hi/" && path !== "/hi/index.html")) return;
+    var KEY = "sgFest2026";
+    try { if (localStorage.getItem(KEY) === "x") return; } catch (e) {}
+    var main = document.querySelector("main"); if (!main) return;
+    var WA = "https://wa.me/917275433783?text=";
+    var after = now >= DIWALI_OVER;
+    var T = HI ? {
+      head: after ? "🪔 दीपावली की शुभकामनाएँ! इस भाई दूज, मुस्कान तोहफ़े में दें" : "🪔 धनतेरस और दीपावली की शुभकामनाएँ",
+      sub: "धनतेरस भगवान धन्वंतरि, यानी आयुर्वेद और चिकित्सा के देवता, का दिन है। इस त्योहार सेहत में निवेश करें।",
+      party: ["दीपावली से पहले चमकें", "दांतों की सफ़ेदी, कार्बन लेज़र पील और ग्लो फ़ेशियल के लिए 6–7 नवंबर के स्लॉट।", "स्लॉट बुक करें", "नमस्ते Smile & Glow, मुझे दीपावली से पहले (6–7 नवंबर) व्हाइटनिंग / कार्बन पील / ग्लो फ़ेशियल का स्लॉट चाहिए।"],
+      gift: ["भाई दूज पर ‘गिफ़्ट अ स्माइल’", "भाई या बहन को दांतों की सफ़ाई, व्हाइटनिंग, ग्लो फ़ेशियल या परामर्श का गिफ़्ट कार्ड दें।", "गिफ़्ट कार्ड लें", "नमस्ते Smile & Glow, मैं भाई दूज पर ‘गिफ़्ट अ स्माइल’ गिफ़्ट कार्ड लेना चाहता/चाहती हूँ। कृपया विकल्प बताएँ।"],
+      tips: ["त्योहार में सेहत", "मिठाई के बाद दांत और त्वचा की देखभाल के आसान टिप्स।", "टिप्स पढ़ें", "/food-for-teeth-and-skin/"],
+      close: "बंद करें"
+    } : {
+      head: after ? "🪔 Happy Diwali! Gift a Smile this Bhai Dooj" : "🪔 Happy Dhanteras & Diwali from Smile & Glow",
+      sub: "Dhanteras is the day of Lord Dhanvantari, the god of medicine. This festive season, invest in your health.",
+      party: ["Party-ready by Diwali", "Slots on 6–7 Nov for teeth whitening, carbon laser peel and glow facials.", "Book a slot", "Hi Smile & Glow, I'd like a slot on 6–7 Nov before Diwali for whitening / carbon peel / glow facial."],
+      gift: ["Gift a Smile for Bhai Dooj", "Give your brother or sister a gift card for a dental cleaning, whitening, glow facial or consultation.", "Get a gift card", "Hi Smile & Glow, I'd like a 'Gift a Smile' gift card for Bhai Dooj. Please share the options."],
+      tips: ["Festive health tips", "Simple ways to protect teeth and skin through the sweets and late nights.", "Read the tips", "/food-for-teeth-and-skin/"],
+      close: "Close"
+    };
+    var css = ".fest{position:relative;margin:16px auto 0;max-width:1160px;width:calc(100% - 32px);padding:20px 22px;border-radius:20px;background:linear-gradient(135deg,var(--brand-soft,#e3eef8),var(--surface,#fff));border:1.5px solid var(--accent,#c2125f);color:var(--ink,#1d2733)}" +
+      ".fest h2{font-size:1.3rem;line-height:1.3;margin:0 44px 4px 0;color:var(--brand,#1b5c8c)}" +
+      ".fest .fest-sub{margin:0 0 14px;color:var(--muted,#525d6b);font-size:.95rem}" +
+      ".fest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}" +
+      ".fest-card{display:flex;flex-direction:column;gap:6px;padding:14px;border-radius:14px;background:var(--surface,#fff)}" +
+      ".fest-card b{font-size:1rem}.fest-card p{margin:0;font-size:.9rem;line-height:1.45;flex:1}" +
+      ".fest-card a{align-self:flex-start;display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;font-weight:600;font-size:.9rem;text-decoration:none;background:var(--accent,#c2125f);color:var(--accent-ink,#fff)}" +
+      ".fest-card a.fest-wa{background:#167a40;color:#fff}" +
+      ".fest-x{position:absolute;top:8px;right:8px;width:44px;height:44px;border:0;border-radius:10px;background:transparent;color:inherit;font-size:1.5rem;cursor:pointer}";
+    var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
+    var box = document.createElement("aside");
+    box.className = "fest no-speak"; box.setAttribute("aria-label", T.head.replace(/^\S+\s/, ""));
+    function card(c, wa) {
+      var href = wa ? WA + encodeURIComponent(c[3]) : c[3];
+      return '<div class="fest-card"><b></b><p></p><a href="' + href + '"' + (wa ? ' class="fest-wa" target="_blank" rel="noopener"' : "") + "></a></div>";
+    }
+    var cards = (after ? [] : [[T.party, 1]]).concat([[T.gift, 1], [T.tips, 0]]);
+    box.innerHTML = '<button type="button" class="fest-x" aria-label="' + T.close + '">×</button><h2></h2><p class="fest-sub"></p><div class="fest-grid">' +
+      cards.map(function (c) { return card(c[0], c[1]); }).join("") + "</div>";
+    box.querySelector("h2").textContent = T.head;
+    box.querySelector(".fest-sub").textContent = T.sub;
+    box.querySelectorAll(".fest-card").forEach(function (el, i) {
+      var c = cards[i][0]; el.querySelector("b").textContent = c[0]; el.querySelector("p").textContent = c[1]; el.querySelector("a").textContent = c[2];
+    });
+    box.querySelector(".fest-x").addEventListener("click", function () { box.remove(); try { localStorage.setItem(KEY, "x"); } catch (e) {} });
+    main.insertBefore(box, main.firstChild);
+  })();
 })();
